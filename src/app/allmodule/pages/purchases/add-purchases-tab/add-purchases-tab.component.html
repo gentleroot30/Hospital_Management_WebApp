@@ -1,0 +1,222 @@
+<div class="container" style="display: block; overflow: hidden; white-space: nowrap">
+  <p class="content-heading">Purchase</p>
+  <a routerLink="../purchase">
+    <p class=" menu-tab-1">Purchase Order</p>
+  </a>
+  <a routerLink="../add-purchases-tab">
+    <p class="menu-tab-active">Add Purchases</p>
+  </a>
+  <a routerLink="../purchases-returns-tab">
+    <p class="menu-tab-2"> Return</p>
+  </a>
+  <div class="menu-line"></div>
+</div>
+<div class="user">
+
+  <!-- Category tabs -->
+
+  <div class="product_tab">
+    <div class="row">
+      <div class="col-md-2">
+        <form #myForm="ngForm" (ngSubmit)="loadPurchase()">
+          <select
+            class="selectform"
+            aria-label="Default select example"
+            [(ngModel)]="formData.searchByType"
+            name="searchByType"
+            (ngModelChange)="loadPurchase()"
+          >
+            <!-- <option value="1" hidden><span>Search by</span></option> -->
+            <option value="1">Supplier Name</option>
+            <option value="2">invoice Number</option>
+           
+          </select>
+        </form>
+      </div>
+      <div class="col-md-6" id="searchhere">
+        <input
+              type="text"
+              class="search"
+              [(ngModel)]="formData.searchByValue"
+              name="searchByValue"
+              placeholder="Search here"
+              style="
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 260px;
+                height: 40px;
+
+                /* disabled text field border */
+
+                border: 0.5px solid #e4e5e5;
+                border-radius: 5px;
+              "
+              (ngModelChange)="loadPurchase()"
+            />
+      </div>
+      <div class="col-md-4">
+
+        <!--data range start-->
+
+        <div style="position: relative; display: inline-block; margin-bottom: 2px; margin-top: 8px; ">
+        <input type="text" name="daterange" class="date-range-input-tag-class" placeholder="Date Range" value="" />
+         <i class="date-range-input-i-tag-class">
+            <svg style="margin-top: -8px ; margin-left:-295px;" width="9" height="5" viewBox="0 0 9 5" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.77542 0.337891L4.54761 3.10405L7.31981 0.337891L8.1714 1.18948L4.54761 4.81326L0.923828 1.18948L1.77542 0.337891Z"
+                fill="#707070" />
+            </svg>
+          </i>
+        </div>
+
+        <!--data range end-->
+
+        <button [disabled]="!roleBaseAccess.canAddPurchases "class="orange_btn" (click)="addNewPurchase()"><i class="icon-icon-10"></i> Add New</button>
+      </div>
+    </div>
+
+    <table mat-table [dataSource]="dataSource1"multiTemplateDataRows
+    class="mat-elevation-z8 mt-2" >
+
+      <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+                <ng-container matColumnDef="expand">
+                  <th mat-header-cell *matHeaderCellDef aria-label="row actions"> &nbsp;
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button aria-label="expand row"
+                      (click)="expandedElement1 = expandedElement1 === element ? null : element; $event.stopPropagation()">
+                      <mat-icon *ngIf="expandedElement1 !== element">keyboard_arrow_down</mat-icon>
+                      <mat-icon *ngIf="expandedElement1 === element">keyboard_arrow_up</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+      <!-- Position Column -->
+
+      <ng-container matColumnDef="DateandTime">
+        <th mat-header-cell *matHeaderCellDef class="batch"> Date and Time </th>
+        <td mat-cell *matCellDef="let element" style="color: #707070;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;"> {{element.DateandTime | date : "dd/MM/yy HH:mm"}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="SupplierName">
+        <th mat-header-cell *matHeaderCellDef class="batch"> Supplier Name </th>
+        <td mat-cell *matCellDef="let element" style="color: #978BDD;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;"> {{element.SupplierName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="payment_due">
+        <th mat-header-cell *matHeaderCellDef class="batch">Payment Due </th>
+        <td mat-cell *matCellDef="let element">
+          <button class="validation_button" [ngStyle]="getButtonStyle(element.payment_due)"
+            (click)="changeButtonColor('paid_unpaid_validator')"> {{element.payment_due}}
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="TotalBill">
+        <th mat-header-cell *matHeaderCellDef class="batch">Bill Total </th>
+        <td mat-cell *matCellDef="let element" style="color: #707070;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;"> {{element.TotalBill}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="DifferencePercent">
+        <th mat-header-cell *matHeaderCellDef class="batch"> % Difference </th>
+        <td mat-cell *matCellDef="let element" style="color: #707070;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;"> {{element.DifferencePercent}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef class="batch"> Action </th>
+        <td mat-cell *matCellDef="let element" style="color: #707070;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;"> <button mat-icon-button [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu" class="hover">
+            <a  class="mat-menu-a hover"
+              ><span class="hover">Purchase History</span></a
+            >
+
+            <hr />
+            <a (click)="roleBaseAccess.canAddPurchases ? viewPurchase(element.purchaseId) : null" [ngClass]="{'disabled': !roleBaseAccess.canViewPurchases}" class="hover text-decoration-n"><span class="hover a"><i
+                  class="icon-icon-15 mat-menu-i hover"></i>view</span> </a><br />
+            <a (click)="roleBaseAccess.canEditPurchases ? editPurchase(element.purchaseId) : null" [ngClass]="{'disabled': !roleBaseAccess.canEditPurchases}" class="hover text-decoration-n"><span class="hover a"><i
+                  class="icon-icon-17 mat-menu-i hover"></i>Edit</span></a><br />
+            <a (click)="roleBaseAccess.canDeletePurchases ? deletePurchasesDialog(element.purchaseId) : null" [ngClass]="{'disabled': !roleBaseAccess.canDeletePurchases}"class="hover text-decoration-n"><span class="hover a">
+                <i class="icon-icon-18 mat-menu-i hover"></i>Delete</span><br />
+            </a>
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns1.length">
+          <div class="example-element-detail" [@detailExpand]=" element == expandedElement1 ? 'expanded' : 'collapsed'">
+            <div class="expansion">
+              <span class="px-4" style="margin-right: 40px">Added By: <p class="inline" style="display: inline-block; width: fit-content">Admin</p></span>
+              <span class="px-4" style=" display: inline-block; width: fit-content; margin-right: 40px;">
+                Added On: <p style="display: inline-block; width: fit-content" class="inline"let element>{{ element.createdAt | date : "dd/MM/yy" }}</p></span>
+              <span class="px-4" style=" display: inline-block; width: fit-content; margin-right: 40px;">
+                Invoice No:<p style="display: inline-block; width: fit-content" class="inline"let element>{{ element.invoiceNumber }}</p></span>
+              <span class="px-4" style=" display: inline-block; width: fit-content; margin-right: 40px;">
+                Total MRP:<p style="display: inline-block; width: fit-content" class="inline">{{ element.TotalBill }}</p></span>
+            </div>
+          </div>
+        </td>s
+      </ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns1" class="example-element-row"
+        [class.example-expanded-row]="expandedElement1 === element"
+        (click)="expandedElement1 = expandedElement1 === element ? null : element"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+  </div>
+
+    <!-- HTML Code for Table-data-description and Pagination code start... -->
+    
+    <mat-paginator #paginator 
+      class="demo-paginator" 
+      (page)="handlePageEvent($event)" 
+      [length]="length"
+      [pageSize]="pageSize" [disabled]="disabled" 
+      [showFirstLastButtons]="showFirstLastButtons"
+      [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" 
+      [hidePageSize]="hidePageSize"
+      [pageIndex]="pageIndex" 
+      aria-label="Select page">
+    </mat-paginator>
+    <!-- HTML Code for Table-data-description and Pagination code end... -->
+  </div>

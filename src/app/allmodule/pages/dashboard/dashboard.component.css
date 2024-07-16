@@ -1,0 +1,333 @@
+.dashboard mat-card {
+    padding: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.dashboard h2 {
+    font-family: 'Balsamiq Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2.57812px;
+    color: #000000;
+    opacity: 0.6;
+}
+
+.no_data {
+    text-align: center;
+}
+
+.no_data p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #707070;
+    padding-top: 10px;
+}
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 257px) 172px;
+    grid-template-rows: repeat(2, minmax(min-content, 144px));
+    gap:20px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 360px);
+}
+
+
+.totalpurchase {
+    padding: 0px;
+    width: 172px;                                                                             
+    height: 144px;                                                 
+    left: 254px;
+    top: 126px;
+  /*  flex-direction: column;
+    align-items: flex-start;
+    display: flex; */
+
+    /* Light/Base/Surface */
+
+    background: #FFFFFF;
+    /* Light/Elevation */
+
+    box-shadow: 0px 0.5px 1.75px rgba(0, 0, 0, 0.039), 0px 1.85px 6.25px rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+}
+
+.totalsales {
+    padding: 0px;
+    width: 172px;
+    height: 144px;
+    left: 254px;
+    top: 126px;
+
+    /* Light/Base/Surface */
+
+    background: #FFFFFF;
+    /* Light/Elevation */
+
+    box-shadow: 0px 0.5px 1.75px rgba(0, 0, 0, 0.039), 0px 1.85px 6.25px rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+}
+
+.totalexpenditure {
+    padding: 0px;
+    width: 172px;
+    height: 144px;
+    left: 254px;
+    top: 126px;
+
+    /* Light/Base/Surface */
+
+    background: #FFFFFF;
+    /* Light/Elevation */
+
+    box-shadow: 0px 0.5px 1.75px rgba(0, 0, 0, 0.039), 0px 1.85px 6.25px rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+}
+
+.graph {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    padding: 0px;
+    width: 735px;
+    height: 418px;
+    left: 252px;
+    top: 286px;
+    /* Light/Base/Surface */
+    background: #FFFFFF;
+    box-shadow: 0px 0.57931px 2.02759px rgba(0, 0, 0, 0.039), 0px 2.14345px 7.24138px rgba(0, 0, 0, 0.19);
+    border-radius: 4.63448px;
+
+}
+
+.pychart {
+    display: grid;
+    justify-items: center;
+    left: 944px;
+    top: 123px;
+    height: 358.64px;
+    /* Light/Base/Surface */
+    background: #FFFFFF;
+    box-shadow: 0px 0.622449px 2.17857px rgba(0, 0, 0, 0.039), 0px 2.30306px 7.78061px rgba(0, 0, 0, 0.19);
+    border-radius: 4.97959px;
+}
+    
+
+
+.paymentdue {
+    align-items: center;
+    padding: 26.2279px 44px 26.2279px 17.2849px;
+    width: 425.71px;
+    height: 203.01px;
+    left: 944px;
+    top: 496px;
+    margin-top: 20px;
+    /* Light/Base/Surface */
+
+    background: #FFFFFF;
+    box-shadow: 0px 0.540154px 1.89054px rgba(0, 0, 0, 0.039), 0px 1.99857px 6.75192px rgba(0, 0, 0, 0.19);
+    border-radius: 4.32123px;
+}
+
+/* top 3 boxes */
+h3 {
+    width: 154px;
+    height: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 24px;
+    margin-left: 9px;
+}
+
+h1 {
+    width: 145px;
+    height: 36px;
+    margin-left: 9px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 36px;
+    margin-top: 32px; 
+    /* identical to box height, or 106% */
+
+
+    /* Light/Base/Chart Title */
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    /* flex: none;
+order: 0;
+flex-grow: 0; */
+}
+
+p {
+    width: 154px;
+    height: 20px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+   margin-left: 10px;
+    /* identical to box height, or 143% */
+    padding-bottom: 20px;
+    letter-spacing: 0.25px;
+    
+
+    /* Light/Chart/Green */
+
+    color: #43A047;
+
+
+
+    /* Inside auto layout */
+
+    /*flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0; */
+}
+
+h4 {
+    width: 73px;
+    height: 22px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.1243px;
+    line-height: 22px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: 0.270077px;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+span {
+    width: 134.32px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.4455px;
+    line-height: 39px;
+    /* identical to box height, or 200% */
+
+flex-grow: 1;
+    color: rgba(0, 0, 0, 0.6)
+}
+h1{
+    width:132.88px;
+    height: 39px;
+
+    font-family:'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.4455px;
+    line-height: 39px;
+    /* identical to box height, or 200% */
+
+flex-grow: 1;
+    color: rgba(0, 0, 0, 0.6)
+}
+/* graph */
+.pie-h {
+    width: 189px;
+    height: 28px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.8552px;
+    line-height: 28px;
+    /* identical to box height, or 133% */
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+    margin-left: -190px;
+
+    .date{
+        width: 193px;
+height: 13px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14.9388px;
+line-height: 13px;
+/* identical to box height, or 86% */
+display: inline-flex;
+margin-right: -400px;
+align-items: center;
+letter-spacing: 0.120287px;
+
+color: #707070;
+ }
+}
+.graph-h {
+    width: 189px;
+    height: 28px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.8552px;
+    line-height: 28px;
+    /* identical to box height, or 133% */
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 40px;
+margin-top: 20px;
+.day{
+width: 100px;
+height: 13px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14.9388px;
+line-height: 13px;
+/* identical to box height, or 86% */
+display: inline-flex;
+margin-top: 20px;
+margin-right: -200px;
+margin-inline: 200px;
+align-items:center ;
+letter-spacing: 0.120287px;
+
+color: #707070;
+margin-top: 25px;
+
+}
+}
+
+@media(max-width:1420px) {
+    .div2{
+        margin-top: 20px;
+    }
+
+    .grid-1{
+        grid-template-columns: repeat(auto-fit, minmax(144px,1fr));    }
+
+        .graph{
+            width: auto;
+            grid-template-columns: minmax(100px,1fr);
+        }
+}
+
+
+

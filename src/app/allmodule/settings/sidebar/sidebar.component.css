@@ -1,0 +1,16 @@
+.sidenav-list span {
+    padding-left: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.6269px;
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+.active{
+    color: #E25D41;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,44 @@
+.logo-container {
+    width: 100%;
+  }
+  .mat-icon-button{
+    display: none;
+  }
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .margin_l{
+    margin-left:52px;
+    margin-bottom: 16px;
+  
+  }
+
+  .setting_i{
+    margin-left:1006px;
+    margin-top: 27px;
+    color: black;
+  }
+
+  .power_i{
+    margin-left: 52px;
+    margin-top: 27px;
+    color: black;
+  }
+
+  .grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1,1fr);
+    text-align: end;
+  }
+
+  .grid >div{
+    margin-right: 60px;
+  }
+
+ mat-button{
+  margin-bottom: 10px;
+ }

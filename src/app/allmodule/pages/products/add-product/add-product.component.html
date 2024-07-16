@@ -1,0 +1,165 @@
+<div class="add">
+  <h2>
+    <a href="" routerLink="/product"><mat-icon>arrow_back</mat-icon></a> Add
+    Product
+  </h2>
+  <form name="addProductForm" (ngSubmit)="addProduct()" [formGroup]="addProductForm">
+    <mat-card>
+      <div class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Product Name</label>
+              <span style="color: red;">* </span>
+              <textarea type="text" class="form-control" rows="5" formControlName="productName"
+                placeholder=" Enter Product Name here" [ngClass]="{
+                  'is-invalid': submitted && f['productName'].errors
+                }"></textarea>
+              <div *ngIf="submitted && f['productName'].errors" class="invalid-feedback">
+                <div *ngIf="f['productName'].errors['required']" class="text-left">
+                  Product Name Field is required
+                </div>
+                <div *ngIf="f['productName'].errors['maxlength']" class="text-left">
+                  Product Name cannot be more than 30 characters
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Category</label>
+              <span style="color: red;">* </span>
+            
+              <select class="selectform w-100" formControlName="category"
+                [ngClass]="{ 'is-invalid': submitted && f['category'].errors }">
+                <option value="" selected disabled>Select Category</option>
+                <option *ngFor="let category of categories" [value]="category.categoryId">
+                  {{ category.categoryName }}
+                </option>
+              </select>
+              <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
+                <div *ngIf="f['category'].errors['required']" class="text-left">
+                  Category Field is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Brand</label>
+              <span style="color: red;">* </span>
+              
+              <select class="selectform w-100" formControlName="brand"
+                [ngClass]="{ 'is-invalid': submitted && f['brand'].errors }">
+                <option value="" selected disabled>Select Brand</option>
+                <option *ngFor="let brand of brands" [value]="brand.brandId">
+                  {{ brand.brandName }}
+                </option>
+              </select>
+              <div *ngIf="submitted && f['brand'].errors" class="invalid-feedback">
+                <div *ngIf="f['brand'].errors['required']" class="text-left">
+                  Brand Field is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Sequence Sorting</label>
+              <span style="color: red;">* </span>
+              <input type="text" class="form-control" formControlName="sequenceSorting"
+                placeholder="Enter Sequence Sorting" [ngClass]="{
+                  'is-invalid': submitted && f['sequenceSorting'].errors
+                }" />
+
+              <div *ngIf="submitted && f['sequenceSorting'].errors" class="invalid-feedback">
+                <div *ngIf="f['sequenceSorting'].errors['required']" class="text-left">
+                  Sequence Sorting Field is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Alert Quantity</label>
+              <span style="color: red;">* </span>
+              <input type="text" class="form-control" formControlName="alertQuantity" placeholder="Enter Alert Quantity"
+                [ngClass]="{
+                  'is-invalid': submitted && f['alertQuantity'].errors
+                }" />
+              <div *ngIf="submitted && f['alertQuantity'].errors" class="invalid-feedback">
+                <div *ngIf="f['alertQuantity'].errors['required']" class="text-left">
+                  Alert Quantity Field is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Discount % </label>
+              <span style="color: red;">* </span>
+              <input type="text" class="form-control" formControlName="discount" placeholder="Enter Discount % "
+                [ngClass]="{ 'is-invalid': submitted && f['discount'].errors }" />
+              <div *ngIf="submitted && f['discount'].errors" class="invalid-feedback">
+                <div *ngIf="f['discount'].errors['required']" class="text-left">
+                  Discout % Field is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 1</label>
+              <span style="color: red;">* </span>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF1"
+                placeholder="Enter Custom Field 1"
+                [ngClass]="{ 'is-invalid': submitted && f['customF1'].errors }"></textarea>
+              <div *ngIf="submitted && f['customF1'].errors" class="invalid-feedback">
+                <div *ngIf="f['customF1'].errors['required']" class="text-left">
+                  Custom Field 1 is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 2</label>
+              <span style="color: red;">* </span>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF2"
+                placeholder="Enter Custom Field 2"
+                [ngClass]="{ 'is-invalid': submitted && f['customF2'].errors }"></textarea>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 3</label>
+              <span style="color: red;">* </span>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF3"
+                placeholder="Enter Custom Field 3"
+                [ngClass]="{ 'is-invalid': submitted && f['customF3'].errors }"></textarea>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <div class="submit_btn">
+      <button (click)="onSubmit()" type="submit" class="orange_btn">
+        <i class="icon-icon-19"></i> Submit
+      </button>
+    </div>
+  </form>
+</div>

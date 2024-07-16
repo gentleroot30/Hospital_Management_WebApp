@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <h2 mat-dialog-title id="mtitle">View user Role <button type="button" class="btn-close" aria-label="Close" id="close"
+            (click)="onNoClick()"></button></h2>
+
+    <div class="add_role" >
+        <form [formGroup]="viewRoleForm">
+            <!-- Role Title and Description -->
+            <div class="row" id="crow">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label id="ctlabel">Role Title</label>
+                  <input type="text" class="form-control" formControlName="roleName" placeholder=" Enter Role"
+                  readonly>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label id="dlabel">Description</label>
+                  <textarea type="text" class="form-control" formControlName="description" placeholder="Enter Description"
+                 readonly></textarea>
+                 
+                </div>
+              </div>
+            </div>
+          
+            <!-- Permissions Table -->
+            <label class="permission">Permissions</label>
+            <div class="permission-box">
+              <table style="background-color: white; text-align: center;">
+                <tr>
+                  <th style="text-align: left; font-size: 16px;">Features</th>
+                  <th style="text-align: center;">View</th>
+                  <th style="text-align: center;">Add</th>
+                  <th style="text-align: center;">Edit</th>
+                  <th style="text-align: center;">Delete</th>
+                  <th style="text-align: center;">All</th>
+                </tr>
+                <tr *ngFor="let feature of allFeatures">
+                  <td style="text-align:left;font-size: 16px;">{{ feature.featureName }}</td>
+                  <td><input type="checkbox"  [checked]="feature.view" [formControlName]="'feature_' + feature.featureId + '_view'" readonly></td>
+                  <td><input type="checkbox" [checked]="feature.add"  [formControlName]="'feature_' + feature.featureId + '_add'" readonly></td>
+                  <td><input type="checkbox"[checked]="feature.edit"  [formControlName]="'feature_' + feature.featureId + '_edit'" readonly></td>
+                  <td><input type="checkbox"[checked]="feature.delete" [formControlName]="'feature_' + feature.featureId + '_delete'" readonly ></td>
+                  <td><input type="checkbox" [checked]="feature.all" [formControlName]="'feature_' + feature.featureId + '_all'"  readonly></td>
+                  
+                </tr>
+              </table>
+            </div>
+          
+           
+          </form>
+          
+    </div>
+
+</div>

@@ -1,0 +1,139 @@
+.capture-container {
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.header-image {
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+/* .link-container {
+  position: relative;
+} */
+.url-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.copy-link,
+.print,
+.download {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-link:hover,
+.print:hover,
+.download:hover {
+  background-color: #ddd;
+}
+
+.mat-table {
+  color: black; /* Set text color to black */
+  background-color: white; /* Set background color to white */
+}
+
+.mat-table th,
+.mat-table td {
+  border-color: black; /* Set border color to black */
+}
+
+.mat-header-row,
+.mat-row {
+  border-bottom: 1px solid black; /* Set bottom border color to black */
+}
+
+.black-and-white th {
+  background-color: #ffffff; /* White background for table headers */
+  color: #000000; /* Black text color for table headers */
+}
+
+.black-and-white td {
+  background-color: #ffffff; /* White background for table cells */
+  color: #000000; /* Black text color for table cells */
+}
+
+.mat-dialog-actions {
+  position: relative; /* Ensure the button is positioned relative to the actions container */
+  justify-content: flex-end;
+  margin-top: -30px;
+}
+.close-button {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+}
+
+
+.mat-dialog-actions button.mat-icon-button {
+  position: absolute;
+  top: -6px;
+  right:  7px;
+  margin-top: -442px; /* Adjust the position to align properly */
+  margin-right: -34px;
+}
+.mat-dialog-content {
+  position: relative;
+}
+.custom-button {
+  border: 1px solid #E25D41;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Balsamiq Sans', sans-serif;
+  font-weight: 400;
+  color: #E25D41;
+  text-transform: uppercase;
+  margin-right: 10px; /* Optional: Add margin to separate buttons */
+  margin-bottom: 20px;
+}
+
+.link-input {
+  width: 100%; /* Full width */
+  padding: 8px; /* Add padding */
+  margin-bottom: 10px; /* Add margin to separate from the button */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  font-family: 'Balsamiq Sans', sans-serif; /* Set font family */
+  font-size: 14px; /* Set font size */
+}
+
+.copy-button {
+  padding: 8px 16px; /* Add padding */
+  background-color: #E25D41; /* Set background color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  font-family: 'Balsamiq Sans', sans-serif; /* Set font family */
+  font-size: 14px; /* Set font size */
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+
+.copy-button:hover {
+  background-color: #C54526; /* Change background color on hover */
+}
+.bottom-buttons {
+  margin-bottom: -91px;
+}

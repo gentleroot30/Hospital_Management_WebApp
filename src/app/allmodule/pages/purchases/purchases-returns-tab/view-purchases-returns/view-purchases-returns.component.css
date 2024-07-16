@@ -1,0 +1,264 @@
+.searchbox {
+  background: rgba(226, 93, 65, 0.06);
+  border: 0.3px solid #1A1A1A;
+  border-radius: 10px;
+  width: 120px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: -69px;
+  height: 40px;
+}
+
+#searchhere {
+  right: 30px;
+  position: absolute;
+}
+
+.table-container {
+  width: 1110px;
+  margin-top: 20px;
+}
+
+
+
+
+
+input[type="checkbox"] {
+  z-index: 1;
+  opacity: 0;
+}
+
+.btn-secondary {
+  margin-left: -219px;
+}
+
+.search {
+  height: 38px;
+  width: 250px;
+  font-size: 13px;
+  border-radius: 6px;
+  border-color: rgb(241, 234, 234);
+  position: absolute;
+  margin-top: 1px;
+
+
+
+}
+
+.search-btn {
+  
+  margin-left: 114px;
+  margin-top: 1px;
+  display: inline-block;
+  height: 38px;
+  color: #FFFFFF;
+  background-color: #E4E5E5;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  border-color: #E25D41;
+  background: #E25D41;
+}
+
+
+
+
+
+
+
+p {
+
+  color: #313131;
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 133.333% */
+  letter-spacing: -0.27px;
+  margin-top: 51px;
+
+
+}
+
+.mat-card {
+  margin-right: 130px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+
+  background: #FFF;
+
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09);
+  width: 1154px;
+  height: 258px;
+  flex-shrink: 0
+
+}
+
+label {
+  color: rgba(0, 0, 0, 0.60);
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  /* 133.333% */
+  letter-spacing: -0.27px;
+}
+
+
+th {
+  color: #313131;
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal
+}
+
+
+
+input {
+
+  width: 230px;
+  height: 40px;
+  padding-left: 8px;
+  border: 0.5px solid #707070;
+  border-radius: 5px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 2px;
+
+}
+
+.search {
+
+  width: 215px;
+  height: 40px;
+  font-size: 13px;
+  border: 0.5px solid #E4E5E5;
+  border-radius: 5px 0px 0 5px;
+  position: absolute;
+  /* transform: translate(-40px,0); */
+  padding-left: 7px;
+  margin-left: 5px;
+}
+
+.search-btn {
+  background-color: #E4E5E5;
+  border-color: #E4E5E5;
+  margin-left: 220px;
+
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* transform: translate(-70px,0); */
+  position: absolute;
+  border-color: #E25D41;
+  background: #E25D41;
+}
+
+.selectform {
+  width: 114px;
+  height: 40px;
+  border-color: rgb(192, 192, 192, 0.6);
+  
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 5px;
+border: 0.5px solid #707070;
+}
+
+.selectform1 {
+
+  width: 225px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family: 'Montserrat';
+  border-radius: 6px;
+
+
+}
+
+.Button-of-submit {
+  width: 123px;
+  height: 40px;
+  left: 728px;
+  top: 738px;
+
+  background: #E25D41;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  text-align: center;
+  align-items: center;
+}
+
+
+p {
+
+  color: #313131;
+
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 133.333% */
+  letter-spacing: -0.27px;
+  margin-top: 39px;
+
+
+
+}
+
+.add h2 {
+  margin-left: 35px;
+  color: #313131;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Balsamiq Sans';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27.5px;
+  /* 114.583% */
+  letter-spacing: 2.578px;
+}
+
+.third-para {
+  width: 124px;
+  height: 35px;
+  padding-top: 5px;
+  padding-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #707070;
+
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,255 @@
+<!-- <app-loading-animation></app-loading-animation> -->
+
+<div class="container" style="display: block; overflow: hidden; white-space: nowrap">
+  <p class="content-heading">Sales</p><button class="view-document pull-right" routerLink="../quotation-documents">View Documents</button>
+  <a routerLink="../sales">
+    <p class="menu-tab-active">Quotation</p>
+  </a>
+  <a routerLink="../pos">
+    <p class="menu-tab-1">POS</p>
+  </a>
+  <a routerLink="../sale-return">
+    <p class="menu-tab-2"> Returns</p>
+  </a>
+  <div class="menu-line"></div>
+</div>
+
+<div class="row" style="margin-top:22px;">
+  <form class="col-md-6" (keyup)="applyFilter($event,'name')" autocomplete="off" mat-button #myForm="ngForm"(ngSubmit)="searchQuotations()" >
+
+    <select class="selectform" aria-label="Default select example" [(ngModel)]="formData.searchByType"
+      name="searchByType" id="searchByType">
+      <option value="1">Customer Name</option>
+      <option value="2">Contact Number</option>
+      <option value="3">Customer Category</option>
+      <option value="4">Ethnicity</option>
+      <option value="5">Address</option>
+      <option value="6">Quotation No</option>
+     
+    </select>
+    <input type="text" class="search" [(ngModel)]="formData.searchByValue"  name="searchByValue" placeholder="Search here" />
+    <!-- <button class="btn btn-secondary search-btn "   type="submit">
+      <i class="icon icon-icon-12 text-white "></i>
+    </button> -->
+  </form>
+  <div class="col-md-2 col-sm-12">
+    <div class="date-range" mat-button>    
+      <input id="range-input" type="text" name="daterange" placeholder="Date Range" value=""
+      (apply.daterangepicker)="handleDateRangeSelection($event)">
+       </div>
+  </div>
+  
+  <div class="col-md-1 col-sm-12">
+    <button  mat-button  class="quotation-template-btn" style="margin-right: 10px; outline: none; padding-left: 20px;
+    padding-right: 15px;" routerLink="/quotation-template">
+        Quotation Templates
+    </button>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <button [disabled]="!roleBaseAccess.canAddSales" (click)=" addQuoation()" mat-button class="add-new px-3 text-white" >
+      <i class="icon-icon-10"></i> Add New
+    </button>
+  </div>
+</div>
+
+<!--   HTML Table Code for Quotation Starts...   -->
+
+<div class="table-scroll" style="margin-left: 16px; margin-right: 77px;margin-top: 10px;">
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 table-style" style="margin-right: 77px !important">
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+        &nbsp;
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="expand row" (click)="
+            expandedElement = expandedElement === element ? null : element;
+            $event.stopPropagation()
+          ">
+          <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Date And Time Column -->
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          width: 200px;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #313131;
+        ">
+        Date and time
+      </th>
+      <td mat-cell *matCellDef="let element" style="width: 133px">
+        {{ element.createdAt |date:"dd-MM-yyyy, h:mmp'm'"}}
+      </td>
+    </ng-container>
+
+    <!-- Category Column -->
+    <ng-container matColumnDef="customerCategoryName">
+      <th mat-header-cell *matHeaderCellDef style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #313131;
+        ">
+        Category
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.customerCategoryName}}</td>
+    </ng-container>
+
+    <!-- Customer Name Column -->
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #313131;
+        ">
+        Customer Name
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <a>{{ element.customerName }}</a>
+      </td>
+    </ng-container>
+
+    <!-- Ethnicity Name Column -->
+    <ng-container matColumnDef="ethnicity">
+      <th mat-header-cell *matHeaderCellDef style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #313131;
+        ">
+        Ethnicity
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.ethnicity }}
+      </td>
+    </ng-container>
+
+    <!-- Address Name Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef style="
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+
+          color: #313131;
+        ">
+        Address
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.address }}
+      </td>
+    </ng-container>
+    
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        
+        
+        color: #313131;"> Action </th>
+      <td mat-cell *matCellDef="let quotation" style="font-size: 30px; text-align: center;"><a mat-icon-button
+          [matMenuTriggerFor]="menu" style="cursor: pointer;">
+          <mat-icon>more_horiz</mat-icon></a>
+        <mat-menu #menu="matMenu" class="Example icon-button with a menu">
+       
+
+          <a (click)="roleBaseAccess.canViewSales ? viewQuotationCall(quotation.quotationId) : null" [ngClass]="{'disabled': !roleBaseAccess.canViewSales}" style="color: #707070;
+            text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px; font-size: 16px;">
+              <i class="icon-icon-15"></i>&nbsp;
+              <span>View</span>
+            </p>
+          </a>
+          <a (click)="roleBaseAccess.canEditSales ? editQuotationCall(quotation.quotationId) : null" [ngClass]="{'disabled': !roleBaseAccess.canEditSales}" style="color: #707070;
+            text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+              <i class="icon-icon-17"></i>
+              <span>Edit</span>
+            </p>
+          </a>
+          <a (click)="roleBaseAccess.canDeleteSales ? DeleteQuotation(quotation.quotationId) : null" [ngClass]="{'disabled': !roleBaseAccess.canDeleteSales}" style="color: #707070;
+            text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+              <i class="icon-icon-18"></i>
+              <span>Delete</span>
+            </p>
+          </a>
+        </mat-menu>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail" [@detailExpand]="
+            element == expandedElement ? 'expanded' : 'collapsed'
+          ">
+          <div class="expansion">
+            <span class="px-2" style="margin-right: 40px">Contact No:
+              <p class="inline" style="display: inline-block; width: fit-content">
+                {{ element.customerContactNo }}
+              </p>
+            </span>
+            <span class="px-2" style="
+                display: inline-block;
+                width: fit-content;
+                margin-right: 40px;
+              ">Quotation No:
+              <p class="inline" style="display: inline-block; width: fit-content">
+                {{ element.quotationNo }}
+              </p>
+            </span>
+            
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+  <mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="length"
+    [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+    aria-label="Select page">
+  </mat-paginator>
+  <p id="err_msg" style="text-align: center; margin-top:30px;">No Quotations Found</p>
+</div>
+
+<!--   HTML Table Code for POS Ends...   -->
+
+<!-- HTML Code for Table-data-description and Pagination code Starts... -->
+
+<!-- HTML Code for Table-data-description and Pagination code Ends... -->
+

@@ -1,0 +1,106 @@
+<div class="example_set">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="head2">
+    <path d="M23.3327 10.5846H6.09185L14.011 2.66547L11.9993 0.667969L0.666016 12.0013L11.9993 23.3346L13.9968 21.3371L6.09185 13.418H23.3327V10.5846Z" fill="#313131"></path></svg>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings
+  </div>
+
+  
+<div class="form">
+  <h1 class="item">Upload Header</h1>
+
+  <div class="rectangular">
+    <h1 class="demo">Upload image with resolution 1000px*1000px</h1>
+
+   
+
+    
+
+    <div class="example">
+        <input type="file" #fileInput style="display: none"  (change)="onFileSelected($event)" accept="image/*,application/pdf" >
+        <i class="demo-icon icon-icon-10" (click)="fileInput.click()" >UPLOAD DOCUMENTS</i>
+
+        <div class="succc">
+        <div *ngIf="uploadedFile">
+          <div *ngIf="isImage">
+            <button  *ngIf="uploadedFile"  (click)="onDelete()" class="rounded-icon">
+              <span>&#10006;</span>
+            </button>
+             
+            <img [src]="imageUrl" alt="Uploaded Image" width="200">
+          </div>
+          
+          <div *ngIf="isPdf">
+            <button  *ngIf="uploadedFile" (click)="onDelete()" class="rounded">
+              <span>&#10006;</span>
+            </button>
+            <!-- Display PDF icon or thumbnail -->
+            <i class="fa fa-file-pdf-o" style="font-size:130px;color:red"></i>
+          </div>
+          <div *ngIf="uploadedFile">
+            <p>{{uploadedFile.name}}</p>
+          </div>
+          <div *ngIf="!isImage && !isPdf">
+            File uploaded is not a supported format.
+          </div>
+        </div>
+      </div>
+     
+        
+  
+
+      </div>
+
+      
+      <p class="head">DRAG AND DROP DOCUMENTS HERE</p>
+    </div>
+    
+
+
+
+
+      <h1 class="item1">Upload Footer</h1>
+      <div class="rectangular1">
+          <h1 class="demo">Upload image with resolution 1000px*1000px</h1>
+          <!---<div class="example">
+            <i class="demo-icon icon-icon-10" >UPLOAD DOCUMENTS</i>
+          </div>-->
+
+          <div class="example">
+            <input type="file" #fileInputt style="display: none"  (change)="onFileSelecteed($event)" accept="image/*,application/pdf" >
+            <i class="demo-icon icon-icon-10" (click)="fileInputt.click()" >UPLOAD DOCUMENTS</i>
+
+            <div class="succc">
+              <div *ngIf="uploadedFilee">
+                <div *ngIf="isImagee">
+                  <button  *ngIf="uploadedFile"(click)="onDel()" class="rounded-icon">
+                    <span>&#10006;</span>
+                  </button>
+                  <img [src]="imageUrll" alt="Uploaded Image" width="200">
+                </div>
+                <div *ngIf="isPdff">
+                  <button  *ngIf="uploadedFile" (click)="onDel()" class="rounded">
+                    <span>&#10006;</span>
+                  </button>
+                  <!-- Display PDF icon or thumbnail -->
+                  <i class="fa fa-file-pdf-o" style="font-size:130px;color:red"></i>
+                </div>
+                <div *ngIf="uploadedFilee">
+                  <p>{{uploadedFilee.name}}</p>
+                </div>
+                <div *ngIf="!isImagee && !isPdff">
+                  File uploaded is not a supported format.
+                </div>
+              </div>
+              </div>
+          </div>
+                <p class="head">DRAG AND DROP DOCUMENTS HERE</p>
+      </div>
+
+          
+      <div class="submit_btn">
+        
+          <button type="submit" (click)="comb()"  class="orange_btn"><i class="icon-icon-19" ></i> Submit</button>
+       
+        
+        
+      </div>
+

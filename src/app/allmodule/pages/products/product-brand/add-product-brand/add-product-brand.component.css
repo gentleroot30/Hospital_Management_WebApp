@@ -1,0 +1,74 @@
+
+
+#close{
+    float: right;
+}
+
+#mdialog{
+    align-items: center;
+}
+
+#ctlabel{
+    
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: -0.015em;
+    
+    color: #313131;
+    
+}
+
+#dlabel{
+    
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+letter-spacing: -0.015em;
+
+color: #313131;
+}
+
+#sbutton{
+    padding-top:25px;
+}
+
+#drow{
+    padding-top:30px;
+}
+
+
+#crow{
+    padding-top:15px;
+}
+
+::placeholder{
+    font-size: 12px;
+}
+
+#mtitle{
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #313131;
+}
+
+.form-control {
+    font-size: 14px;
+    
+}

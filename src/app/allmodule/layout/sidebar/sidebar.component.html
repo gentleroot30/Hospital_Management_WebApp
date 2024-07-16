@@ -1,0 +1,57 @@
+<div class="logo">
+  <img src="assets/images/logo.png">
+</div>
+<mat-nav-list class="sidenav-list">
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Admin dashboard')" routerLink="/dashboard" routerLinkActive="active">
+      <i class="demo-icon icon-icon-2"></i>
+      <span>Dashboard</span>
+    </a>
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('User Management')" routerLink="/user" routerLinkActive="active">
+      <i class="demo-icon icon-icon-21"></i>
+      <span>Users</span>
+    </a>
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Supplier Management')" routerLink="/supplier" routerLinkActive="active">
+      <i class="demo-icon icon-icon-1"></i>
+      <span>Suppliers</span>
+    </a>
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Customer Management')" routerLink="/customers" routerLinkActive="active">
+      <i class="demo-icon icon-icon-3"></i>
+      <span>Customer</span>
+    </a>
+   
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Products Management')" routerLink="/product" routerLinkActive="active">
+      <i class="demo-icon icon-icon-4"></i>
+      <span>Products</span>
+    </a>
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Purchase Management')" routerLink="/purchase" routerLinkActive="active">
+      <i class="demo-icon icon-icon-5"></i>
+      <span>Purchases</span>
+    </a>
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Sales Management')" routerLink="/sales" routerLinkActive="active">
+      <i class="demo-icon icon-icon-6"></i>
+      <span>Sales</span>
+    </a>
+
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission(' Expenses Management')" routerLink="/expenses" routerLinkActive="active">
+      <i class="demo-icon icon-icon-7"></i>
+      <span>Expenses</span>
+    </a>
+
+    <a mat-list-item *ngIf="roleAccess.hasViewPermission('Reports Management ')" routerLink="/reports" routerLinkActive="active">
+      <i class="demo-icon icon-icon-8"></i>
+      <span>Reports</span>
+    </a>
+    
+   
+    <!-- <a mat-list-item routerLink="/offers">
+      <i class="demo-icon icon-icon-1"></i>
+      <span>Notification Template</span>
+    </a>
+    <a mat-list-item routerLink="/offers">
+      <i class="demo-icon icon-icon-1"></i>
+      <span>Settings</span>
+    </a> -->
+    <!-- <a mat-list-item routerLink="/offers" (click)="onToggleClose()">
+      <span>Settings</span>
+    </a> -->
+</mat-nav-list>

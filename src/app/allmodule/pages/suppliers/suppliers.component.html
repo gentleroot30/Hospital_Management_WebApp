@@ -1,0 +1,288 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.12.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.12.0/js/bootstrap-datepicker.min.js"></script> -->
+<h2>Suppliers</h2>
+<div class="row" style="margin-left: 5px; padding: 0;">
+  <a routerLink="../supplier">
+  </a>
+  <!-- <div class=""> -->
+    <form class="col-md-6" mat-button #myForm="ngForm" (ngSubmit)="searchSupplier()">
+      <select class="selectform " aria-label="Default select example" style="margin-right:7px;"
+      [(ngModel)]="formData.searchByType" name="searchByType" (ngModelChange)="searchSupplier()">
+        <option value="" hidden><span>Search by</span></option>
+        <option value="1">Supplier Name</option>
+        <option value="2">Supplier Id</option>
+        <option value="3">Contact No</option>
+      </select>
+
+      <input type="text" class="search"  [(ngModel)]="formData.searchByValue" name="searchByValue" placeholder="Search here" (ngModelChange)="searchSupplier()" />
+      <!-- <button class="btn btn-secondary search-btn "  type="submit">
+        <i class="icon icon-icon-12 text-white "></i>
+      </button> -->
+      </form>
+      <div class="col-md-2 col-sm-12">
+        <div class="date-range" mat-button>    
+          <input id="range-input" type="text" name="daterange" placeholder="Date Range" value=""
+          (apply.daterangepicker)="handleDateRangeSelection($event)">
+           </div>
+      </div>
+      <!-- <button class="btn btn-secondary search-btn search-btn-class-i-tag" type="submit"
+        style="margin-top: 0px; margin-left: 220px;">
+        <i><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.95387 17.844L6.73813 14.0625C7.46733 13.3338 7.46754 12.1519 6.73861 11.423V11.423C6.00988 10.6943 4.82836 10.6943 4.09962 11.423L0.314396 15.2082C-0.10451 15.6271 -0.10451 16.3167 0.314395 16.7356L1.42283 17.844C1.84544 18.2629 2.53867 18.2629 2.95387 17.844Z"
+              fill="#FEFDFE" />
+            <path
+              d="M7.24904 9.52779C6.8672 9.90963 6.8672 10.5287 7.24904 10.9106V10.9106C7.63088 11.2924 8.24996 11.2924 8.6318 10.9106L8.79868 10.7437C9.21391 10.3284 9.86219 10.2844 10.398 10.5247C12.4233 11.433 14.8861 11.0584 16.5484 9.39619C18.6948 7.24976 18.6948 3.76135 16.5484 1.61121C14.402 -0.538924 10.9135 -0.535217 8.7634 1.61121C7.10116 3.27346 6.7266 5.73631 7.63487 7.7616C7.87515 8.2974 7.83115 8.94569 7.41592 9.36091L7.24904 9.52779ZM9.84589 2.67887C11.4029 1.12187 13.9274 1.12187 15.4807 2.67887C17.0377 4.23586 17.0377 6.76042 15.4807 8.31371C13.9237 9.8707 11.3992 9.8707 9.84589 8.31371C8.28889 6.76042 8.28889 4.23586 9.84589 2.67887Z"
+              fill="#FEFDFE" />
+          </svg>
+        </i>
+      </button> -->
+
+
+
+
+      <div class="add-new-button-rs" style="float: right !important;"></div>
+      <button mat-button [disabled]="!roleBaseAccess.canAddSuppliers" (click)="addSupplier()" class="orange_btn" id="add-new-button"  style="
+        min-width: (135) px !important;
+        height: 40px;
+        text-transform: capitalize !important;
+        margin-right: 77px;
+        margin-bottom: 13.7px;
+        margin-top: -40px; 
+      ">
+        <i class="icon-icon-10"></i> Add New
+      </button>
+
+
+
+
+      <!-- <div class="responsive-button-container">
+        <div style="    width: fit-content;">
+          <select class="selectform-rs" aria-label="Default select example"
+            style=" display:inline; margin-right:7px; margin-bottom: -5px;">
+            <option value="" hidden><span>Search by</span></option>
+            <option value="1">Supplier Name</option>
+            <option value="2">Supplier Id</option>
+            <option value="3">Contact Number</option>
+          </select>
+          <button mat-button class="orange_btn_rs" id="add-new-button-rs" routerLink="/add-supplier" style="
+          min-width: (135) px !important;
+          height: 40px;
+          display: none;
+          text-transform: capitalize !important;
+          margin-bottom: 13.7px;
+          margin-top: 0px;">
+            <i class="icon-icon-10"></i> Add New
+          </button>
+        </div>
+        
+      </div> 
+  <div class="col-md-2">
+              <button class="orange_btn" routerLink="/add-supplier"><i class="icon-icon-10"></i> Add New</button>
+            </div> 
+ </div> -->
+
+
+
+
+ 
+
+          
+ <div *ngIf="AllSupplier && AllSupplier.length > 0" class="table-container" style=" margin-right: 77px !important; margin-left: 0px !important;">
+
+
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 mt-2">
+
+
+
+    <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="expand row"
+          (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+          <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="supplierName">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+
+              color: #313131;"> Supplier Name </th>
+      <td mat-cell *matCellDef="let element"><a href="" routerLink="/view-suppliers">{{element.supplierName}}</a></td>
+    </ng-container>
+
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="contactNo1">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+              
+              color: #313131;"> Contact </th>
+      <td mat-cell *matCellDef="let element">{{element.contactNo1}}</td>
+    </ng-container>
+
+    
+
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="purchaseDue">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+            
+
+              color: #313131;"> Purchase Due (<span>&#8377;</span>)</th>
+      <td mat-cell *matCellDef="let element "> {{element.purchaseDue}} </td>
+    </ng-container>
+     
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="purchaseReturns">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+              
+              color: #313131;"> Purchase Return Due (<span>&#8377;</span>) </th>
+      <td mat-cell *matCellDef="let element"> {{element.purchaseReturns}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+              
+              color: #313131;"> Action </th>
+      <td mat-cell *matCellDef="let supplier"style="font-size: 30px; text-align: center;"><a mat-icon-button 
+        [matMenuTriggerFor]="menu"style="cursor: pointer;"><mat-icon>more_horiz</mat-icon></a>
+        <mat-menu #menu="matMenu" class="hover">
+          <a class="mat-menu-a hover" routerLink="/purchase-document"><span class="hover">Purchase
+              Documents</span></a>
+          <hr>
+
+
+          <!-- View SUpllier  -->
+          <a (click)="roleBaseAccess.canViewSuppliers ? viewSupplier(supplier.supplierId) : null" [ngClass]="{'disabled': !roleBaseAccess.canViewSuppliers}" style="color: #707070;
+          text-decoration: none;">
+          <p style="padding-left: 6px;padding-right: 5px; font-size: 16px;">
+          <i class="icon-icon-15"></i>&nbsp;
+          <span>View</span>
+          </p>
+          </a>
+          <br>
+          <!-- Edit Supplier -->
+          <a  (click)="roleBaseAccess.canEditSuppliers ? editSupplier(supplier.supplierId) : null" [ngClass]="{'disabled': !roleBaseAccess.canEditSuppliers}" style="color: #707070;
+          text-decoration: none;">
+          <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+          <i class="icon-icon-17"></i>
+          <span> Edit</span>
+        </p>
+      </a>
+      <br>
+           <!-- Delete Supplier -->
+          <a (click)="roleBaseAccess.canDeleteSuppliers ? deleteSupplierDialog(supplier.supplierId) : null" [ngClass]="{'disabled': !roleBaseAccess.canDeleteSuppliers}" style="color: #707070;
+          text-decoration: none;"> 
+          <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+          <i class="icon-icon-18"></i>
+          <span>Delete</span>
+         </p>
+        </a>
+       </mat-menu>
+      </td>
+     </ng-container> 
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="expansion">
+            <span class="px-4">Supplier ID: <p class="inline"let supplier of AllSupplier>{{element.supplierId}}</p></span>
+            <span class="px-4">Added By: <p class="inline">Admin</p></span>
+            <span class="px-4">Added On: <p class="inline"let supplier of AllSupplier>{{element.createdAt | date : "dd/MM/yy"}}</p></span><br><br>
+            <span style="margin-left: 15px;">Address: <h6 class="inline address"let supplier of AllSupplier>{{element.address}}</h6></span>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    
+  </table>
+
+  <mat-paginator #paginator
+             class="demo-paginator"
+             (page)="handlePageEvent($event)"
+             [length]="length"
+             [pageSize]="pageSize"
+             [disabled]="disabled"
+             [showFirstLastButtons]="showFirstLastButtons"
+             [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+             [hidePageSize]="hidePageSize"
+             [pageIndex]="pageIndex"
+             aria-label="Select page">
+</mat-paginator>
+
+<div *ngIf="dataSource.data.length > 0">
+  <div style="margin-top: 10px;font-family: Montserrat; font-style: normal; font-weight: 400; font-size: 18px; line-height: 22px; color: #232121;">
+    Total Purchase Due: ₹ {{ totalPurchaseDue | number: '1.2-2' }}
+  </div>
+  <div style="margin-top: 10px;font-family: Montserrat; font-style: normal; font-weight: 400; font-size: 18px; line-height: 22px; color: #313131;">
+    Total Purchase Return Due: ₹ {{ totalPurchaseReturns | number: '1.2-2' }}
+  </div>
+</div>
+</div> 
+<p style="text-align: center; margin-top:30px;" *ngIf="noSuppliersFound">No Supplier Found</p>
+</div>
+<!-- <ul class="pagination justify-content-end mt-4" style="margin-right: 77px !important;">
+  <a href="#">
+    <li class="page-item disabled">
+      <a class="page-link material-icons" id="arrow">keyboard_arrow_left</a>
+    </li>
+  </a>
+  <li class="page-item"><a class="page-link" style="color:#E25D41">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">4</a></li>
+  <li class="page-item"><a class="page-link" href="#">5</a></li>
+  <a href="#">
+    <li class="page-item">
+      <a class="page-link material-icons" id="arrow">keyboard_arrow_right</a>
+    </li> 
+  </a>
+</ul>
+<h3 class="mt-2">Total Purchase Due: <span>&#8377;</span> 2000.00</h3>
+<h3>Total Purchase Return Due: <span>&#8377;</span> 2000.00</h3> -->

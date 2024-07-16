@@ -1,0 +1,15 @@
+.material-icons{
+    font-size: 30px;
+}
+input:focus
+{
+    border: 1px solid #FFC107;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #FFC107;
+    outline-offset: 0px;
+    outline: none;
+}
+
+.contacts-container{
+    display: flex;
+}

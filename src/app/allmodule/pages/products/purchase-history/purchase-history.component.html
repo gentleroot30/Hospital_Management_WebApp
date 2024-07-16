@@ -1,0 +1,120 @@
+<h2><a routerLink="/product" style="color:black;"><mat-icon class="mt-2">arrow_back</mat-icon></a> Purchase History</h2>
+<mat-card style="margin-top: 95px;">
+  <div class="row">
+    <div class="col-md-2">
+      <p style="display: inline-block; font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: -0.015em;
+    
+    color: rgba(0, 0, 0, 0.6);">Product Name:</p>
+    </div>
+    <div class="col-md-2">
+      <p style="display: inline-block; font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      /* identical to box height, or 133% */
+      
+      letter-spacing: -0.015em;
+      
+      color: rgba(0, 0, 0, 0.6);">{{productName}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <p style="display: inline-block; font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: -0.015em;
+    
+    color: rgba(0, 0, 0, 0.6);">Current Stock:</p>
+    </div>
+    <div class="col-md-2">
+      <p style="display: inline-block; font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      /* identical to box height, or 133% */
+      
+      letter-spacing: -0.015em;
+      
+      color: rgba(0, 0, 0, 0.6);">{{currentStock}}</p>
+    </div>
+  </div>
+</mat-card>
+
+
+<div class="table">
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 mt-2">
+
+    <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+    <ng-container matColumnDef="purchaseDate">
+      <th mat-header-cell *matHeaderCellDef> Purchase Date </th>
+      <td mat-cell *matCellDef="let product"><a href="">{{product.purchaseDate | date:'yyyy-MM-dd HH:mm:ss' }}</a>
+      </td>
+
+    </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="batchNo">
+      <th mat-header-cell *matHeaderCellDef> Batch No.</th>
+      <td mat-cell *matCellDef="let product"><a href="">{{product.batchNo}}</a></td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="expiryDate">
+      <th mat-header-cell *matHeaderCellDef> Expiry Date </th>
+      <td mat-cell *matCellDef="let product">{{product.expiryDate | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="packOf">
+      <th mat-header-cell *matHeaderCellDef> Pack Of (<span>&#8377;</span>)</th>
+      <td mat-cell *matCellDef="let product"> {{product.packOf}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="mrpPerPack">
+      <th mat-header-cell *matHeaderCellDef>MRP Per Pack(<span>&#8377;</span>) </th>
+      <td mat-cell *matCellDef="let product"> {{product.mrpPerPack}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orderQuantity">
+      <th mat-header-cell *matHeaderCellDef> Order Quantity (<span>&#8377;</span>) </th>
+      <td mat-cell *matCellDef="let product"> {{product.orderQuantity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="unitPrice">
+      <th mat-header-cell *matHeaderCellDef>Unit Price (<span>&#8377;</span>) </th>
+      <td mat-cell *matCellDef="let product"> {{product.unitPrice}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalMRP">
+      <th mat-header-cell *matHeaderCellDef> Total MRP (<span>&#8377;</span>) </th>
+      <td mat-cell *matCellDef="let product"> {{product.totalMRP}} </td>
+    </ng-container>
+
+   
+
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+  </table>
+  <h3 class="mt-2">Grand Total MRP: <span>&#8377;</span>{{ calculateTotalMrp()}}</h3>
+  <h3>Grand Quantity:  {{currentStock}}</h3>
+
+</div>

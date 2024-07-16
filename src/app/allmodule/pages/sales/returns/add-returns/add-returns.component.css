@@ -1,0 +1,45 @@
+.align{
+    display: flex;
+    flex-direction: column;
+    gap:2rem 0;
+  }
+  
+  .searchbox{
+    background: rgba(226, 93, 65, 0.06);
+  border: 0.3px solid #1A1A1A;
+  border-radius: 10px;
+  width:120px;
+  height:32px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  }
+  .btn btn-secondary search-btn{
+    width: 40px;
+    height: 40px;
+
+  }
+  .toggle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 0.5px solid gray;
+    background-color: white;
+  }
+  
+  .green {
+    background: #75DA72;
+    color: white;
+  }
+  input[type="checkbox"] {
+    z-index: 1;
+    opacity: 0;
+  }

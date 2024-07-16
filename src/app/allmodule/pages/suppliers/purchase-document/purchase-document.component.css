@@ -1,0 +1,144 @@
+h2{
+    font-family: 'Balsamiq Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2.57812px;
+    color: #000000;
+    opacity: 0.6;
+  }
+
+  .inline{
+    display: inline-block;
+  }
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.search{
+  height: 40px;
+  width: 260px;
+  font-size: 13px;
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192,0.6);
+  position: absolute;
+  margin-top:-14px;
+}
+  
+.search-btn{
+  margin-left: 250px;
+  margin-top:-14px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  background-color:  #E25D41;
+}
+
+
+mat-card{
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  width: 184.49px;
+  height: 303.51px;
+  background: #FFFFFF; 
+  position: absolute;
+  margin-left: -15px;
+}
+
+p{
+font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 22px;
+text-align: center;
+color: #707070;
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: -1px 0px;
+z-index: 1;
+}
+
+mat-card-actions{
+  text-align: center;
+  margin-top: 0%;
+}
+.icon{
+  margin-top: -10px;
+  text-align: end;
+  margin-left: -70px;
+  /* position: absolute; */
+  /* padding-left: 435px;   */
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 20%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 46%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.input{
+  width: 135px;
+  height: 40px;
+}
+
+.container{
+  height: 320px;
+  margin-left: -15px;
+}
+
+mat-card-action{
+  margin-top: -55px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(3,310px);
+  grid-auto-rows: 310px;
+}
+
+
+@media(max-width:1080px){
+  .search{
+    width: auto;
+  }
+    
+  .search-btn{
+    margin-left: 150px;
+  }
+
+  .icon{
+    margin-left: auto;
+    margin-top: 50px;
+    text-align: start;
+  
+  }
+  .icon > button{
+     margin-top: 30px;
+  }
+
+  .container{
+    margin-top: -40px;
+  }
+
+  .grid{
+    grid-template-columns: repeat(auto-fit, minmax(184px,1fr));  
+  }
+}

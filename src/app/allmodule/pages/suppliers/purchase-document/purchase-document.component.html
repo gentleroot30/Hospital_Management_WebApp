@@ -1,0 +1,374 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><div class="user">
+<div class="add">
+    <h2><a href="" routerLink="/supplier"><mat-icon>arrow_back</mat-icon></a>Purchase Documents</h2>
+    <div class="row">
+        <div class="col-6">
+        <input type="text" class="search"  placeholder="Search Here">
+        <button class="btn btn-secondary search-btn " type="button">
+          <i class="fa fa-search"></i>
+        </button>
+    </div>    
+    <div class="icon col-5">
+        <button mat-button (click)="share()" ><img src="../../../../../assets/icon/share-alt.svg" alt=""></button>
+        <button mat-button style="position: absolute;"><img src="../../../../../assets/icon/download.svg" alt=""></button>
+    </div>
+
+<!-- <div  class="row container mt-5">
+<div class="item col-3">
+    <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p> 
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+</div>
+<div class="item col-3">
+    <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p>
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+</div>
+<div class="item col-3">
+    <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p>
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+</div>
+<div class="item col-3">
+    <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p>
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+</div>
+<div class="item col-3">
+    <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p>
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+</div>
+</div>
+
+<div  class="row container">
+    <div class="item col-3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+    </div>
+    <div class="item col-3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+    </div>
+    <div class="item col-3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+    </div>
+    <div class="item col-3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+    </div>
+    <div class="item col-3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+    </div>
+    </div>             -->
+    <div class="grid">
+       <div class="doc1">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc2">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc3">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc4">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc5">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc6">
+        <button mat-button>
+        <mat-card class="example-card">
+            <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+            <mat-card-content> 
+                <p>Name of Document</p>
+                <p>12/06/2016</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+            </mat-card-actions>
+          </mat-card> 
+        </button>
+    </div>
+       <div class="doc7">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc8">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc9">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc10">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc11">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc12">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc13">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc14">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+       <div class="doc15">
+        <button mat-button>
+            <mat-card class="example-card">
+                <img mat-card-image src="../../../../../assets/images/purchase.png" alt="document" class="px-2 mt-1">
+                <mat-card-content> 
+                    <p>Name of Document</p>
+                    <p>12/06/2016</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <input type="text" mat-input placeholder="Enter Sequence" class="input" id="doc1" name="document">
+                </mat-card-actions>
+              </mat-card> 
+            </button>
+       </div>
+    </div>
+    
+</div>

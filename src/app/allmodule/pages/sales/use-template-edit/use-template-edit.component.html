@@ -1,0 +1,33 @@
+<h2 style="    width: fit-content;">Edit Use Template</h2>               
+
+<button style="margin-left: 590px; top: -47px; right: -54px; outline:none; border-style: none; background-color: #FFF;" class="clear" (click)="onNoClick()"><img src="../../../../../../assets/icon/clear_icon.svg" alt="" style="background-color: white; margin-top: -81px;"></button>
+
+<div class="view_role">
+  <form name="viewRoleForm" (ngSubmit)="viewrole()" [formGroup]="viewRoleForm">
+    <div class="form-group">
+      <label class="role-title" style="width: fit-content; margin-bottom: 3px;">Template Title</label>
+      <input type="text" class="form-control role-title-input" formControlName="RoleTitle" placeholder="Cashier" [ngClass]="{ 'is-invalid': submitted && f['userId'].errors }" style="width: 600px; border-color: #E4E5E5; font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 200% */
+      letter-spacing: -0.18px;">
+      <div *ngIf="submitted && f['userId'].errors" class="invalid-feedback">
+        <div *ngIf="f['userId'].errors['required']" class="text-left">User Id Field is required</div>
+      </div>
+
+      <label class="description" style="margin-top: 13px; width: fit-content; margin-bottom: 3px;">Template Description</label>
+      <textarea type="text" class="form-control description-input" formControlName="Description" placeholder=" Lorem ipsum dolor sit amet consectetur adipisicing elit" [ngClass]="{ 'is-invalid': submitted && f['userId'].errors }" style="width: 600px; border-color: #E4E5E5; font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 200% */
+      letter-spacing: -0.18px;"></textarea>
+      <div *ngIf="submitted && f['userId'].errors" class="invalid-feedback">
+        <div *ngIf="f['userId'].errors['required']" class="text-left">User Id Field is required</div>
+      </div>
+      <button _ngcontent-jkw-c260="" class="submit-btn" (click)="useTemplateEditSuccess()" (click)="onClose()"><svg _ngcontent-jkw-c260="" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g _ngcontent-jkw-c260="" clip-path="url(#clip0_8689_1534)"><path _ngcontent-jkw-c260="" d="M8.00065 1.33398C4.32065 1.33398 1.33398 4.32065 1.33398 8.00065C1.33398 11.6807 4.32065 14.6673 8.00065 14.6673C11.6807 14.6673 14.6673 11.6807 14.6673 8.00065C14.6673 4.32065 11.6807 1.33398 8.00065 1.33398ZM6.66732 11.334L3.33398 8.00065L4.27398 7.06065L6.66732 9.44732L11.7273 4.38732L12.6673 5.33398L6.66732 11.334Z" fill="white"></path></g><defs _ngcontent-jkw-c260=""><clipPath _ngcontent-jkw-c260="" id="clip0_8689_1534"><rect _ngcontent-jkw-c260="" width="16" height="16" fill="white"></rect></clipPath></defs></svg> SUBMIT
+      </button>
+    </div>
+  </form>
+</div>

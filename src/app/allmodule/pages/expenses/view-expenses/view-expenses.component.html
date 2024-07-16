@@ -1,0 +1,42 @@
+<div class="add">
+    <h2><a routerLink="/expenses"><mat-icon>arrow_back</mat-icon></a> View Expenses</h2>
+    <form name="addExpensesForm" [formGroup]="viewExpensesForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Date</label>
+                        <input type="text" class="form-control" formControlName="expenseDate" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Amount </label>
+                        <input type="text" class="form-control" formControlName="amount" readonly>
+                        
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" class="form-control" formControlName="categoryName" readonly>
+                    </div>
+                        
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Expense Note</label>
+                        <textarea class="form-control" rows="5" formControlName="expenseNote" readonly>
+
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        <!-- <div class="submit_btn">
+            <button type="submit" routerLink="/edit-expenses" class="orange_btn"><i class="icon-icon-17"></i> Edit</button>
+        </div> -->
+    </form>
+</div>

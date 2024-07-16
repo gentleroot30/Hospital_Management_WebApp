@@ -1,0 +1,78 @@
+<div class="add">
+    <h2><a href="" routerLink="/product"><mat-icon>arrow_back</mat-icon></a> View Product</h2>
+    <form [formGroup]="addProductForm" (ngSubmit)="onEdit()">
+      <mat-card>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Product Name</label>
+              <textarea type="text" class="form-control" rows="5" formControlName="productName"  readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Category</label>
+              <input type="text" class="form-control" formControlName="category"  readonly>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Brand</label>
+              <input type="text" class="form-control" formControlName="brand"  readonly>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Sequence Sorting</label>
+              <input type="text" class="form-control" formControlName="sequenceSorting"  readonly>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Alert Quantity</label>
+              <input type="text" class="form-control" formControlName="alertQuantity"  readonly>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Discount % </label>
+              <input type="text" class="form-control" formControlName="discount"  readonly>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 1</label>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF1"  readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 2</label>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF2"  readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Custom Field 3</label>
+              <textarea type="text" class="form-control" rows="4" formControlName="customF3"  readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Other form controls go here -->
+      </mat-card>
+      <div class="submit_btn">
+        <button (click)="onEdit()" type="submit" class="orange_btn"><i class="icon-icon-17"></i> Edit</button>
+      </div>
+    </form>
+  </div>
+  

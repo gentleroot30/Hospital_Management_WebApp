@@ -1,0 +1,62 @@
+<div class="add">
+    <h2><a routerLink="/expenses"><mat-icon>arrow_back</mat-icon></a> Add Expenses</h2>
+    <form name="addExpensesForm" [formGroup]="addExpensesForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Date</label>
+                        <input type="date" class="selectform w-100" formControlName="expenseDate"
+                        [ngClass]="{ 'is-invalid': submitted && f['expenseDate'].errors }" [max]="maxDate">
+                        <div *ngIf="submitted && f['expenseDate'].errors" class="invalid-feedback">
+                            <div *ngIf="f['expenseDate'].errors['required']" class="text-left">Date Field is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Amount(₹) </label>
+                        <input type="text" class="form-control" formControlName="amount" placeholder="Enter Amount"
+                        [ngClass]="{ 'is-invalid': submitted && f['amount'].errors }">
+                        <div *ngIf="submitted && f['amount'].errors" class="invalid-feedback">
+                            <div *ngIf="f['amount'].errors['required']" class="text-left">Amount Field is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="selectform w-100"  formControlName="expenseCategoryId" [ngClass]="{ 'is-invalid': submitted && f['expenseCategoryId'].errors }">
+                            <option value="" select disabled>Select Category</option>
+                            <option  *ngFor="let category of AllCategory" [value]="category.categoryId">{{category.categoryName}}</option>
+                          </select>
+                          <div *ngIf="submitted && f['expenseCategoryId'].errors" class="invalid-feedback">
+                            <div *ngIf="f['expenseCategoryId'].errors['required']" class="text-left">Category Field is required</div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Expense Note</label>
+                        <textarea class="form-control" rows="5" formControlName="expenseNote" placeholder="Enter notes here"
+                        [ngClass]="{ 'is-invalid': submitted && f['expenseNote'].errors }"></textarea>
+                        <div *ngIf="submitted && f['expenseNote'].errors" class="invalid-feedback">
+                            <div *ngIf="f['expenseNote'].errors['required']" class="text-left"> Expense Note CAN_NOT be blank</div>
+                            <div *ngIf="f['expenseNote'].errors['maxlength']" class="text-left">
+                                Expense Note should be up to 100 characters long
+                            </div>
+                            <div *ngIf="f['expenseNote'].errors['whitespaceOnly']" class="text-left">Expense Note cannot consist of only whitespace</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+           
+        </mat-card>
+        <div class="submit_btn">
+            <button type="submit" (click)="addExpenses()" class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+        </div>
+    </form>
+</div>

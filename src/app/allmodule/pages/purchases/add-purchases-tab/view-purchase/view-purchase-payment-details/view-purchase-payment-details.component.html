@@ -1,0 +1,110 @@
+<div class="add">
+    <h2><a routerLink="/add-purchases-tab"><mat-icon>arrow_back</mat-icon></a> View Purchase </h2>
+  
+    <div class="nav-container" style="margin-left: 35%; margin-right: 25%; margin-bottom: 32.5px;">
+      <ul class="nav nav-pills" style="    white-space: nowrap;
+      position: absolute;
+  ">
+        <li class="active" id="product-details-tab" style="
+          background: #ED1C24;
+          
+          border-radius: 4.375px;"><a data-toggle="pill"  routerLink="/view-purchases-product-details" style=" background-color: #313131 !important;font-family: 'Montserrat';
+          text-align: center; 
+          font-style: normal;
+          font-weight: 600;
+          font-size: 15.75px;
+          line-height: 19px;
+          color: #FFFFFF !important;" (click)="sendPaymentDetails()">Product Details</a></li>
+        <svg style="margin-top: 17px; margin-right: -1px;
+          margin-left: -1px;" width="61" height="2" viewBox="0 0 61 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0.960938" y1="1" x2="60.0372" y2="1" stroke="#707070" />
+        </svg>
+  
+        <li><a data-toggle="pill"  href="#menu1" style="background-color: #52D14FCC !important; font-family: 'Montserrat';
+            text-align: center;
+            margin-right: 15px !important;
+                    font-style: normal;
+            font-weight: 600;
+            font-size: 15.75px;
+            line-height: 19px;
+            color: #FFFFFF;">Payment Details</a></li>
+      </ul>
+    </div>
+</div>
+<div class="add">
+    <form name="addPosForm"  [formGroup]="viewPurchasePaymentDetailsForm">
+        <div class="row">
+            <mat-card class="mt-5">
+                <div class="col-md-2">
+                    <p>Total Amount</p>
+                    <p >Rs.{{productDetails.totalMrp}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Total Discount</p>
+                    <p >Rs.{{productDetails.totalDiscount}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Payble</p>
+                    <p >Rs.{{productDetails.totalBill}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Total Paying</p>
+                    <input type="text" style="width: 100px;" [ngModelOptions]="{standalone: true}" [(ngModel)]="totalPaying" (ngModelChange)="onChangeTotalPaying()"   placeholder="Enter here" >
+                </div>
+                <div class="col-md-2">
+                    <p>Change Return</p>
+                    <p >Rs.{{changeReturn}}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>Balance</p>
+                    <p >Rs.{{balance}}</p>
+                </div>
+                
+            </mat-card>
+           
+        </div>
+        
+        <mat-card class="mt-5"*ngFor="let payment of paymentDetails ;let i = index" >
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <p> Reciever Name <span style="color: red ">*</span></p>
+                    <input class="w-100" type="text" placeholder="Enter Reciever Name"  [ngModelOptions]="{standalone: true}" [(ngModel)]="payment.recieverName">
+                  </div>
+                  <div class="col-md-4">
+                    <p> Reciever Contact Number <span style="color: red ">*</span></p>
+                    <input class="w-100" type="text" placeholder="Enter Contact Numbber"  [ngModelOptions]="{standalone: true}" [(ngModel)]="payment.recieverContact">
+                  </div>
+                <div class="col-md-4">
+                    <p>Payment Date <span style="color: red ">*</span> </p>
+                    <input class="w-100" type="date" class="form-control" placeholder="Enter Amount Here" [ngModelOptions]="{standalone: true}" [(ngModel)]="payment.paymentDate">
+                   
+                </div> 
+            </div>
+            <div class="row mt-3" >
+                <div class="col-md-4">
+                    <p>Amount (₹)  <span style="color: red ">*</span></p>
+                    <input class="w-100" type="text" placeholder="Enter Amount Here" [ngModelOptions]="{standalone: true}" [(ngModel)]="payment.amount" (ngModelChange)="calculateTotalPaying($event,payment)">
+                  </div>
+                  
+                <div class="col-md-4">
+                    <p>Payment Method <span style="color: red ">*</span></p>
+                
+                    <select class="selectform w-100"  [ngModelOptions]="{standalone: true}" [(ngModel)]="payment.paymentMethod">
+                        <option value="0" selected>Select Payment Method</option>
+                        <option value="1">Cash</option>
+                        <option value="2">UPI</option>
+                        <option value="3">Internet Banking</option>
+                    </select>
+                </div>
+                   
+                      
+            </div>
+            <h4> <button type="button" class="btn-close" aria-label="Close" id="close" ></button></h4> 
+        </mat-card>
+        
+
+
+
+

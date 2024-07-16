@@ -1,0 +1,264 @@
+<div class="add">
+    <h2><a routerLink="/sale-return"><mat-icon>arrow_back</mat-icon></a> Add Sales Returns </h2>
+    <div class="nav-container" style="margin-left: 35%; margin-right: 25%; margin-bottom: 32.5px;">
+        <ul class="nav nav-pills" style="    white-space: nowrap;
+        position: absolute;
+    ">
+            <li class="active" id="product-details-tab" style="
+            background: #ED1C24;
+            
+            border-radius: 4.375px;"><a data-toggle="pill" style=" background-color: #52D14FCC !important;font-family: 'Montserrat';
+            text-align: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15.75px;
+            line-height: 19px;
+            color: #FFFFFF !important;">Product Details</a></li>
+            <svg style="margin-top: 17px; margin-right: -1px;
+            margin-left: -1px;" width="61" height="2" viewBox="0 0 61 2" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.960938" y1="1" x2="60.0372" y2="1" stroke="#707070" />
+            </svg>
+
+            <li><a data-toggle="pill" routerLink="/add-sale-return-payment-details" style="background-color:  #ccc !important; font-family: 'Montserrat';
+              text-align: center;
+              margin-right: 15px !important;
+                      font-style: normal;
+              font-weight: 600;
+              font-size: 15.75px;
+              line-height: 19px;
+              color: #FFFFFF"[class.disabled]="!addSalesReturnProductForm.valid">Payment Details</a></li>
+        </ul>
+    </div>
+    <div class="container">
+
+    </div>
+    <form [formGroup]="addSalesReturnProductForm">
+        <mat-card class="mt-5">
+            <div class="row">
+                <div class="col-md-10">
+                    <h3
+                        style="font-family: Montserrat; font-size: 18px; font-weight: 600; color:#00000099; line-height: 24px;">
+                        Supplier Details</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Customer</label>
+                        <span style="color: red ">*</span>
+                        <select class="selectform w-100" formControlName="customerId"
+                            [ngClass]="{ 'is-invalid': submitted && f['customerId'].errors }"
+                            (ngModelChange)="getProductsByCustomerId($event)">
+                            <option value="" selected disabled>Select Customer</option>
+                            <option *ngFor="let customer of allCustomer" [value]="customer.customerId">
+                                {{ customer.customerName }}
+                            </option>
+                        </select>
+
+                        <div *ngIf="submitted && f['customerId'].errors" class="invalid-feedback">
+                            <div *ngIf="f['customerId'].errors['required']" class="text-left">Select customer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Date</label>
+                        <span style="color: red ">*</span>
+                        <input formControlName="returnDate" type="date" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['returnDate'].errors }">
+                        <div *ngIf="submitted && f['returnDate'].errors" class="invalid-feedback">
+                            <div *ngIf="f['returnDate'].errors['required']" class="text-left">Return Date is required</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </mat-card>
+
+        <mat-card>
+            <div class="row">
+                <div class="col-md-10">
+                    <h3
+                        style="font-family: Montserrat; font-weight: 600; font-size: 18px; color:#00000099; line-height: 24px;">
+                        Add Products</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <mat-label style="font-family: Montserrat; font-size: 15px;width: 130px; height: 24px;">Product
+                    Name</mat-label>
+            </div>
+
+
+            <div class="row" style="margin-top:22px;">
+
+                <div class="col-md-3">
+                    <select class="selectform" style="width: 150px;" name="searchByType">
+                        <option value="1">Supplier Name</option>
+                        <option value="2">PO Number</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" list="allProducts" 
+                    class="search" id="searchProduct" 
+                      [matAutocomplete]="auto"
+                    autocomplete="off" placeholder="Search product here" />
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option 
+                      #matOption (click)="onMatOptionClicked(product)" 
+                      [value]="product.productName" *ngFor="let product of allProducts" >
+                        {{product.productName}}
+                      </mat-option>
+                    </mat-autocomplete>
+                
+                  </div>
+
+
+
+            </div>
+            <div>
+                <table *ngIf="templateProducts.length != 0"  mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 mt-2 " matSort>
+
+                    <!--- Note that these columns can be defined in any order.
+                                   The actual rendered columns are set as a property on the row definition" -->
+
+                    <!-- Position Column -->
+
+                    <ng-container matColumnDef="productName">
+                        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                     font-style: normal;
+                     font-weight: 400;
+                     font-size: 18px;
+                     line-height: 22px;
+                     /* identical to box height */
+                     
+                     
+                     color: #313131;"> Product Name </th>
+                        <td mat-cell *matCellDef="let product "> {{product.productName}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container  matColumnDef="Batch">
+                        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                     font-style: normal;
+                     font-weight: 400;
+                     font-size: 18px;
+                     line-height: 22px;
+                     /* identical to box height */
+                     
+                     color: #313131;"> Batch <span style="color: red ">*</span></th>
+                        <td mat-cell *matCellDef="let product">
+                          <select  style="border-radius: 5px;
+            border: 0.5px solid #E4E5E5;
+            color: var(--secondary-text, #707070);
+            font-family: Montserrat;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 116px;
+            height: 35px;
+            padding-left: 10px;
+            outline: none;"
+            [(ngModel)]="product.selectedBatchId" [ngModelOptions]="{standalone: true}" (ngModelChange)="calculateReturnSubTotalFromBatchDropdown($event,product)" >
+                            <option selected >Select Batch</option>
+            
+                            <option   *ngFor="let batch of product.batches " [value]="batch.batchId" >
+                              {{ batch.batchNo }}
+                            </option>
+            
+                          </select>
+                        </td>
+                      </ng-container>
+            
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="Return_Quantity">
+                        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                         font-style: normal;
+                         font-weight: 400;
+                         font-size: 18px;
+                         line-height: 22px;
+                         /* identical to box height */
+                         
+                         color: #313131;"> Quantity <span style="color: red ">*</span></th>
+                        <td mat-cell *matCellDef="let product">
+                          <input type="text" [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="calculateReturnSubTotalFromQuantityEditBox($event,product)" [ngModel]="product.returnQuantity"
+                            placeholder="Enter Here" style=" height: 35px;
+                                    width: 96px;
+                                    
+                                    outline: none;
+                                    text-align: center;
+                                    padding-right: 10px;">
+            
+            
+                        </td>
+                      </ng-container>
+            
+                      <!-- Weight Column -->
+                      <ng-container  matColumnDef="Return_Subtotal">
+                        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                         font-style: normal;
+                         font-weight: 400;
+                         font-size: 18px;
+                         line-height: 22px;
+                         /* identical to box height */
+                         
+                         
+                         color: #313131;"> Amount <span style="color: red ">*</span></th>
+                        <td mat-cell *matCellDef="let product  ">
+                          {{product.amount }}
+                        </td>
+                      </ng-container>
+
+
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22px;
+                    /* identical to box height */
+                    
+                    
+                    color: #313131;"> Action </th>
+                        <td mat-cell *matCellDef="let product"> <button mat-icon-button
+                            (click)="onClickDeleteProductList(product)"   aria-label="Example icon-button with a menu">
+                                <mat-icon style="color: #E25D41;" >delete</mat-icon>
+                            </button>
+
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+
+            </div>
+        </mat-card>
+        <div class="col-md-3">
+            <p style="display: inline-block; font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 24px;
+          /* identical to box height, or 133% */
+          
+          letter-spacing: -0.015em;
+          margin-top: 11px;
+          color: rgba(0, 0, 0, 0.6);">Total Return Amount:{{calculateTotalReturnAmount()}} </p>
+          
+          </div>
+       
+            <button style="width: 172px; margin-top: 11px;" (click)="continueToPaymentDetails()" type="submit"  class="orange_btn"> Save and Continue  </button>
+        
+    </form>
+
+</div>

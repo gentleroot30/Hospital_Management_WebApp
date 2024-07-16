@@ -1,0 +1,56 @@
+<h2 mat-dialog-title id="mtitle">Use Templates <button type="button" style="float: right;" class="btn-close" aria-label="Close" id="close"
+    (click)="onNoClick()"></button></h2>
+
+<div class="role_tab">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="inline px-4" style=" margin-top: 22px; margin-bottom: 14px;">
+        <form #myForm="ngForm" (ngSubmit)="searchTemplates()">
+          <input type="text" autocomplete="off" class="search" [(ngModel)]="formData.searchByValue" name="searchByValue"
+            placeholder="Search here" (ngModelChange)="searchTemplates()">
+          <button class="btn btn-secondary search-btn" type="submit" style="background-color:#E25D41;">
+            <i class="icon-icon-12"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="role_tab_box">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-3"  *ngFor="let template of templateData;let i=index">
+        <div class="boxs">
+          <div class="role_box">
+            {{template.quotationTemplateName}}
+          </div>
+          <div id="noDataMessage" style="display: none">No data found</div>
+          <div class="role_box_icon">  
+            <ul>
+              <a (click)="confirmUseTemplate(template.quotationTemplateId)" style="cursor: pointer;color:#E25D41;"><i><svg  width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_13508_3496)">
+<path d="M8.00016 1.33398C4.32016 1.33398 1.3335 4.32065 1.3335 8.00065C1.3335 11.6807 4.32016 14.6673 8.00016 14.6673C11.6802 14.6673 14.6668 11.6807 14.6668 8.00065C14.6668 4.32065 11.6802 1.33398 8.00016 1.33398ZM11.3335 8.66732H8.66683V11.334H7.3335V8.66732H4.66683V7.33398H7.3335V4.66732H8.66683V7.33398H11.3335V8.66732Z" fill="orange"/>
+</g>
+<defs>
+<clipPath id="clip0_13508_3496">
+<rect width="50" height="50" fill="orange"/>
+</clipPath>
+</defs>
+</svg>
+
+                </i></a>
+            </ul>
+        </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="length"
+  [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
+  [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+  aria-label="Select page">
+</mat-paginator>
+<p id="err_msg" style="text-align: center; margin-top:30px;">No Template Found</p>

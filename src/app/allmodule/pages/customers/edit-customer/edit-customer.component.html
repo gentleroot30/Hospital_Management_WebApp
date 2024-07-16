@@ -1,0 +1,166 @@
+<div class="add">
+    <h2><a routerLink="/customers"><mat-icon>arrow_back</mat-icon></a> Edit Customer</h2>
+    <form name="editCustomerForm" [formGroup]="editCustomerForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Customer Code</label>
+                        <input type="text" class="form-control" formControlName="customerCode" readonly>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="selectform w-100" formControlName="categoryId"
+                            [ngClass]="{ 'is-invalid': submitted && f['categoryId'].errors }" required>
+                            <option class="form-control" *ngFor="let category of AllCategory"
+                                [value]="category.categoryId">{{category.categoryName}}</option>
+                        </select>
+                        <div *ngIf="submitted && f['categoryId'].errors" class="invalid-feedback">
+                            <div *ngIf="f['categoryId'].errors['required']" class="text-left">Category Field is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Ethnicity</label>
+                        <input type="text" class="form-control" formControlName="ethnicity"
+                            [ngClass]="{ 'is-invalid': submitted && f['ethnicity'].touched }">
+                        <div *ngIf="submitted && f['ethnicity'].errors" class="invalid-feedback">
+                            <div *ngIf="f['ethnicity'].errors['required']" class="text-left">Ethinicity Field is
+                                required</div>
+                                <div *ngIf="f['ethnicity'].errors['maxlength']" class="text-left">
+                                    Ethinicity cannot be more than 25 characters
+                                  </div>
+                                  <div *ngIf="f['ethnicity'].errors['pattern']" class="text-left">
+                                   This field cannot contain special characters or numbers
+                                  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" formControlName="customerName"
+                            [ngClass]="{ 'is-invalid': submitted && f['customerName'].errors }" required>
+                        <div *ngIf="submitted && f['customerName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['customerName'].errors['required']" class="text-left"> Full Name Field is
+                                required</div>
+                                <div *ngIf="f['customerName'].errors['maxlength']" class="text-left">
+                                    Full Name cannot be more than 25 characters
+                                  </div>
+                                  <div *ngIf="f['customerName'].errors['pattern']" class="text-left">
+                                    Full Name cannot contain special characters or numbers
+                                  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Field 1</label>
+                        <input type="text" class="form-control" formControlName="customField_1"
+                            [ngClass]="{ 'is-invalid': submitted && f['customField_1'].errors }" required>
+                        <div *ngIf="submitted && f['customField_1'].errors" class="invalid-feedback">
+                            <div *ngIf="f['customField_1'].errors['required']" class="text-left"> Field 1 is required
+                            </div>
+                            <div *ngIf="f['customField_1'].errors['required']" class="text-left">
+                                Field 1 is required
+                            </div>
+                            <div *ngIf="f['customField_1'].errors['maxlength']" class="text-left">
+                                Field 1 cannot be more than 25 characters
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Field 2</label>
+                        <input type="text" class="form-control" formControlName="customField_2"
+                            [ngClass]="{ 'is-invalid': submitted && f['customField_2'].errors }" required>
+                            <div *ngIf="submitted && f['customField_2'].errors" class="invalid-feedback">
+                                <div *ngIf="f['customField_2'].errors['required']" class="text-left">
+                                    Field 2 is required
+                                </div>
+                                <div *ngIf="f['customField_2'].errors['maxlength']" class="text-left">
+                                    Field 2 cannot be more than 25 characters
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" formControlName="address"
+                            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" required>
+                            <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                                <div *ngIf="f['address'].errors['required']" class="text-left">
+                                    Address Field is required
+                                </div>
+                                <div *ngIf="f['address'].errors['maxlength']" class="text-left">
+                                    Address field cannot be more than 300 characters.
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" style="float: left;width: 86%;">
+                        <label>Contact</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" formControlName="contactNo_1"
+                                    style="margin-bottom: 15px;"
+                                    [ngClass]="{ 'is-invalid': submitted && f['contactNo_1'].errors }" required>
+                                <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['contactNo_1'].errors['required']" class="text-left"> Contact field is
+                                        required</div>
+                                </div>
+                                <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['contactNo_1'].errors['pattern']" class="text-left"> Number should be
+                                        in 10 digit</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4" [hidden]="hidden_1">
+                                <input type="text" class="form-control" formControlName="contactNo_2" placeholder="Enter Contact 2"
+                                    style="margin-bottom: 15px;"
+                                    [ngClass]="{ 'is-invalid': submitted && f['contactNo_2'].errors }"  >
+                                
+                                <div *ngIf="submitted && f['contactNo_2'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['contactNo_2'].errors['pattern']" class="text-left"> Number should be
+                                        in 10 digit</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" [hidden]="hidden_2">
+                                <input type="text" class="form-control" formControlName="contactNo_3" placeholder="Enter Contact 3"
+                                    style="margin-bottom: 15px;"
+                                    [ngClass]="{ 'is-invalid': submitted && f['contactNo_3'].errors }"  >
+                                 
+                                <div *ngIf="submitted && f['contactNo_3'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['contactNo_3'].errors['pattern']" class="text-left"> Number should be
+                                        in 10 digit</div>
+                                </div>
+                            </div>
+                            <button style="margin-top: 7px;" type="button" (click)="addContact()" class="plus_btn" [hidden]="Hide_button"><i
+                                class="icon-icon-20"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </mat-card>
+        <div class="submit_btn">
+            <button (click)="editCustomer()" type="submit" class="orange_btn"><i class="icon-icon-17"></i>
+                Submit</button>
+        </div>
+    </form>
+</div>

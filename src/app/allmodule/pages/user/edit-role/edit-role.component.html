@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <h2 mat-dialog-title id="mtitle">
+    Edit user Role
+    <button type="button" class="btn-close" aria-label="Close" id="close" (click)="onNoClick()"></button>
+  </h2>
+
+  <div class="add_role">
+    <form [formGroup]="editRoleForm" (ngSubmit)="EditRole()">
+      <!-- Role Title and Description -->
+      <div class="row" id="crow">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label id="ctlabel">Role Title</label>
+            <input type="text" class="form-control" formControlName="roleName" placeholder=" Enter Role"
+              [ngClass]="{ 'is-invalid': submitted && f['roleName'].errors }" />
+            <div *ngIf="submitted && f['roleName'].errors" class="invalid-feedback">
+              <div *ngIf="f['roleName'].errors['required']" class="text-left">
+                Role name Field is required
+              </div>
+              <div *ngIf="f['roleName'].errors['pattern']" class="text-left">Role name must be alphabetic and up to 20 char long </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label id="dlabel">Description</label>
+            <textarea type="text" class="form-control" formControlName="description" placeholder="Enter Description"
+              [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
+            <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+              <div *ngIf="f['description'].errors['required']" class="text-left">
+                Description is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Permissions Table -->
+      <label class="permission">Permissions</label>
+      <div class="permission-box">
+        <table style="background-color: white; text-align: center">
+          <tr>
+            <th style="text-align: left; font-size: 16px">Features</th>
+            <th style="text-align: center">View</th>
+            <th style="text-align: center">Add</th>
+            <th style="text-align: center">Edit</th>
+            <th style="text-align: center">Delete</th>
+            <th style="text-align: center">All</th>
+          </tr>
+          <tr *ngFor="let feature of allFeatures">
+            <td style="text-align: left; font-size: 16px">
+              {{ feature.featureName }}
+            </td>
+            <td>
+              <input type="checkbox" [checked]="feature.view"
+                [formControlName]="'feature_' + feature.featureId + '_view'"
+                (change)="toggleViewAddEditDeleteCheckbox(feature.featureId)" />
+            </td>
+            <td>
+              <input type="checkbox" [checked]="feature.add" [formControlName]="'feature_' + feature.featureId + '_add'"
+                (change)="toggleViewAddEditDeleteCheckbox(feature.featureId)" />
+            </td>
+            <td>
+              <input type="checkbox" [checked]="feature.edit"
+                [formControlName]="'feature_' + feature.featureId + '_edit'"
+                (change)="toggleViewAddEditDeleteCheckbox(feature.featureId)" />
+            </td>
+            <td>
+              <input type="checkbox" [checked]="feature.delete"
+                [formControlName]="'feature_' + feature.featureId + '_delete'"
+                (change)="toggleViewAddEditDeleteCheckbox(feature.featureId)" />
+            </td>
+            <td>
+              <input type="checkbox" [checked]="feature.all" [formControlName]="'feature_' + feature.featureId + '_all'"
+                (change)="toggleAllCheckbox(feature.featureId)" />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <mat-dialog-actions align="center">
+        <button type="submit" class="orange_btn">
+          <i class="icon-icon-19"></i> Submit
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </div>
+</div>

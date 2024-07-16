@@ -1,0 +1,125 @@
+<div class="add">
+    <h2><a href="" routerLink="/supplier" class="button_back"><mat-icon>arrow_back</mat-icon></a> Add Supplier</h2>
+    <form name="addSupplierForm" [formGroup]="addSupplierForm">
+        <mat-card>
+        <div class="row">
+            <!-- <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Supplier ID</label>
+                            <input type="text" class="form-control" formControlName="supplierId" placeholder="Supplier ID"
+                            [ngClass]="{ 'is-invalid': submitted && f['supplierId'].errors }">
+                            <option value="0" hidden><span>Select Category </span></option>
+                            <option *ngFor="let Supplier" value="{{Supplier.SupplierId}}>{{Supplier.SupplierName}}"></option>
+                            <div *ngIf="submitted && f['supplierId'].errors" class="invalid-feedback">
+                                <div *ngIf="f['supplierId'].errors['required']" class="text-left">Supplier Id Field is required</div>
+                            </div>
+                        </div>
+                    </div> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="form-control" formControlName="suppliername" placeholder="Name"
+                  [ngClass]="{ 'is-invalid': submitted && f['suppliername'].errors }"
+                  (input)="validateFullName($event)" (paste)="validatePaste($event)">
+                <div *ngIf="submitted && f['suppliername'].errors" class="invalid-feedback">
+                  <div *ngIf="f['suppliername'].errors['required']" class="text-left">Name Field is required</div>
+                  <div *ngIf="f['suppliername'].errors['pattern']" class="text-left">Name cannot contain numbers, special characters, or spaces</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Address</label>
+                <textarea type="text" class="form-control" rows="5" formControlName="address" placeholder="Enter address here"
+                  [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" (input)="validateAddress($event)"></textarea>
+                <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                  <div *ngIf="f['address'].errors['required']" class="text-left">Address Field is required</div>
+                  <div *ngIf="f['address'].errors['onlySpaces']" class="text-left">Address cannot be only spaces</div>
+                  <div *ngIf="f['address'].errors['maxLength']" class="text-left">Address cannot exceed 300 characters</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+
+        <div class="row">
+            <label>Contact</label>
+            <div class="col-md-4">
+                <!-- <div class="form-group" style="float: left;width: 86%;"> -->
+                  <input type="text" class="form-control" formControlName="contactNo_1" placeholder="Enter Contact"
+                        style="margin-bottom: 15px;" [ngClass]="{ 'is-invalid': submitted && f['contactNo_1'].errors }">
+                    <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_1'].errors['required']" class="text-left"> Contact field is required
+                        </div>
+                    </div>
+                    <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_1'].errors['pattern']" class="text-left">Number should be
+                            in 10 digit</div>
+                            
+                    </div>
+                    <!-- </div> -->
+                    </div>
+
+                    <div class="col-md-4" [hidden]="hidden_1">
+                        
+                        <input type="text" class="form-control" formControlName="contactNo_2" placeholder="Contact"
+                            style="margin-bottom: 15px;"[ngClass]="{ 'is-invalid': submitted && f['contactNo_2'].errors }">
+                        <div *ngIf="submitted && f['contactNo_2'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contactNo_2'].errors['required']" class="text-left"> Contact field is
+                                required</div>
+                        </div>
+                        <div *ngIf="submitted && f['contactNo_2'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contactNo_2'].errors['pattern']" class="text-left">Number should be
+                                in 10 digit</div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="col-md-4" [hidden]="hidden_2">
+                        <input type="text" class="form-control" formControlName="contactNo_3" placeholder="Contact"
+                            style="margin-bottom: 15px;"
+                            [ngClass]="{ 'is-invalid': submitted && f['contactNo_3'].errors }">
+                        <div *ngIf="submitted && f['contactNo_3'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contactNo_3'].errors['required']" class="text-left"> Contact field is
+                                required</div>
+                        </div>
+                        <div *ngIf="submitted && f['contactNo_3'].errors" class="invalid-feedback">
+                            <div *ngIf="f['contactNo_3'].errors['pattern']" class="text-left">Number should be
+                                in 10 digit</div>
+                        </div>
+                    </div>
+
+
+                <!-- </div> -->
+<!-- <div class="row">
+    <div class="col-md-4"> -->
+                <button type="button" (click)="addContact()" class="plus_btn" [hidden]="Hide_button"><i
+                        class="icon-icon-20"></i></button>
+                        <!-- <div class="ml-auto"></div>
+                        </div>
+</div> -->
+
+            <!-- </div> -->
+        </div>
+
+        
+
+
+
+        <div class="submit_btn">
+            <button type="submit" class="orange_btn" (click)="addSupplier()"><i class="icon-icon-19"></i>
+                Submit</button>
+        </div>
+        </mat-card>
+        </form>
+        

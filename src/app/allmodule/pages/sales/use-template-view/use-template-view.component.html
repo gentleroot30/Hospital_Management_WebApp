@@ -1,0 +1,32 @@
+<h2 style="    width: fit-content;">View Use Template</h2>               
+
+<button  style="margin-left: 590px; top: -47px; right: -54px; outline:none; border-style: none; background-color: #FFF;" class="clear" (click)="onNoClick()"><img src="../../../../../../assets/icon/clear_icon.svg" alt="" style="background-color: white; margin-top: -81px;"></button>
+
+<div class="view_role">
+  <form name="viewRoleForm" (ngSubmit)="viewrole()" [formGroup]="viewRoleForm">
+    <div class="form-group">
+      <label class="role-title" style="width: fit-content; margin-bottom: 3px;">Template Title</label>
+      <input type="text" class="form-control role-title-input" formControlName="RoleTitle" placeholder="Cashier" [ngClass]="{ 'is-invalid': submitted && f['userId'].errors }" style="width: 600px; border-color: #E4E5E5; font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 200% */
+      letter-spacing: -0.18px; ">
+      <div *ngIf="submitted && f['userId'].errors" class="invalid-feedback">
+        <div *ngIf="f['userId'].errors['required']" class="text-left">User Id Field is required</div>
+      </div>
+
+      <label class="description" style="margin-top: 13px; width: fit-content; margin-bottom: 3px;">Template Description</label>
+      <textarea type="text" class="form-control description-input" formControlName="Description" placeholder=" Lorem ipsum dolor sit amet consectetur adipisicing elit" [ngClass]="{ 'is-invalid': submitted && f['userId'].errors }" style="width: 600px; border-color: #E4E5E5; font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 200% */
+      letter-spacing: -0.18px;"></textarea>
+      <div *ngIf="submitted && f['userId'].errors" class="invalid-feedback">
+        <div *ngIf="f['userId'].errors['required']" class="text-left">User Id Field is required</div>
+      </div>
+
+    </div>
+  </form>
+</div>

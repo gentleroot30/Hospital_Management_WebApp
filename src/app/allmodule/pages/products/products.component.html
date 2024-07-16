@@ -1,0 +1,270 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="user">
+  <div class="container" style="display: block; overflow: hidden; white-space: nowrap">
+    <p class="content-heading">Product</p>
+    <a routerLink="../product">
+      <p class="menu-tab-active">Product</p>
+    </a>
+    <a routerLink="../product-category">
+      <p class="menu-tab-1">Category</p>
+    </a>
+    <a routerLink="../product-brand">
+      <p class="menu-tab-2">Brand</p>
+    </a>
+    <div class="menu-line"></div>
+  </div>
+
+  <!-- product tabs -->
+
+  <div class="product_tab">
+    <div class="row">
+      <div class="col-md-10">
+        <form #myForm="ngForm" (ngSubmit)="loadProducts()">
+          <select class="selectform" aria-label="Default select example" [(ngModel)]="formData.searchByType"
+            name="searchByType" (ngModelChange)="loadProducts()">
+            <!-- <option value="1" hidden><span>Search by</span></option> -->
+            <option value="1">Product Name</option>
+            <option value="2">Catagory</option>
+            <option value="3">Brand</option>
+          </select>
+          <div class="inline px-4">
+            <input autocomplete="off" type="text" class="search" [(ngModel)]="formData.searchByValue"
+              name="searchByValue" placeholder="Search here" style="
+                box-sizing: border-box;
+
+                position: absolute;
+                width: 260px;
+                height: 40px;
+
+                /* disabled text field border */
+
+                border: 0.5px solid #e4e5e5;
+                border-radius: 5px;
+              " (ngModelChange)="loadProducts()" />
+            <!-- <button class="btn btn-secondary search-btn" type="submit">
+              <i class="fa fa-search"></i>
+            </button> -->
+          </div>
+        </form>
+        <div class="col-md-2 col-sm-12">
+          <div class="date-range" mat-button>    
+            <input id="range-input" type="text" name="daterange" placeholder="Date Range" value=""
+            (apply.daterangepicker)="handleDateRangeSelection($event)">
+             </div>
+        </div>
+      </div>
+      
+      <div class="col-md-2">
+        <button [disabled]="!roleBaseAccess.canAddProducts" class="orange_btn" (click)="addProducts()" >
+          <i class="icon-icon-10"></i> Add New
+        </button>
+      </div>
+    </div>
+    <table *ngIf="AllProducts.length != 0" mat-table [dataSource]="dataSource" multiTemplateDataRows
+      class="mat-elevation-z8 mt-2">
+      <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+
+      <ng-container matColumnDef="expand">
+        <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+          &nbsp;
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button aria-label="expand row" (click)="
+              expandedElement = expandedElement === element ? null : element;
+              $event.stopPropagation()
+            ">
+            <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+            <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Product Name
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <a href="">{{ element.productName }}</a>
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="currentStock">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Current Stock
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="customField1">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Custom Field 1
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.customField1 }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="customField2">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Custom Field 2
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.customField2 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="customField3">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Custom Field 3
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.customField3 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef style="
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #313131;
+          ">
+          Action
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu" class="hover">
+            <a (click)="viewPurchaseHistory(element.productId)" class="mat-menu-a hover"
+              ><span class="hover">Purchase History</span></a
+            >
+
+            <hr />
+            <a (click)="roleBaseAccess.canViewProducts ? onViewProducts(element) : null" [ngClass]="{'disabled': !roleBaseAccess.canViewProducts}" class="hover text-decoration-n"><span class="hover a"><i
+                  class="icon-icon-15 mat-menu-i hover"></i>view</span> </a><br />
+            <a (click)="roleBaseAccess.canEditProducts ? onEditProducts(element) : null" [ngClass]="{'disabled': !roleBaseAccess.canEditProducts}" class="hover text-decoration-n"><span class="hover a"><i
+                  class="icon-icon-17 mat-menu-i hover"></i>Edit</span></a><br />
+            <a (click)="roleBaseAccess.canDeleteProducts ? deleteProductDialog(element) : null" [ngClass]="{'disabled': !roleBaseAccess.canDeleteProducts}"class="hover text-decoration-n"><span class="hover a">
+                <i class="icon-icon-18 mat-menu-i hover"></i>Delete</span><br />
+            </a>
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+          <div class="example-element-detail" [@detailExpand]="
+              element == expandedElement ? 'expanded' : 'collapsed'
+            ">
+            <div class="expansion">
+              <span class="px-4">Brand:
+                <p class="inline">{{ element.brandName }}</p>
+              </span>
+              <span class="px-4">Category:
+                <p class="inline ">{{ element.PRODUCT_CATEGORYName }}</p>
+              </span>
+              <span class="px-4"> Sequence:
+                <p class="inline">{{ element.sequenceStoring }}</p>
+              </span>
+              <span class="px-4"> Discount:
+                <p class="inline">{{ element.discountPercent }}</p>
+              </span>
+              <br /><br />
+              <span class="px-4"> Alert Quantity:
+                <p class="inline">{{ element.alertQuantity }}</p>
+              </span>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>  -->
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+          </tr>  -->
+      <!-- <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr> -->
+
+      <!--           
+ Header Row Definition -->
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+
+      <!-- Default Data Row Definition -->
+      <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+
+      <!-- Expanded Row Definition -->
+      <!-- <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+          </tr> -->
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let element; columns: columnsToDisplay" class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+  </div>
+
+  <mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="length"
+    [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+    aria-label="Select page" *ngIf="AllProducts.length != 0">
+  </mat-paginator>
+
+  <p id="err_msg" style="text-align: center; margin-top: 30px" *ngIf="AllProducts.length == 0">
+    No Products Found
+  </p>
+</div>

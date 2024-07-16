@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1>Report</h1>
+<div>
+  <h2>Stock</h2>
+</div>
+<div class="stock_tab">
+  <div class="row" style="margin-top:22px;">
+
+    <div class="col-md-1 col-sm-12">
+      <form mat-button>
+        <select class="selectform" aria-label="Default select example">
+          <option value="" hidden><span>Search by</span></option>
+          <option value="1">Product Name</option>
+          <option value="2">Product Category</option>
+          <option value="3">Brand</option>
+        </select>
+      </form>
+    </div>
+    <div class="col-md-3 search-container col-sm-12">
+      <div mat-button>
+        <input type="text" class="search" placeholder="Search here" />
+        <button class="btn btn-secondary search-btn " type="button">
+          <i class="icon icon-icon-12 text-white "></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="date-range" mat-button>
+
+        <!-- <i class="fa-solid fa-calendar" style="font-size: 15px;"></i> -->
+
+        <input id="range-input" type="text" name="daterange" placeholder="Date Range" value="" />
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+  <div class="table-scroll" style=" margin-right: 77px !important; margin-left: 16px !important;">
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 mt-2">
+
+      <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Product Name Column -->
+      <ng-container matColumnDef="Product_Name">
+        <th mat-header-cell *matHeaderCellDef style="width: 300px;font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+          color: #313131;"> Product Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 133px; padding: 30px;"><a
+            href="">{{element.Product_Name}}</a> </td>
+      </ng-container>
+
+      <!-- Unit Price Column -->
+      <ng-container matColumnDef="Unit_Price">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+          
+          
+          color: #313131;"> Unit Price (<span>&#8377;</span>) </th>
+        <td mat-cell *matCellDef="let element"> {{element.Unit_Price}} </td>
+      </ng-container>
+
+      <!-- Current Stock Column -->
+      <ng-container matColumnDef="Current_Stock">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+          
+          
+          color: #313131;"> Current Stock </th>
+        <td mat-cell *matCellDef="let element"> {{element.Current_Stock}} </td>
+      </ng-container>
+
+      <!-- Current Stock Value (₹) Note Column -->
+      <ng-container matColumnDef="Current_Stock_Value">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+          
+          
+          color: #313131;"> Current Stock value (<span>&#8377;</span>) </th>
+        <td mat-cell *matCellDef="let element"> {{element.Current_Stock_Value }} </td>
+      </ng-container>
+      <!-- Units Sold Note Column -->
+      <ng-container matColumnDef="Units_Sold">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+            
+            
+            color: #313131;"> Units Sold </th>
+        <td mat-cell *matCellDef="let element"> {{element.Units_Sold}} </td>
+      </ng-container>
+      <!-- <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+            
+            
+            color: #313131;"> Action </th>
+            <td mat-cell *matCellDef="let element" style="font-size: 30px; text-align: center;"><a mat-icon-button [matMenuTriggerFor]="menu" style="cursor: pointer;">...</a>
+              <mat-menu #menu="matMenu" class="hover">
+                <a routerLink="/reports-view" style="text-decoration: none;color: #707070;"><p style="padding-left: 6px;padding-right: 5px;">
+                  <i class="icon-icon-15"></i>&nbsp;
+                  <span>View</span></p>
+                </a>
+                <a routerLink="/reports-edit" style="text-decoration: none;color: #707070;"><p style="padding-left: 6px;padding-right: 5px;">
+                  <i class="icon-icon-17"></i>
+                  <span>Edit</span></p>
+                </a >
+                <a href="" style="text-decoration: none;color: #707070;"><p style="padding-left: 6px;padding-right: 5px;">
+                  <i class="icon-icon-18"></i>
+                  <span>Delete</span></p>
+                </a>
+              </mat-menu>     
+            </td>
+          </ng-container> -->
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
+
+  <ul class="pagination justify-content-end" style="float: right;">
+    <li style="width: 25.56px;height: 25.56px;border-radius: 3.5503px;">
+      <a class="page-link material-icons" id="arrow"
+        style="background-color: #E25D41; color: white;border-radius: 3.5503px;">keyboard_arrow_left</a>
+    </li>
+    <li class="page-item"><a class="page-link-class" href="#">1</a></li>
+    <li class="page-item"><a class="page-link-class" href="#">2</a></li>
+    <li class="page-item"><a class="page-link-class" href="#">3</a></li>
+    <li class="page-item"><a class="page-link-class" href="#">4</a></li>
+    <li class="page-item"><a class="page-link-class" href="#">5</a></li>
+    <li style="width: 25.56px;height: 25.56px;">
+      <a class="page-link material-icons" id="arrow"
+        style="background-color: #E25D41; color: white;border-radius: 3.5503px;">keyboard_arrow_right</a>
+    </li>
+  </ul>
+  <h3 class="mt-2">Total Stock Value: <span>&#8377;</span> 200.00</h3>
+  <h3>Total Units Sold: <span>&#8377;</span> 500.00</h3>
+
+</div>

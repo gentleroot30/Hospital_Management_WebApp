@@ -1,0 +1,50 @@
+input{
+position: absolute;
+width: 409px;
+height: 39px;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.5);
+border-radius: 5px;
+}
+ .button{
+    background: #E25D41;
+    border-radius: 5px;
+    margin-left: 430px;
+ }
+
+ a{
+    color: red;
+ }
+
+ h2{
+width: 53px;
+height: 24px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+letter-spacing: -0.015em;
+color: #313131;
+ }
+
+ h3{
+    width: 197px;
+    height: 24px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+
+/* Primary Text */
+
+color: #313131;
+
+ }
+
+ .clear{
+    background: #FFFFFF;
+    margin-left:420px ;
+ }

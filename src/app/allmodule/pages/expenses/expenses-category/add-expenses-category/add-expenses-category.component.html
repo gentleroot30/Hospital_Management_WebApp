@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <h2 mat-dialog-title id="mtitle">Add Expense Category <button type="button" class="btn-close" aria-label="Close" id="close" (click)="onNoClick()"></button></h2>
+    
+<div mat-dialog-content id="mdialog">
+        <form name="addCategoryForm" [formGroup]="addExpensesCategoryForm">
+                <div class="row" id="crow">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label id="ctlabel">Category Title</label>
+                            <input type="text" class="form-control" rows="5" formControlName="categoryName" placeholder=" Enter Category"
+                            [ngClass]="{ 'is-invalid': submitted && f['categoryName'].errors }">
+                            <div *ngIf="submitted && f['categoryName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['categoryName'].errors['required']" class="text-left">
+                                    Category Title Field is required
+                                </div>
+                                <div *ngIf="f['categoryName'].errors['pattern']" class="text-left"> Category Title must be alphabetic and up to 20 char long and cannot contain whitespace characters</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="drow">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label id="dlabel">Description</label>
+                            <textarea type="text" class="form-control" rows="4" formControlName="description" placeholder="Enter Description"
+                            [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
+                            
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>  
+<mat-dialog-actions align="center"  id="sbutton">
+  <button type="submit" (click)="addExpensesCategory()" class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+</mat-dialog-actions>
+</div>

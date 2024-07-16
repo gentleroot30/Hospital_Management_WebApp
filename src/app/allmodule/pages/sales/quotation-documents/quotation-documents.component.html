@@ -1,0 +1,247 @@
+<div style="display: flex; align-items: center">
+  <a
+    routerLink="/sales"
+    style="margin-left: 21.67px; display: inline-block; margin-top: -5px"
+  >
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23.3337 10.5834H6.09283L14.012 2.66425L12.0003 0.666748L0.666992 12.0001L12.0003 23.3334L13.9978 21.3359L6.09283 13.4167H23.3337V10.5834Z"
+        fill="#313131"
+      />
+    </svg>
+  </a>
+  <p
+    style="
+      margin-left: 10px;
+      margin-top: 8px;
+      height: 28px;
+      font-family: 'Balsamiq Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 2.57812px;
+      color: #313131;
+    "
+  >
+    Sales Document
+  </p>
+</div>
+
+<div class="container" style="margin-left: 16px; margin-bottom: 36px">
+  <div mat-button style="display: inline-block; margin-right: 12px">
+    <input type="text" class="search" placeholder="&nbsp;Search here" />
+    <button class="btn btn-secondary search-btn" type="button" style="outline: none;">
+      <i > <svg _ngcontent-bcg-c257="" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="ng-tns-c257-1"><path _ngcontent-bcg-c257="" d="M2.95387 17.844L6.73813 14.0625C7.46733 13.3338 7.46754 12.1519 6.73861 11.423V11.423C6.00988 10.6943 4.82836 10.6943 4.09962 11.423L0.314396 15.2082C-0.10451 15.6271 -0.10451 16.3167 0.314395 16.7356L1.42283 17.844C1.84544 18.2629 2.53867 18.2629 2.95387 17.844Z" fill="#FEFDFE" class="ng-tns-c257-1"></path><path _ngcontent-bcg-c257="" d="M7.24904 9.52779C6.8672 9.90963 6.8672 10.5287 7.24904 10.9106V10.9106C7.63088 11.2924 8.24996 11.2924 8.6318 10.9106L8.79868 10.7437C9.21391 10.3284 9.86219 10.2844 10.398 10.5247C12.4233 11.433 14.8861 11.0584 16.5484 9.39619C18.6948 7.24976 18.6948 3.76135 16.5484 1.61121C14.402 -0.538924 10.9135 -0.535217 8.7634 1.61121C7.10116 3.27346 6.7266 5.73631 7.63487 7.7616C7.87515 8.2974 7.83115 8.94569 7.41592 9.36091L7.24904 9.52779ZM9.84589 2.67887C11.4029 1.12187 13.9274 1.12187 15.4807 2.67887C17.0377 4.23586 17.0377 6.76042 15.4807 8.31371C13.9237 9.8707 11.3992 9.8707 9.84589 8.31371C8.28889 6.76042 8.28889 4.23586 9.84589 2.67887Z" fill="#FEFDFE" class="ng-tns-c257-1"></path></svg></i>
+    </button>
+  </div>
+
+  <div style="
+  position: relative;
+  display: inline-block;
+  margin-bottom: 13.7px;
+  margin-top: 22px;
+">
+<input type="text" name="daterange" class="date-range-input-tag-class" placeholder="Date Range" value="" />
+<i class="date-range-input-i-tag-class">
+  <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.77542 0.337891L4.54761 3.10405L7.31981 0.337891L8.1714 1.18948L4.54761 4.81326L0.923828 1.18948L1.77542 0.337891Z" fill="#707070" />
+  </svg>
+</i>
+</div>
+
+  <div
+    class="container pull-right"
+    style="display: inline-block; width: fit-content; margin-right: 17px"
+  >
+    <svg (click)="shareDocumentViaEmail()"
+      width="36"
+      height="36"
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="36" height="36" rx="5" fill="#E25D41" />
+      <path
+        d="M22.5714 20C21.764 20 21.0219 20.2443 20.4361 20.653L16.7759 18.6513C16.8843 18.2223 16.8843 17.7777 16.7759 17.3487L20.4361 15.347C21.0219 15.7557 21.764 16 22.5714 16C24.465 16 26 14.6568 26 13C26 11.3432 24.465 10 22.5714 10C20.6779 10 19.1429 11.3432 19.1429 13C19.1429 13.2237 19.1711 13.4416 19.2241 13.6513L15.5639 15.653C14.9781 15.2443 14.236 15 13.4286 15C11.535 15 10 16.3432 10 18C10 19.6568 11.535 21 13.4286 21C14.236 21 14.9781 20.7557 15.5639 20.347L19.2241 22.3487C19.17 22.5626 19.1428 22.781 19.1429 23C19.1429 24.6568 20.6779 26 22.5714 26C24.465 26 26 24.6568 26 23C26 21.3432 24.465 20 22.5714 20Z"
+        fill="white"
+      />
+    </svg>
+    <svg style="margin-left:17px; margin-right:138px;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="5" fill="#E25D41"/>
+      <g transform="translate(9 9)">
+        <path d="M6.75 0H9.25C9.66562 0 10 0.334375 10 0.75V6H12.7406C13.2969 6 13.575 6.67188 13.1812 7.06563L8.42813 11.8219C8.19375 12.0562 7.80937 12.0562 7.575 11.8219L2.81562 7.06563C2.42188 6.67188 2.7 6 3.25625 6H6V0.75C6 0.334375 6.33437 0 6.75 0ZM16 11.75V15.25C16 15.6656 15.6656 16 15.25 16H0.75C0.334375 16 0 15.6656 0 15.25V11.75C0 11.3344 0.334375 11 0.75 11H5.33437L6.86562 12.5312C7.49375 13.1594 8.50625 13.1594 9.13437 12.5312L10.6656 11H15.25C15.6656 11 16 11.3344 16 11.75ZM12.125 14.5C12.125 14.1562 11.8438 13.875 11.5 13.875C11.1562 13.875 10.875 14.1562 10.875 14.5C10.875 14.8438 11.1562 15.125 11.5 15.125C11.8438 15.125 12.125 14.8438 12.125 14.5ZM14.125 14.5C14.125 14.1562 13.8438 13.875 13.5 13.875C13.1562 13.875 12.875 14.1562 12.875 14.5C12.875 14.8438 13.1562 15.125 13.5 15.125C13.8438 15.125 14.125 14.8438 14.125 14.5Z" fill="white"/>
+      </g>
+    </svg>
+    
+  </div>
+</div>
+
+<div class="row" style="display: inline-block; text-align: center;">
+  <div class="card">
+    <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+    <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+    <p class="p-tag" >
+      Name of document 12/06/2022
+    </p>
+
+    <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+  </div>
+  <div class="card">
+<img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+<img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+  <p class="p-tag">
+    Name of document 12/06/2022
+  </p>
+
+  <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+</div>
+<div
+class="card">
+<img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+<img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+<p class="p-tag">
+  Name of document 12/06/2022
+</p>
+
+<input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+</div>
+<div
+class="card">
+<img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+<img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+<p class="p-tag">
+  Name of document 12/06/2022
+</p>
+
+<input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+</div>
+<div class="card">
+<img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+<img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+<p class="p-tag">
+  Name of document 12/06/2022
+</p>
+
+<input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+</div>
+  </div>
+
+  <div class="row" style="display: inline-block; text-align: center;">
+    <div class="card">
+      <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+      <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+      <p class="p-tag">
+        Name of document 12/06/2022
+      </p>
+  
+      <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+    </div>
+    <div class="card">
+  <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+  <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+    <p class="p-tag">
+      Name of document 12/06/2022
+    </p>
+  
+    <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+  </div>
+  <div class="card">
+  <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+  <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+  <p class="p-tag">
+    Name of document 12/06/2022
+  </p>
+  
+  <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+  </div>
+  <div class="card">
+  <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+  <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+  <p class="p-tag">
+    Name of document 12/06/2022
+  </p>
+  
+  <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+  </div>
+  <div class="card">
+  <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+  <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+  <p class="p-tag">
+    Name of document 12/06/2022
+  </p>
+  
+  <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+  </div>
+    </div>
+  
+    <div class="row" style="display: inline-block; text-align: center;">
+      <div class="card">
+        <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+        <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+        <p class="p-tag">
+          Name of document 12/06/2022
+        </p>
+    
+        <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+      </div>
+      <div class="card">
+    <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+    <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+      <p class="p-tag">
+        Name of document 12/06/2022
+      </p>
+    
+      <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+    </div>
+    <div class="card">
+    <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+    <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+    <p class="p-tag">
+      Name of document 12/06/2022
+    </p>
+    
+    <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+    </div>
+    <div class="card">
+    <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+    <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+    <p class="p-tag">
+      Name of document 12/06/2022
+    </p>
+    
+    <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+    </div>
+    <div class="card">
+    <img src="/assets/img/purchase.svg" width="165" height="196" alt="Documents-Reference-Example">
+    <img src="/assets/img/verified.svg" alt="" style="margin-top: -399px; margin-left: 134.5px;">
+    <p class="p-tag">
+      Name of document 12/06/2022
+    </p>
+    
+    <input type="text" class="enter-sequence" placeholder="Enter Sequence" style="border-color: #E4E5E5; color: black;"/>
+    </div>
+      </div>
+      
+      <!-- Pagination Code Starts  -->
+      <ul class="pagination justify-content-center" style="margin-right:78px;">
+        <li class="page-item disabled">
+          <a class="page-link material-icons" id="arrow">keyboard_arrow_left</a>
+        </li>
+        <li class="page-item"><a class="page-link pagenum-active" href="#">1</a></li>
+        <li class="page-item"><a class="page-link pagenum" href="#">2</a></li>
+        <li class="page-item"><a class="page-link pagenum" href="#">3</a></li>
+        <li class="page-item"><a class="page-link pagenum" href="#">4</a></li>
+        <li class="page-item"><a class="page-link pagenum" href="#">5</a></li>
+        <li class="page-item">
+          <a class="page-link material-icons" id="arrow">keyboard_arrow_right</a>
+        </li>
+      </ul>
+
+         <!-- Pagination Code Ends -->

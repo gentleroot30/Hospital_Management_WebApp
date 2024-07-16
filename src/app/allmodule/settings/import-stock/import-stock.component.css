@@ -1,0 +1,259 @@
+.example_set{
+        position: absolute;
+        width: 108px;
+        height: 28px;
+        
+        margin-left: 25px;
+        font-family: Balsamiq Sans;
+            
+    text-align: left;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        /* identical to box height, or 115% */
+        
+        letter-spacing: 2.57812px;
+        
+        color: #313131;
+         }
+         .head1{
+        
+            margin-bottom: 82px;
+                position: absolute;
+                margin-left: 15px;
+margin-right: 500px;
+            
+            }
+.form{
+    box-sizing: border-box;
+
+position: absolute;
+width: 1350px;
+height: 316px;
+margin-left: 30px;
+top: 131px;
+
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.1);
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.09);
+border-radius: 5px;
+}
+
+.demo{
+    box-sizing: border-box;
+
+position: absolute;
+width: 1265px;
+height: 173px;
+margin-top: 97px;
+margin-left: 35px;
+
+
+/* Secondary Text */
+
+border: 1px dashed #707070;
+}
+.head{
+    position: absolute;
+    width: 136px;
+    height: 24px;
+    margin-top: 55px;
+    margin-left: 44px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: -0.015em;
+    
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.iconn {
+    margin-top:30px;
+    border: 1px solid black;
+    
+  }
+  
+.example{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 12px 24px;
+gap: 5px;
+    
+   
+position: absolute;
+width: 219px;
+height: 40px;
+margin-left: 525px;
+margin-top: 65px;
+margin-bottom: 68px;
+    
+    background: #E25D41;
+    border-radius: 5px;
+}
+
+.example .succ{
+    position: absolute;
+    width: 363px;
+    height: 20px;
+    margin-left: -50px;
+    margin-right: 377px;
+    margin-top: -60px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(18, 87, 247);
+   
+}
+
+.cancel-button {
+    /* margin-top: 5px; */
+    background: none;
+    color: #E25D41;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 101px;
+    font-weight: bold;
+    position: absolute;
+    margin-top: -129px;
+    margin-left: 24px;
+    /* height: 31px; */
+    font-size: x-large;
+
+  }
+  
+  /* .cancel-button:hover {
+    background-color: white; /* Adjust hover color */
+  
+    */
+  .remove-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #f00; /* Red color */
+    border-radius: 50%;
+  }
+  
+  .remove-icon::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 2px;
+    background-color: #fff; /* White color */
+    margin: 6px auto;
+    transform: rotate(45deg);
+  }
+  
+  .remove-icon::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 8px;
+    background-color: #fff; /* White color */
+    margin: auto 6px;
+    transform: rotate(45deg);
+  }
+  
+
+
+.title{
+    width: 318px;
+height: 16px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-decoration-line: underline;
+text-transform: uppercase;
+
+color: #E25D41;
+
+margin-top: 120px;
+margin-bottom: 99px;
+margin-left: 475px;
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.example1{
+    /* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 12px 24px;
+gap: 5px;
+
+position: absolute;
+width: 123px;
+height: 40px;
+margin-left: 635px;
+top: 479px;
+
+background: #E25D41;
+border-radius: 5px;
+}
+.btn1{
+    width: 54px;
+height: 16px;
+
+font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-transform: uppercase;
+margin-left: 2px;
+margin-bottom: 20px;
+color: #FFFFFF;
+
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.bold{
+     font-weight: bold; 
+}
+.demo-icon{
+    position: absolute;
+left: 8.33%;
+right: 8.34%;
+top: 8.34%;
+bottom: 8.33%;
+margin-top: 6.45px;
+font-family:Balsamiq Sans;
+font-style: normal;
+font-size: 14px;
+font-weight: 400;
+
+
+
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+
+}

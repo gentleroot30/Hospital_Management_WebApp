@@ -1,0 +1,703 @@
+.content-heading {
+  width: fit-content;
+  height: 28px;
+  margin-left: 16px;
+  margin-top: 8px;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 2.57812px;
+  color: #313131;
+}
+.quotation-template-btn{
+  border: 1px solid #E25D41;
+  border-radius: 5px;
+  text-decoration: #E25D41;
+  font-family: Balsamiq Sans;
+  font-weight: 400;
+  color: #E25D41;
+  text-transform: uppercase;
+}
+
+/* CSS Code of View-Document Starts ........ */
+.view-document {
+  margin-top: -45px; width: 154px;
+  height: 36px;
+  margin-right:88px;
+  background: #E25D41;
+  border-style: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  border-radius: 4px; 
+}
+.view-document-rs {
+  width: 154px;
+  height: 36px;
+  margin-right:88px;
+  background: #E25D41;
+  border-style: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  border-radius: 4px; 
+}
+/* CSS Code of View-Document Ends ........ */
+
+/* CSS Code of Menu Bar Starts ........ */
+.menu-tab-1 {
+  width: 90px;
+  height: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #707070;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-tab-2 {
+  width: 39px;
+  height: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+  margin-left: -30px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #707070;
+}
+
+.menu-tab-active {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.09);
+  border-radius: 0px 30px 0px 0px;
+  width: fit-content;
+  height: 44px;
+  padding-left: 12px;
+  margin-left: 12px;
+  padding-top: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #e25d41 !important;
+}
+
+.menu-line {
+  width: 556px;
+  display: block;
+  overflow: hidden;
+  height: 0px;
+  margin-top: -12px;
+  margin-left: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.selectform{
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family:'Montserrat' ;
+  border-radius: 6px;
+  border-color:0.446px solid #707070;
+  padding-left: 7px;
+  border: 0.5px solid #e4e5e5;
+  border-radius: 5px 0px 0px 5px;
+}
+option{
+  font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 16px;
+
+}
+.search{
+  
+  width: 215px;
+  height: 40px;
+  font-size: 13px;
+  border:0.446px solid #707070;
+  border-radius: 5px 0px 0 5px;
+  position: absolute;
+  font-family: Montserrat;
+  /* transform: translate(-40px,0); */
+  padding-left: 7px;
+  margin-left: 40px;
+  border: 0.5px solid #e4e5e5;
+   border-radius: 5px 0px 0px 5px;
+  outline: none;
+  }
+  
+  .search-btn{
+    background-color: #E25D41;
+  border-color: #E4E5E5;
+  margin-left: 250px; 
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* transform: translate(-70px,0); */
+  }
+  #input-range{
+    width:300px;
+    margin-left:50px  !important;
+  
+  }
+  
+  .add-new{
+  float:right; 
+  height:40px;
+   width:135px; 
+   margin-right: -90px;  
+   background-color: #E25D41;
+  
+  }
+
+  .quotation-template{
+    background-color: #E25D41 !important;
+    
+  }
+/* CSS Code of Menu Bar Ends ........ */
+
+/* CSS Code for the DropDown List Select and Option CSS    Starts.....  */
+
+
+
+
+
+
+
+/* CSS Code for the DropDown List Select and Option CSS   Ends.....  */
+
+/* CSS Code for Search Bar Starts..... */
+
+
+
+
+
+/* CSS Code for Search Bar Ends..... */
+
+/* CSS Code for Date Range Starts..... */
+
+input[name="daterange"] {
+  width: 170px;
+  height: 40.3px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  color: #707070;
+  font-weight: 400;
+  border: 0.5px solid #e4e5e5;
+  border-radius: 5px 0px 0px 5px;
+  padding: 8px;
+  align-items: center;
+  border-radius: 4px;
+  margin-left:50px;
+  outline: none;
+  
+}
+
+
+/* CSS Code for Date Range Ends..... */
+
+/* CSS Code for QUOTATION TEMPLATE Button Starts....  */
+
+
+/* CSS Code for QUOTATION TEMPLATE Button Ends....  */
+
+/* CSS Code for Add New Button Starts..... */
+
+
+
+
+
+/* CSS Code for Add New Button Ends..... */
+
+/* CSS Code for Adjustments of Responsiveness of Buttons Starts....  */
+
+@media (max-width: 1063px) {
+  .quotation-templates-btn {
+      margin-left: 10px !important;
+  }
+}
+
+@media (max-width: 1436px) {
+  .orange_btn {
+      display:none !important; 
+  }
+  .orange_btn-rs {
+      display: inline !important;
+  }
+}
+
+@media (min-width: 1436px) {
+  .orange_btn {
+      display:block !important; 
+  }
+  .orange_btn-rs {
+      display: none !important;
+  }
+}
+
+@media (max-width: 1292px) {
+  .quotation-templates-btn {
+      display:none !important; 
+  }
+  .quotation-templates-btn-rs {
+      display: inline !important;
+  }
+}
+
+@media (min-width: 1292px) {
+  .quotation-templates-btn {
+      display:block !important; 
+  }
+  .quotation-templates-btn-rs {
+      display: none !important;
+  }
+}
+
+@media (max-width: 840px) {
+  .date-range-input-tag-class,.date-range-input-i-tag-class {
+      display:none !important; 
+  }
+  .date-range-input-tag-class-rs,.date-range-input-i-tag-class-rs {
+      display: inline !important;
+      margin-top: 0px;
+  }
+  .responsive-button-container {
+      margin-top: -25px;
+
+  }
+}
+
+@media (min-width: 840px) {
+  .date-range-input-tag-class,.date-range-input-i-tag-class {
+      display:inline !important; 
+  }
+  .date-range-input-tag-class-rs,.date-range-input-i-tag-class-rs {
+      display: none !important;
+      margin-top: 0px;
+  }
+  
+}
+
+@media (max-width: 628px) {
+  .selectform {
+      display:none !important; 
+  }
+  .selectform-rs {
+      display: inline !important;
+  }
+
+  .quotation-templates-btn-rs {
+    margin-bottom: 10px;
+  }
+  .selectform-rs {
+    margin-top: 10px;
+  }
+
+}
+@media (min-width: 628px) {
+  .selectform-rs {
+      display:none !important; 
+  }
+  
+}
+
+@media (max-width: 623px) {
+  .view-document {
+    display: none !important;
+  }
+  .view-document-rs {
+    margin-bottom: 10px;
+    margin-left: 16px;
+
+
+      display: inline !important;
+  }
+}
+@media (min-width: 623px) {
+  .view-document {
+    display: block !important;
+  }
+  .view-document-rs {
+      display: none !important;
+  }
+}
+@media (min-width: 1438px) {
+  
+  .responsive-button-container {
+      display: none !important;
+      margin-top: -15px;
+  }
+}
+@media (max-width: 1438px) {
+  
+  .responsive-button-container {
+      margin-top: -15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .selectform-rs {
+      margin-top: 15px !important;
+      margin-bottom: 0px;
+      
+  }
+}
+
+
+  /* CSS Code for Adjustments of Responsiveness of Buttons Ends....  */
+
+/* CSS Code for Expansion of data Starts.... */
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.expansion {
+  margin-left: 50px;
+}
+
+.expansion span {
+  width: 105px;
+  height: 22px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #313131;
+}
+
+.expansion p {
+  width: 42px;
+  height: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #707070;
+}
+/* CSS Code for Expansion of data Ends.... */
+
+/* CSS Code for Table Styling of data Starts.... */
+.mat-cell {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* CSS Code for Table Styling of data Ends..... */
+
+.table-data-description {
+  width: fit-content;
+  display: inline-block;
+  white-space: nowrap;
+  width: 238px;
+  height: 24px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*  CSS Code for Pagination CSS Starts..... */
+#arrow {
+  height: 30px;
+  width: 30px;
+  background-color: #e25d41;
+  color: #ffffff;
+  font-size: 30px;
+  border-radius: 3.5503px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.material-icons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-link-class {
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #707070;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.pagenum {
+  background-color: #fffaf9;
+  color: #70707099;
+  border: none !important;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.pagenum-active {
+  background-color: #fffaf9;
+  color: #e25d41;
+  border: none !important;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.page-item {
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(112, 112, 112, 0.6);
+}
+
+.page-link {
+  margin-left: 0px !important;
+  background-color: #fffaf9;
+  color: rgba(112, 112, 112, 0.6);
+  font-size: 14px !important;
+  border: none;
+}
+.page-link-active {
+  margin-top: 2px;
+  padding: 5px;
+  background: #fffaf9;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  border: none;
+  color: #e25d41;
+}
+
+.pagination {
+  margin-top: 13.08px;
+}
+
+
+/*  CSS Code for Pagination CSS Ends..... */
+
+.table-responsive {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+  .expansion {
+    margin-left: 0;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .expansion span,
+  .expansion p {
+    width: auto;
+    margin: 8px 0;
+  }
+
+  
+}
+
+@media only screen and (max-width: 1000px) {
+  .table-style {
+    width: 1000px;
+    margin-top: 20px;
+
+    overflow-x: scroll;
+  }
+  .table-scroll {
+    margin-right: 0px !important;
+    overflow-x: scroll;
+  }
+}
+
+.table-data {
+  position: static;
+  margin-right: 83px;
+  margin-left: 16px;
+  display: flex;
+  white-space: nowrap; /* Prevents line breaks */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-data-description {
+  display: block;
+  margin-right: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+.page-item {
+  list-style-type: none;
+  margin-right: 8px;
+}
+
+@media (max-width: 880px) {
+  .table-data {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+
+  .pagination {
+    justify-content: flex-start;
+  }
+
+  .table-data-description {
+    margin-right: 0; 
+    margin-bottom: 8px; 
+  }
+}
+
+
+/*product  mat-menu */
+a {
+  text-decoration: none;
+ 
+}
+a.disabled {
+  pointer-events: none;
+  color: gray; /* Change this to any color you prefer */
+  text-decoration: none;
+}
+
+a.disabled span {
+  cursor: not-allowed;
+}
+
+a span {
+  cursor: pointer;
+}
+.mat-menu-i{
+margin-right: 10px;
+}
+
+.mat-menu-a{
+text-decoration: none;
+width: 177px;
+height: 22px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #707070;
+flex: none;
+order: 0;
+flex-grow: 0;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+.i{
+font-family: 'Montserrat';
+}
+.hover :hover{
+color:#E25D41;
+}
+.a{
+text-decoration: none;
+color: #707070;
+padding-left: 10px;
+line-height: 30px;
+}
+.text-decoration-n{
+text-decoration: none;
+}
+hr{
+width: 89.02px;
+height: 1px;
+border: 1px solid #7b7b7b;
+flex: none;
+order: 1;
+flex-grow: 0;
+margin-bottom: 5px;
+}
+
+
+
+.icon-icon-17:before {
+  content: '\e811';
+  width: 26px;
+}
+
+.icon-icon-18:before {
+  content: '\e812';
+  width: 25px;
+}

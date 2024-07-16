@@ -1,0 +1,76 @@
+<div class="add">
+    <h2><a href="" routerLink="/sales"><mat-icon>arrow_back</mat-icon></a> View Sales Return</h2>
+    <form name="viewReturnForm" (ngSubmit)="viewSales()" [formGroup]="viewReturnForm">
+        <div class="align">
+        
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Customer</label>
+                        <input type="text" class="form-control" formControlName="customer" placeholder="Enter Customer"
+                        [ngClass]="{ 'is-invalid': submitted && f['customer'].errors }">
+                       
+                        <div *ngIf="submitted && f['customer'].errors" class="invalid-feedback">
+                            <div *ngIf="f['customer'].errors['required']" class="text-left">Customer Field is required</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Reference No</label>
+                        <input type="text" class="form-control" formControlName="referenceno" placeholder="00123"
+                        [ngClass]="{ 'is-invalid': submitted && f['referenceno'].errors }">
+                        <div *ngIf="submitted && f['referenceno'].errors" class="invalid-feedback">
+                            <div *ngIf="f['referenceno'].errors['required']" class="text-left">Reference No Field is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker" class="form-control" formControlName ="date">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+
+ 
+        </mat-card>
+    
+
+
+        <mat-card>
+
+            <h2><a href="" routerLink="/sales"></a> Add Products</h2>
+            <div class="row">
+                <div class="col-md-2">
+                <form>
+                    <select class="form-select" style="border-color:darkgrey; font-size: small; color:darkgray; height:38px; width:165px">
+                      <option hidden>Search by</option>
+                      <!-- <option *ngFor="let Option of Option" [value]="Option.value">{{Option.viewValue}}</option> -->
+                    </select>
+                  </form>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="search" placeholder="Search here">
+                    <button class="btn btn-secondary search-btn " type="button">
+                      <i class="icon-icon-12"></i>
+                    </button>
+                </div>
+            </div>
+            </mat-card>
+        </div>
+    
+        <div class="submit_btn">
+            <button type="submit" class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+        </div>
+    </form>
+</div>
+

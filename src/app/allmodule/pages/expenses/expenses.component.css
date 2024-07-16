@@ -1,0 +1,481 @@
+.content-heading {
+  width: fit-content;
+  height: 28px;
+  margin-left: 16px;
+  margin-top: 8px;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 2.57812px;
+  color: #313131;
+}
+
+/* CSS Code of Menu Bar Starts ........ */
+.menu-tab-1 {
+  width: 90px;
+  height: 24px;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+  margin-left: 16px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #707070;
+}
+
+
+
+a {
+  text-decoration: none;
+ 
+}
+a.disabled {
+  pointer-events: none;
+  color: gray; /* Change this to any color you prefer */
+  text-decoration: none;
+}
+
+a.disabled span {
+  cursor: not-allowed;
+}
+
+a span {
+  cursor: pointer;
+}
+
+.menu-tab-active {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.09);
+  border-radius: 0px 30px 0px 0px;
+  width: fit-content;
+  height: 44px;
+  padding-left: 12px;
+  margin-left: 12px;
+  padding-top: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #e25d41 !important;
+}
+
+.menu-line {
+  width: 556px;
+  display: block;
+  overflow: hidden;
+  height: 0px;
+  margin-top: -12px;
+  margin-left: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* CSS Code of Menu Bar Ends ........ */
+
+
+h2 {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2.57812px;
+  color: #000000;
+  opacity: 0.6;
+}
+
+h1 {
+  color: #1A1A1A;
+  font-size: 24px;
+  font-family: Balsamiq Sans;
+  font-weight: 700;
+  letter-spacing: 2.578px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+.icon_size {
+  font-size: 25px !important;
+}
+
+
+.mat-menu-i {
+  margin-right: 10px;
+}
+
+.mat-menu-a {
+  text-decoration: none;
+  width: 177px;
+  height: 22px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #707070;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.i {
+  font-family: 'Montserrat';
+}
+
+.hover :hover {
+  color: #E25D41;
+}
+
+.a {
+  text-decoration: none;
+  color: #707070;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+.text-decoration-n {
+  text-decoration: none;
+}
+
+hr {
+  width: 89.02px;
+  height: 1px;
+  border: 1px solid #7b7b7b;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-bottom: 5px;
+}
+
+.selectform {
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family: 'Montserrat';
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192, 0.6);
+  padding-left: 7px;
+}
+
+option {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px
+}
+
+.inline {
+  display: inline-block;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+
+.role_box {
+  background: #FFFFFF;
+  border: 0.5px solid #FFC107;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: #313131;
+  justify-content: center;
+  height: 65px;
+  position: relative;
+}
+
+.role_box_icon {
+  display: none;
+
+}
+
+.boxs:hover .role_box_icon {
+  display: block;
+  position: absolute;
+  background: rgba(255, 241, 200, 0.8);
+  top: 77px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23.6%;
+}
+
+.role_box_icon ul {
+  margin: 0;
+  padding: 0;
+}
+
+.role_box_icon ul li {
+  float: left;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.role_box_icon ul li i {
+  font-size: 20px;
+  color: #E25D41;
+}
+
+.icon_size {
+  font-size: 25px !important;
+}
+
+.search {
+
+  width: 215px;
+  height: 40px;
+  font-size: 13px;
+  border: 0.5px solid #E4E5E5;
+  border-radius: 5px 0px 0 5px;
+  position: absolute;
+  font-family: Montserrat;
+  /* transform: translate(-40px,0); */
+  padding-left: 7px;
+  margin-left: 30px;
+  outline: none;
+
+}
+
+.search-btn {
+  background-color: #E25D41;
+  border-color: #E4E5E5;
+  margin-left: 244px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* transform: translate(-70px,0); */
+}
+
+#input-range {
+  width: 300px;
+  margin-left: 50px !important;
+
+}
+
+.content-table {
+  margin-right: 80px;
+  padding-top: 20px;
+}
+
+li,
+a {
+  gap: 0px;
+}
+
+.page-link {
+  color: #707070;
+  font-size: small;
+  height: 30px;
+  width: 30px;
+  border: hidden;
+
+}
+
+#arrow {
+  height: 30px;
+  width: 30px;
+  background-color: #E25D41;
+  color: #FFFFFF;
+  font-size: 30px;
+  border-radius: 3.5503px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+
+
+
+/* expansion */
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.expansion {
+  margin-left: 50px;
+}
+
+.expansion span {
+  width: 105px;
+  height: 22px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #313131;
+
+}
+
+.expansion p {
+  width: 42px;
+  height: 20px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #707070;
+}
+
+.address {
+  width: 446px;
+  height: 20px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #707070;
+
+}
+
+.mat-header-cell {
+  color: #313132;
+  font-size: 18px;
+  line-height: 22px;
+  height: 71px;
+}
+
+.add-new {
+  float: right;
+  height: 40px;
+  width: 135px;
+  margin-right: -10px;
+  background-color: #E25D41;
+}
+
+#customers_tab {
+  margin-bottom: 22px;
+}
+
+/* DaterangePicker CSS */
+
+i.fa-solid {
+  padding-top: 13.5px;
+  padding-left: 42px;
+  position: absolute;
+  color: #000000;
+  margin-left: 54px;
+
+}
+
+input[name="daterange"] {
+  width: 170px;
+  height: 40.3px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  color: #707070;
+  font-weight: 400;
+  border: 1px solid #ccc;
+  padding: 8px;
+  align-items: center;
+  border-radius: 4px;
+  margin-left: -250px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+@media(max-width:1080px) {
+  .search {
+    width: auto;
+    display: inline;
+    margin-left: 0px;
+    margin-top: 7px;
+
+  }
+
+  .search-btn {
+    background-color: #E25D41;
+    display: inline;
+    margin-left: 165px;
+    margin-top: 7px;
+  }
+
+  #range-input {
+    margin-top: 7px;
+  }
+
+  input[name="daterange"] {
+
+    margin-left: 0px;
+  }
+
+  .add-new {
+    float: left;
+    margin-top: 7px;
+    margin-right: -10px;
+  }
+
+
+}

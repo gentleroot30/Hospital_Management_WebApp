@@ -1,0 +1,159 @@
+<div class="container" style="display: block; overflow: hidden; white-space: nowrap">
+  <p class="content-heading">Purchase</p>
+  <a routerLink="../purchase">
+    <p class=" menu-tab-1">Purchase Order</p>
+  </a>
+  <a routerLink="../add-purchases-tab">
+    <p class="menu-tab-2" routerLink="../add-purchases-tab">Add Purchases </p>
+  </a>
+  <a routerLink="../purchases-returns-tab">
+    <p class="menu-tab-active"> Return</p>
+  </a>
+  <div class="menu-line"></div>
+</div>
+
+
+  <div class="row" style="margin-top:22px;">
+    <form class="col-md-6"  autocomplete="off" mat-button #myForm="ngForm"(ngSubmit)="searchPurchaseReturns()" >
+  
+      <select class="selectform" aria-label="Default select example" [(ngModel)]="formData.searchByType"
+        name="searchByType" id="searchByType" (ngModelChange)="searchPurchaseReturns()">
+        <option value="1">Supplier Name</option>
+        <option value="2">Return ref No</option>
+      
+      
+       
+      </select>
+      <input type="text" class="search" [(ngModel)]="formData.searchByValue" (ngModelChange)="searchPurchaseReturns()"  name="searchByValue" placeholder="Search here" />
+  
+    </form>
+    <div class="col-md-3 col-sm-12">
+      <button [disabled]="!roleBaseAccess.canAddPurchases" mat-button class="add-new px-3 text-white"  (click)="addNewPurchaseReturn()">
+        <i class="icon-icon-10"></i> Add New
+      </button>
+    </div>
+  </div>
+  <div class="table-scroll" style="margin-left: 16px; margin-right: 77px; margin-top: 5px;">
+  <table *ngIf="AllPurchaseReturns.length != 0" mat-table [dataSource]="dataSource2" multiTemplateDataRows class="mat-elevation-z8 mt-2" style=" margin-left: 3px;
+      padding-right: calc(var(--bs-gutter-x)* -0.5);
+      padding-left: calc(var(--bs-gutter-x)* -0.5);">
+
+    <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="returnDate">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Date and Time </th>
+      <td mat-cell *matCellDef="let element" style="color: #707070;
+  
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;"> {{element.returnDate |date:"dd-MM-yyyy, h:mmp'm'"}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="supplierName">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Supplier Name </th>
+      <td mat-cell *matCellDef="let element" Style="color: #978BDD;
+  
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              text-decoration-line: underline;"> {{element.supplierName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalReturnBill">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Amount </th>
+      <td mat-cell *matCellDef="let element" style="color: #707070;
+      
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;"> {{element.totalReturnBill}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalSupplierPendingPayement">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Payment Due </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="validation_button btn"
+          [ngStyle]="getButtonStyle(element.totalReturnBill - element.totalReturnPaid)">
+          {{(element.totalReturnBill - element.totalReturnPaid) > 0 ? (element.totalReturnBill -
+          element.totalReturnPaid) : 'Paid' }}
+        </span>
+      </td>
+
+    </ng-container>
+
+    <!-- Symbol Column -->
+
+
+    <ng-container matColumnDef="createdBy">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Added By </th>
+      <td mat-cell *matCellDef="let element" style="color: #707070;
+      
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;"> {{element.createdBy}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="third-para"> Action </th>
+      <td mat-cell *matCellDef="let return"> <button mat-icon-button [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu" class="hover">
+          <span class="hover">Purchase History</span>
+          <mat-divider></mat-divider>
+          <a (click)="roleBaseAccess.canViewPurchases ? viewPurchasesReturnsCall(return.returnId): null" [ngClass]="{'disabled': !roleBaseAccess.canViewPurchases}" style="color: #707070;
+                  text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px; font-size: 16px;">
+              <i class="icon-icon-15"></i>&nbsp;
+              <span>View</span>
+            </p>
+          </a>
+          <a (click)="roleBaseAccess.canEditPurchases ? editPurchasesReturnsCall(return.returnId) : null" [ngClass]="{'disabled': !roleBaseAccess.canEditPurchases}" style="color: #707070;
+                  text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+              <i class="icon-icon-17"></i>
+              <span>Edit</span>
+            </p>
+          </a>
+          <a (click)="roleBaseAccess.canDeletePurchases ? deletePurchasesReturnsDialog(return.returnId) : null" [ngClass]="{'disabled': !roleBaseAccess.canDeletePurchases}" style="color: #707070;
+                  text-decoration: none;">
+            <p style="padding-left: 6px;padding-right: 5px;font-size: 16px;">
+              <i class="icon-icon-18"></i>
+              <span>Delete</span>
+            </p>
+          </a>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+  </table>
+
+  <!-- HTML Code for Table-data-description and Pagination code start... -->
+  <mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="length"
+    [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
+    [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+    aria-label="Select page" >
+  </mat-paginator>
+  <p id="err_msg" style="text-align: center; margin-top:30px;"
+  *ngIf="AllPurchaseReturns.length == 0">No Purchase Return Found</p>
+
+</div>
+

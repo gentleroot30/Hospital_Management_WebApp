@@ -1,0 +1,57 @@
+<div class="add">
+    <h2><a routerLink="/expenses"><mat-icon>arrow_back</mat-icon></a> Edit Expenses</h2>
+    <form name="editExpensesForm" [formGroup]="editExpensesForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Date</label>
+                        <input type="date" class="selectform w-100" formControlName="expenseDate" [max]="maxDate">
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Amount </label>
+                        <input type="text" class="selectform w-100" formControlName="amount"
+                        [ngClass]="{ 'is-invalid': submitted && f['amount'].errors }">
+                        <div *ngIf="submitted && f['amount'].errors" class="invalid-feedback">
+                            <div *ngIf="f['amount'].errors['required']" class="text-left">Amount Field is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="selectform w-100"  formControlName="expenseCategoryId" >
+                            <option class="form-control" *ngFor="let category of AllCategory" [value]="category.categoryId">{{category.categoryName}}</option>
+                            </select>
+                          
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Expense Note</label>
+                        <textarea class="form-control" rows="5" formControlName="expenseNote" placeholder="Enter notes here"
+                        [ngClass]="{ 'is-invalid': submitted && f['expenseNote'].errors }"></textarea>
+                        <div *ngIf="submitted && f['expenseNote'].errors" class="invalid-feedback">
+                            <div *ngIf="f['expenseNote'].errors['required']" class="text-left"> Expense Note field is required</div>
+                            <div *ngIf="f['expenseNote'].errors['maxlength']" class="text-left">
+                                Expense Note should be up to 100 characters long
+                            </div>
+                            <div *ngIf="f['expenseNote'].errors['whitespaceOnly']" class="text-left">Expense Note cannot consist of only whitespace</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+           
+        </mat-card>
+        <div class="submit_btn">
+            <button type="submit" (click)="editExpense()" class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+        </div>
+    </form>
+</div>
+

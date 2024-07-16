@@ -1,0 +1,65 @@
+<div class="add">
+    <h2><a href="" routerLink="/reports"><mat-icon>arrow_back</mat-icon></a> Edit Reports</h2>
+    <form name="editReportsForm" [formGroup]="editReportsForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Product Name</label>
+                        <textarea type="text" class="form-control" [value]="00123" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis quam quam arcu quam mauris ." formControlName="Product_Name"
+                        [ngClass]="{ 'is-invalid': submitted && f['productname'].errors }"></textarea>
+                        <div *ngIf="submitted && f['productname'].errors" class="invalid-feedback">
+                            <div *ngIf="f['productname'].errors['required']" class="text-left">Product Name Field is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Unit Price (₹)</label>
+                        <input type="text" class="form-control" placeholder="12345" formcontrolname="Unit_Price">
+                        <div *ngIf="submitted && f['userRole'].errors" class="invalid-feedback">
+                            <div *ngIf="f['userRole'].errors['required']" class="text-left">Unit Price Field is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Current Stock</label>
+                        <input type="email" class="form-control" formControlName="Current_Stock" 
+                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="12345" >
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']" class="text-left">Current Stock is required</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Current Stock Value (₹)</label>
+                        <input type="text" class="form-control" formControlName="Current_Stock_Value" placeholder="12345" 
+                        [ngClass]="{ 'is-invalid': submitted && f['fullName'].errors }">
+                        <div *ngIf="submitted && f['fullName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['fullName'].errors['required']" class="text-left">Current Stock Value Field is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Units Sold</label>
+                            <input type="text" class="form-control"formControlName="Units_Sold" placeholder=" 12345" 
+                            [ngClass]="{ 'is-invalid': submitted && f['address'].errors }">
+                            <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                                <div *ngIf="f['address'].errors['required']" class="text-left">Units Sold Field is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+        </mat-card>
+        <div class="submit_btn">
+            <button type="submit" class="orange_btn"><i class="icon-icon-19"></i> Update</button>
+        </div>
+    </form>
+</div>

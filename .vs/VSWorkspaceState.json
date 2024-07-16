@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\allmodule",
+    "\\src\\app\\allmodule\\pages",
+    "\\src\\app\\allmodule\\pages\\customers\\add-customer",
+    "\\src\\app\\allmodule\\pages\\expenses",
+    "\\src\\app\\allmodule\\pages\\expenses\\add-expense-category",
+    "\\src\\app\\allmodule\\pages\\products"
+  ],
+  "SelectedNode": "\\src\\app\\allmodule\\pages\\customers",
+  "PreviewInSolutionExplorer": false
+}

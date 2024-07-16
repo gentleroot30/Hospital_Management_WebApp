@@ -1,0 +1,164 @@
+/* table styling */
+
+th {
+    height: 71px;
+    color: #313131;
+font-size: 18px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+  td {
+    color: #707070;
+font-size: 14px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+
+  .table-data-description {
+    width: fit-content;
+    display: inline-block;
+    white-space: nowrap;
+    width: 238px;
+    height: 24px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  /*  CSS Code for Pagination CSS Starts..... */
+#arrow {
+    height: 30px;
+    width: 30px;
+    background-color: #e25d41;
+    color: #ffffff;
+    font-size: 30px;
+    border-radius: 3.5503px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+  .material-icons {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .page-link-class {
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #707070;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  
+  .pagenum {
+    background-color: #fffaf9;
+    color: #70707099;
+    border: none !important;
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  .pagenum-active {
+    background-color: #fffaf9;
+    color: #e25d41;
+    border: none !important;
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .page-item {
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgba(112, 112, 112, 0.6);
+  }
+  
+  .page-link {
+    margin-left: 0px !important;
+    background-color: #fffaf9;
+    color: rgba(112, 112, 112, 0.6);
+    font-size: 14px !important;
+    border: none;
+  }
+  .page-link-active {
+    margin-top: -1px;
+    padding: 5px;
+    background: #fffaf9;
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    border: none;
+    color: #e25d41;
+  }
+  .pagination {
+    margin-top: 13.08px;
+  }
+  
+  
+  /*  CSS Code for Pagination CSS Ends..... */
+
+
+
+/* CSS Code for Checkbox Starts.....  */
+  /* Hide the default checkbox appearance */
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    outline: none; /* Remove the focus outline */
+    cursor: pointer;
+    position: relative;
+  }
+
+  /* Remove the border for the checkbox on all browsers */
+  input[type="checkbox"]::before {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 0.2px solid #E25D41; /* Set the border color to black (#000000) */
+    border-radius: 3px; /* Optional border radius */
+    outline: none; /* Remove the focus outline */
+  }
+
+  /* Custom style for the checkbox when checked */
+  input[type="checkbox"]:checked::before {
+    content: "\f00c"; /* Unicode for the check icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    color: #fff; /* Checkmark color */
+    position: absolute;
+    top: 0;
+    left: 2px;
+    line-height: 16px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background-color: #E25D41; /* Background color when checked */
+  }
+/* CSS Code for Checkbox Ends.....  */

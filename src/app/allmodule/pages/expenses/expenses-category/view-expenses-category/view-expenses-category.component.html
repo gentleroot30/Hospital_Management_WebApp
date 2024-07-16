@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <h2 mat-dialog-title id="mtitle">View Expense Category <button type="button" class="btn-close" aria-label="Close"
+            id="close" (click)="onNoClick()"></button></h2>
+
+    <div mat-dialog-content id="mdialog">
+        <form name="viewCategoryForm" [formGroup]="viewExpensesCategoryForm">
+            <div class="row" id="crow">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label id="ctlabel">Category Title</label>
+                        <input type="text" class="form-control" rows="5" formControlName="categoryName" readonly>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="drow">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label id="dlabel">Description</label>
+                        <textarea type="text" class="form-control" rows="4" formControlName="description" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

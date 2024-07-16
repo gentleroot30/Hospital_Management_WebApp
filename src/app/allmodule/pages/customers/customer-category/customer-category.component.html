@@ -1,0 +1,85 @@
+<h2>Customer</h2>
+<div class="container" style="display: block; overflow: hidden; white-space: nowrap">
+  <a routerLink="../customers">
+    <p class="menu-tab-1">Customer</p>
+  </a>
+  <a routerLink="../customer-category">
+    <p class="menu-tab-active">Category</p>
+  </a>
+  <div class="menu-line"></div>
+</div>
+<div class="role_tab">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="inline px-4" style=" margin-top: 10px; margin-bottom: 14px;">
+        <form #myForm="ngForm" (ngSubmit)="SearchCustomerCategories()">
+          <input type="text" autocomplete="off" class="search" [(ngModel)]="formData.searchByValue" name="searchByValue"
+            placeholder="Search here"(ngModelChange)="SearchCustomerCategories()">
+          <!-- <button class="btn btn-secondary search-btn" type="submit" style="background-color:#E25D41;">
+            <i class="icon-icon-12"></i>
+          </button> -->
+        </form>
+      </div>
+    </div>
+    <div class="col-md-2" style="margin-top: 20px;">
+      <button class="orange_btn" (click)="categoryOpenDialog()"><i class="icon-icon-10"></i> Add New</button>
+    </div>
+  </div>
+  <div class="role_tab_box">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let category of mainData;let i=index "  >
+        <div class="boxs">
+          <div class="role_box">
+            {{category.categoryName}}
+          </div>
+          <div class="role_box_icon">  
+            <ul>
+              <a (click)="viewCategoryDialog(category.categoryId)" style="cursor: pointer;color:#E25D41;"><i ><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_702_2017)">
+                <path d="M15.9997 6C9.33301 6 3.63967 10.1467 1.33301 16C3.63967 21.8533 9.33301 26 15.9997 26C22.6663 26 28.3597 21.8533 30.6663 16C28.3597 10.1467 22.6663 6 15.9997 6ZM15.9997 22.6667C12.3197 22.6667 9.33301 19.68 9.33301 16C9.33301 12.32 12.3197 9.33333 15.9997 9.33333C19.6797 9.33333 22.6663 12.32 22.6663 16C22.6663 19.68 19.6797 22.6667 15.9997 22.6667ZM15.9997 12C13.7863 12 11.9997 13.7867 11.9997 16C11.9997 18.2133 13.7863 20 15.9997 20C18.213 20 19.9997 18.2133 19.9997 16C19.9997 13.7867 18.213 12 15.9997 12Z" fill="#E25D41"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_702_2017">
+                <rect width="32" height="32" fill="white"/>
+                
+                </clipPath>
+                </defs>
+                </svg>
+                </i></a>
+              <a (click)="editCategoryDialog(category.categoryId)" style="cursor: pointer;color:#E25D41;"><i><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_678_2714)">
+                <path d="M4 22.9994V27.9994H9L23.7467 13.2528L18.7467 8.25276L4 22.9994ZM27.6133 9.38609C28.1333 8.86609 28.1333 8.02609 27.6133 7.50609L24.4933 4.38609C23.9733 3.86609 23.1333 3.86609 22.6133 4.38609L20.1733 6.82609L25.1733 11.8261L27.6133 9.38609Z" fill="#E25D41"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_678_2714">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+                </i></a>
+              <a (click)="deleteCategoryDialog(category.categoryId)" style="cursor: pointer;color:#E25D41"><i><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_678_2717)">
+                <path d="M8.00033 25.3333C8.00033 26.8 9.20033 28 10.667 28H21.3337C22.8003 28 24.0003 26.8 24.0003 25.3333V9.33333H8.00033V25.3333ZM25.3337 5.33333H20.667L19.3337 4H12.667L11.3337 5.33333H6.66699V8H25.3337V5.33333Z" fill="#E25D41"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_678_2717">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+                </i></a>
+            </ul>
+      </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="length"
+  [pageSize]="pageSize" [disabled]="disabled" [showFirstLastButtons]="showFirstLastButtons"
+  [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+  aria-label="Select page">
+</mat-paginator>
+<p id="err_msg" style="text-align: center; margin-top:30px;">No Customer Categories Found</p>

@@ -1,0 +1,788 @@
+.content-heading {
+  width: fit-content;
+  height: 28px;
+  margin-left: 16px;
+  margin-top: 8px;
+  font-family: "Balsamiq Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 2.57812px;
+  color: #313131;
+}
+
+/* CSS Code of View-Document Starts ........ */
+.view-document {
+  margin-top: -45px;
+  width: 154px;
+  height: 36px;
+  margin-right: 88px;
+  background: #E25D41;
+  border-style: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+
+.view-document-rs {
+  margin-top: -45px;
+  width: 154px;
+  height: 36px;
+  margin-right: 88px;
+  background: #E25D41;
+  border-style: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+
+/* CSS Code of View-Document Ends ........ */
+
+/* CSS Code of Menu Bar Starts ........ */
+.menu-tab-1 {
+  width: fit-content;
+  height: 24px;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #707070;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-tab-2 {
+  width: fit-content;
+  height: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #707070;
+}
+
+.menu-tab-active {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.09);
+  border-radius: 0px 30px 0px 0px;
+  width: fit-content;
+  height: 44px;
+  padding-left: 12px;
+  margin-left: 12px;
+  padding-top: 12px;
+  padding-right: 16px;
+  margin-right: 16px;
+  display: inline-block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #e25d41 !important;
+}
+
+.menu-line {
+  width: 556px;
+  display: block;
+  overflow: hidden;
+  height: 0px;
+  margin-top: -12px;
+  margin-left: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* CSS Code of Menu Bar Ends ........ */
+
+
+
+
+.user h2 {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2.57812px;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.user {
+  padding-bottom: 20px;
+}
+
+.role_tab_box {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin: 20px 0;
+}
+
+.row {
+  margin-right: 0;
+  padding-top: 20px;
+}
+
+.role_box {
+  background: #FFFFFF;
+  border: 0.5px solid #FFC107;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: #313131;
+  justify-content: center;
+  height: 65px;
+  position: relative;
+}
+
+.role_box_icon {
+  display: none;
+
+}
+
+.boxs:hover .role_box_icon {
+  display: block;
+  position: absolute;
+  background: rgba(255, 241, 200, 0.8);
+  top: 115px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21.8%;
+}
+
+.role_box_icon ul {
+  margin: 0;
+  padding: 0;
+}
+
+.role_box_icon ul li {
+  float: left;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.role_box_icon ul li i {
+  font-size: 20px;
+  color: #E25D41;
+}
+
+.icon_size {
+  font-size: 25px !important;
+}
+
+#opsearch {
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 149% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.167252px;
+
+  color: #707070;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+
+.search{
+  
+  width: 215px;
+  height: 40px;
+  font-size: 13px;
+  border:0.446px solid #707070;
+  border-radius: 5px 0px 0 5px;
+  position: absolute;
+  font-family: Montserrat;
+  /* transform: translate(-40px,0); */
+  padding-left: 7px;
+  margin-left: 40px;
+  border: 0.5px solid #e4e5e5;
+   border-radius: 5px 0px 0px 5px;
+  outline: none;
+  }
+
+.search-btn {
+  margin-left: 184px;
+  margin-top: 1px;
+  display: inline-block;
+  height: 38px;
+  color: #FFFFFF;
+  background-color: #E4E5E5;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  border-color: #E25D41;
+    background: #E25D41;
+
+}
+
+#searchhere {
+  padding: 0px;
+}
+
+option {
+  width: 100px;
+  height: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height, or 100% */
+
+
+  color: #707070;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.selectform{
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family:'Montserrat' ;
+  border-radius: 6px;
+  border-color:0.446px solid #707070;
+  padding-left: 7px;
+  border: 0.5px solid #e4e5e5;
+  border-radius: 5px 0px 0px 5px;
+}
+option{
+  font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 16px;
+
+}
+.add-new{
+  float:right; 
+  height:40px;
+   width:135px; 
+   margin-right: -196px;  
+   background-color: #E25D41;
+  
+  }
+
+.sby {
+  height: 38px;
+  width: 165px;
+  font-size: 13px;
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192, 0.6);
+  position: absolute;
+  margin-top: 1px;
+
+}
+
+span:hover {
+  text-decoration-color: #E25D41;
+}
+
+.user h2 {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2.57812px;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.first {
+  width: 107.95px;
+  height: 40.3px;
+  margin-right: 9px;
+
+
+  li,
+  a {
+    gap: 0px;
+  }
+
+}
+
+.second {
+  width: 240px;
+  height: 40px;
+  margin-right: 30px;
+
+}
+
+option {
+  width: 100px;
+  height: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height, or 100% */
+
+
+  color: #707070;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+span:hover {
+  text-decoration-color: #E25D41;
+}
+
+i.fa-solid {
+
+  position: absolute;
+  color: #000000;
+  margin-left: 94.93px;
+  margin-top: 12px;
+
+}
+
+.selectform {
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family: 'Montserrat';
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192, 0.6);
+  padding-left: 7px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.second-mobile {
+  visibility: hidden;
+  display: none;
+  width: 100%;
+  height: 40px;
+  margin-right: 30px;
+}
+
+.third {
+  width: 116.95px;
+  height: 40.3px;
+  margin-left: 0px;
+}
+
+.user {
+  padding-bottom: 20px;
+}
+
+.role_tab_box {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin: 20px 0;
+}
+
+.row {
+  margin-right: 0;
+  padding-top: 20px;
+}
+
+.role_box {
+  background: #FFFFFF;
+  border: 0.5px solid #FFC107;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: #313131;
+  justify-content: center;
+  height: 65px;
+  position: relative;
+}
+
+.role_box_icon {
+  display: none;
+
+}
+
+.boxs:hover .role_box_icon {
+  display: block;
+  position: absolute;
+  background: rgba(255, 241, 200, 0.8);
+  top: 115px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21.8%;
+}
+
+.role_box_icon ul {
+  margin: 0;
+  padding: 0;
+}
+
+.role_box_icon ul li {
+  float: left;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.role_box_icon ul li i {
+  font-size: 20px;
+  color: #E25D41;
+}
+
+.icon_size {
+  font-size: 25px !important;
+}
+
+#opsearch {
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 149% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.167252px;
+
+  color: #707070;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+
+.search {
+  height: 38px;
+  width: 250px;
+  font-size: 13px;
+  border-radius: 6px;
+  border-color: rgb(241, 234, 234);
+  position: absolute;
+  margin-top: -38x;
+
+
+}
+
+.search-btn {
+  margin-left: 185px;
+  margin-top: 1px;
+  display: inline-block;
+  height: 38px;
+  color: #FFFFFF;
+  background-color: #E4E5E5;
+  width: 40px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: absolute;
+  border-color: #E25D41;
+    background: #E25D41;
+
+
+}
+
+#searchhere {
+  padding: 0px;
+}
+
+option {
+  width: 100px;
+  height: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height, or 100% */
+
+
+  color: #707070;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+
+.sby {
+  height: 38px;
+  width: 165px;
+  font-size: 13px;
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192, 0.6);
+  position: absolute;
+  margin-top: 1px;
+
+}
+
+span:hover {
+  text-decoration-color: #E25D41;
+}
+
+li,
+a {
+  gap: 0px;
+}
+
+.page-link {
+  color: #707070;
+  font-size: small;
+  height: 30px;
+  width: 30px;
+  border: hidden;
+
+}
+
+#arrow {
+  height: 30px;
+  width: 30px;
+  background-color: #E25D41;
+  color: #FFFFFF;
+  font-size: 30px;
+  border-radius: 3.5503px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+
+
+/* CSS Code for Date Range Starts..... */
+
+.date-range-input-tag-class {
+  width: 183.00px;
+  padding-left: 10px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.1672516018152237px;
+  text-align: left;
+  color: #707070;
+  height: 37.3px;
+  border: 0.446004px solid;
+  border-color: #e4e5e5 !important;
+  outline: none;
+  border-radius: 5px;
+  padding-right: 25px;
+  margin-top: -12px;
+  margin-left: -492px;
+}
+
+.date-range-input-tag-class-rs {
+  width: 183px;
+  padding-left: 10px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.1672516018152237px;
+  text-align: left;
+  color: #707070;
+  height: 40.3px;
+  margin-left: 16px;
+  border: 0.446004px solid;
+  border-color: #e4e5e5 !important;
+  border-radius: 5px;
+  padding-right: 25px;
+}
+
+.date-range-input-i-tag-class {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.date-range-input-i-tag-class-rs {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*product  mat-menu */
+a {
+  text-decoration: none;
+ 
+}
+a.disabled {
+  pointer-events: none;
+  color: gray; /* Change this to any color you prefer */
+  text-decoration: none;
+}
+
+a.disabled span {
+  cursor: not-allowed;
+}
+
+a span {
+  cursor: pointer;
+}
+.mat-menu-i{
+margin-right: 10px;
+}
+
+.mat-menu-a{
+text-decoration: none;
+width: 177px;
+height: 22px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #707070;
+flex: none;
+order: 0;
+flex-grow: 0;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+.i{
+font-family: 'Montserrat';
+}
+.hover :hover{
+color:#E25D41;
+}
+.a{
+text-decoration: none;
+color: #707070;
+padding-left: 10px;
+line-height: 30px;
+}
+.text-decoration-n{
+text-decoration: none;
+}
+hr{
+width: 89.02px;
+height: 1px;
+border: 1px solid #7b7b7b;
+flex: none;
+order: 1;
+flex-grow: 0;
+margin-bottom: 5px;
+}
+
+/* CSS Code for Date Range Ends..... */
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  margin-left: 652px
+}
+.third-para{
+  color: #313131;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+
+.validation_button {
+  width: 83.5px;
+  height: 36.5px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15.75px;
+  line-height: 19px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 4.375px;
+}
+

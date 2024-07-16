@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <button mat-button  class="clear" (click)="onNoClick()"><img src="../../../../../../assets/icon/clear_icon.svg" alt="" style="background-color: white;"></button>
+    <div class="img">     
+        <img src="../../assets/images/delete.png">
+        <h1 style="color: rgb(255, 51, 0);">Are you Sure ?</h1>
+        <h3 style="margin-top: -10px; margin-left: -45px;">This will be deletely permanently </h3>
+      <h3 style="margin-top: -20px; margin-left: -35px;">This action can not be undone.</h3>
+    </div>
+    <div class="button">
+        <button class="btn btn-outline-danger cancel" (click)="onNoClick()" style="margin-left: -25px;">Cancel</button>
+        <button class="btn btn-danger  delete" style="margin-left: 15px;"(click)="deleteSale(data.salesid)"><i class="icon-icon-19"></i>Delete</button>
+    </div>
+</div>

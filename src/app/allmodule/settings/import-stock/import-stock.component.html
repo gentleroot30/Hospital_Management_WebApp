@@ -1,0 +1,33 @@
+<div class="example_set">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="head1">
+    <path d="M23.3327 10.5846H6.09185L14.011 2.66547L11.9993 0.667969L0.666016 12.0013L11.9993 23.3346L13.9968 21.3371L6.09185 13.418H23.3327V10.5846Z" fill="#313131"></path>
+  </svg>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings
+</div>
+
+<div class="form">
+  <h1 class="head">Import file</h1>
+  <div class="demo" style="text-align: center;">
+    <div *ngIf="selectedFile">
+      <img src="assets/icon/icons-excel.svg" class="iconn">
+      <p class="file-name">{{ selectedFile.name }}</p>
+      <button class="cancel-button" (click)="clearSelectedFile()">
+        x
+      </button>
+    </div>
+    <div class="example" *ngIf="!selectedFile">
+      <input type="file" #fileIn style="display: none" (change)="onFileSelected($event)" />
+      <i class="demo-icon icon-icon-10" (click)="fileIn.click()">UPLOAD DOCUMENTS</i>
+      <div class="succ">
+        <div *ngIf="uploadStatus" class="success-message">
+          {{ uploadStatus }}
+        </div>
+      </div>
+    </div>
+    <!-- <p class="title" *ngIf="!selectedFile">DON'T HAVE TEMPLATE?<span class="bold" (click)="downloadTemplate()">DOWNLOAD HERE</span></p> -->
+  </div>
+</div>
+<div class="example1">
+  <img src="assets/images/check.png" class="icon">
+  <h1 class="btn1" (click)="uploadFile()">SUBMIT</h1>
+</div>

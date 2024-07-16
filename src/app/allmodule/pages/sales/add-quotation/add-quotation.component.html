@@ -1,0 +1,303 @@
+<div class="add">
+  <h2><a routerLink="/sales"><mat-icon>arrow_back</mat-icon></a> Add Quotation </h2>
+  <form [formGroup]="addQuotationForm" >
+    <mat-card class="mb-3">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>Customer</label>
+                  <span style="color: red ">*</span>
+                  <select class="selectform w-100" formControlName="customerId" [ngClass]="{ 'is-invalid': submitted && f['customerId'].errors }">
+                    <option value="" selected disabled>Select Customer</option>
+                    <option  *ngFor="let customers of allCustomer" [value]="customers.customerId">{{customers.customerName}}</option>
+                </select>
+                <div *ngIf="submitted && f['customerId'].errors" class="invalid-feedback">
+                  <div *ngIf="f['customerId'].errors['required']" class="text-left">Select customer</div>
+              </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label> Date</label>
+                  <span style="color: red ">*</span>
+                  <input id="quotation-date" type="date" formControlName="quotationDate" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f['quotationDate'].errors }">
+                  <div *ngIf="submitted && f['quotationDate'].errors" class="invalid-feedback">
+                    <div *ngIf="f['quotationDate'].errors['required']" class="text-left">Quotation Date is required</div>
+                </div>
+              </div>
+  
+          </div>
+          
+      </div>
+  </mat-card>
+
+  <mat-card>
+      <div class="row">
+          <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Add NF</h3>
+      </div>
+
+      <div class="row">
+          <div class="col-md-4">
+              <label>NF1</label>
+              <input type="text" formControlName="newField1" class="form-control" placeholder="Enter NF1" [ngClass]="{ 'is-invalid': submitted && f['newField1'].errors }">
+            <div *ngIf="submitted && f['newField1'].errors" class="invalid-feedback">
+              <div *ngIf="f['newField1'].errors['pattern']" class="text-left">Enter valid values</div>
+          </div>
+          </div>
+          <div class="col-md-4">
+              <label>NF2</label>
+              <input type="text" formControlName="newField2" class="form-control" placeholder="Enter NF2" [ngClass]="{ 'is-invalid': submitted && f['newField2'].errors }">
+            <div *ngIf="submitted && f['newField2'].errors" class="invalid-feedback">
+              <div *ngIf="f['newField2'].errors['pattern']" class="text-left">Enter valid values</div>
+          </div>
+          </div>
+          <div class="col-md-4">
+              <label>NF3</label>
+              <input type="text" formControlName="newField3" class="form-control" placeholder="Enter NF3" [ngClass]="{ 'is-invalid': submitted && f['newField3'].errors }">
+            <div *ngIf="submitted && f['newField3'].errors" class="invalid-feedback">
+              <div *ngIf="f['newField3'].errors['pattern']" class="text-left">Enter valid values</div>
+          </div>
+          </div>
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-4">
+              <label>NF4</label>
+              <input type="text" formControlName="newField4" class="form-control" placeholder="Enter NF4"[ngClass]="{ 'is-invalid': submitted && f['newField4'].errors }">
+            <div *ngIf="submitted && f['newField4'].errors" class="invalid-feedback">
+              <div *ngIf="f['newField4'].errors['pattern']" class="text-left">Enter valid values</div>
+          </div>
+          </div>
+          <div class="col-md-4">
+              <label>NF5</label>
+              <input type="text" formControlName="newField5" class="form-control" placeholder="Enter NF5"[ngClass]="{ 'is-invalid': submitted && f['newField5'].errors }">
+            <div *ngIf="submitted && f['newField5'].errors" class="invalid-feedback">
+              <div *ngIf="f['newField5'].errors['pattern']" class="text-left">Enter valid values</div>
+          </div>
+          </div>
+          <div class="col-md-4">
+              <label>NF6</label>
+              <input type="text" formControlName="newField6" class="form-control" placeholder="Enter NF6"[ngClass]="{ 'is-invalid': submitted && f['newField6'].errors }">
+              <div *ngIf="submitted && f['newField6'].errors" class="invalid-feedback">
+                <div *ngIf="f['newField6'].errors['pattern']" class="text-left">Enter valid values</div>
+            </div>
+          </div>
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-4">
+              <label>NF7</label>
+              <input type="text" formControlName="newField7" class="form-control" placeholder="Enter NF7"[ngClass]="{ 'is-invalid': submitted && f['newField7'].errors }">
+              <div *ngIf="submitted && f['newField7'].errors" class="invalid-feedback">
+                <div *ngIf="f['newField7'].errors['pattern']" class="text-left">Enter valid values</div>
+            </div>
+          </div>
+      </div>
+  </mat-card>
+
+  <mat-card class="mt-5">
+      <div class="row">
+          <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Notes</h3>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <label >Sale Note 1 </label>
+              <textarea class="form-control" formControlName="saleNote1" placeholder="Enter Notes Here"></textarea>
+          </div>
+         
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-8">
+              <label >Sale Note 2 </label>
+              <textarea class="form-control" formControlName="saleNote2" placeholder="Enter Notes Here"></textarea>
+          </div>
+         
+      </div>
+  </mat-card>
+  <mat-card style="margin-top: 20px;">
+      <div class="row">
+          <div class="col-md-10">
+              <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Add Products</h3>
+          </div>
+        <div class="col-md-2">
+          <button  mat-button (click)="useTemplate()" class="use-template-btn " style="margin-right: 10px; outline: none; padding-left: 15px;
+          padding-right: 15px;">
+              Use Templates
+          </button>
+        </div>
+      </div>
+      <div class="row">
+         <mat-label style="font-family: Montserrat; font-size: 15px;width: 130px; height: 24px;">Product Name</mat-label> 
+      </div>
+
+      <div class="row" style="margin-top:22px;">
+      
+        <div class="col-md-3">
+          <select class="selectform"style="width: 150px;"  
+          name="searchByType"  >
+            <option  value="1">Supplier Name</option>
+            <option value="2">PO Number</option>
+          </select>
+         
+        </div>
+        
+        <div class="col-md-3">
+        <input type="text" list="allProducts" 
+        class="search" id="searchProduct" 
+          [matAutocomplete]="auto"
+        autocomplete="off" placeholder="Search product here" />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option  
+          #matOption (click)="onMatOptionClicked(product)" 
+          [value]="product.productName" *ngFor="let product of allProducts" >
+            {{product.productName}}
+          </mat-option>
+        </mat-autocomplete>
+
+      </div>
+
+
+      
+    </div>
+    <div>
+      <table *ngIf="templateProducts.length != 0"  mat-table [dataSource]="dataSource"  multiTemplateDataRows class="mat-elevation-z8 mt-2 " matSort >
+  
+        <!--- Note that these columns can be defined in any order.
+                             The actual rendered columns are set as a property on the row definition" -->
+       
+             <!-- Position Column -->
+            
+             <ng-container matColumnDef="productName">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Product Name </th>
+               <td mat-cell *matCellDef="let product "> {{product.productName}} </td>
+             </ng-container>
+       
+             <!-- Name Column -->
+             <ng-container matColumnDef="customField1">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField1}} </td>
+             </ng-container>
+       
+             <!-- Weight Column -->
+             <ng-container matColumnDef="customField2">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField2}} </td>
+             </ng-container>
+       
+             <!-- Symbol Column -->
+             <ng-container matColumnDef="customField3">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField3}} </td>
+             </ng-container>
+  
+             <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+              
+              
+              color: #313131;"> Action </th>
+              <td mat-cell *matCellDef="let product"> <button mat-icon-button 
+                (click)="onClickDeleteProductList(product)"  aria-label="Example icon-button with a menu">
+                  <mat-icon  style="color: #E25D41;">delete</mat-icon>
+                </button>
+    
+              </td>
+            </ng-container>
+             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         
+           </table>
+           
+     </div>
+     
+   </mat-card>
+   <mat-card class="mt-5">
+      <div class="row">
+          <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Notes</h3>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <label >Sale Note 3 </label>
+              <div class="textarea-container">
+                  <button  mat-button  class=" custom-button">Send SMS</button>
+                  <textarea class="form-control"  formControlName="saleNote3" placeholder="Enter Notes Here"></textarea>
+              </div>
+          </div>
+         
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-8">
+              <label >Sale Note 4 </label>
+              <textarea class="form-control" formControlName="saleNote4" placeholder="Enter Notes Here"></textarea>
+          </div>
+         
+      </div>
+  </mat-card>
+
+  <mat-card>
+      <div class="form">
+
+          <div class="rectangular" id="selectFiles" (dragover)="onDragOver($event)"
+         (dragleave)="onDragLeave($event)"
+         (drop)="onDrop($event)">
+            <h1 class="demo">Upload image with resolution 1000px*1000px (accepts .doc,.jpeg,.png,.pdf)</h1>
+         
+            <div class="example">
+                <input type="file" #fileInput style="display: none" formControlName="file" (change)="onFileSelected($event)" multiple accept=".doc,.jpeg,.png,.pdf"/>
+                <input type="hidden" name="documentType"  >
+                <i class="demo-icon icon-icon-10" (click)="fileInput.click()">UPLOAD DOCUMENTS</i>
+                <div class="succ">
+                  <div *ngIf="uploadStatus" class="success-message">
+                    {{ uploadStatus }}
+                  </div>
+                </div>
+            </div>
+            <p class="head">DRAG AND DROP DOCUMENTS HERE (upto 10 files)</p>
+            
+        
+              </div>
+              <div class="submit_btn">
+                <button type="submit" (click)="openTemplateTable()"  class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+            </div>
+      </div>
+      
+  </mat-card>
+  
+  </form>
+</div>  

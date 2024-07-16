@@ -1,0 +1,193 @@
+.card {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15.2949px 9.55932px;
+    isolation: isolate;
+    margin-left: 24px;
+    margin-top: 36px;
+    margin-bottom: 20px;
+    margin-right: 34px;
+    position: relative;
+    
+    width: 184.49px;
+    height: 303.51px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 3.82373px 10px rgba(0, 0, 0, 0.12);
+}
+
+.search{
+    
+    width: 215px;
+    height: 40px;
+    font-size: 13px;
+    border: 0.5px solid #E4E5E5;
+    border-radius: 5px 0px 0 5px;
+    position: absolute;
+    /* transform: translate(-40px,0); */
+    padding-left: 7px;
+    margin-left: 5px;
+  }
+
+  .search-btn{
+    background-color: #E25D41;
+    border-color: #E25D41;
+    margin-left: 220px;
+    
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    /* transform: translate(-70px,0); */
+  }
+  
+/* CSS Code for Date Range Starts..... */
+
+.date-range-input-tag-class {
+  width: fit-content;
+  height: 40.3px;
+  border: 0.446004px solid;
+  border-color: #e4e5e5 !important;
+  border-radius: 5px;
+  padding-right: 25px;
+}
+.date-range-input-i-tag-class {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CSS Code for Date Range Ends..... */
+
+
+.p-tag {
+        width: 105px;
+        height: 45px;
+        margin-left: 30.75px;
+        margin-bottom: 0px !important;
+        margin-top:-20px ;
+        font-family: 'Balsamiq Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        /* or 187% */
+
+        text-align: center;
+
+        /* Secondary Text */
+
+        color: #707070;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        z-index: 1;
+}
+
+/* Input tag on focus outline:none; */
+input:focus {
+  outline:none;
+}
+
+.enter-sequence {
+  box-sizing: border-box;
+
+        /* Auto layout */
+        margin-left: 25.75px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 5px 10px;
+        gap: 10px;
+
+        width: 117px;
+        height: 33px;
+
+        /* Secondary Text */
+
+        border: 0.5px solid #707070;
+        border-radius: 5px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        z-index: 2;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        /* identical to box height, or 187% */
+
+        text-align: center;
+
+        /* Secondary Text */
+
+        color: #707070;
+}
+
+/* 
+Pagination CSS */
+#arrow{
+  height: 30px;
+  width: 30px;
+  background-color: #E25D41;
+  color: #FFFFFF;
+  font-size:30px;
+  border-radius: 3.5503px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.material-icons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-link-class {
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color:#707070;
+  margin-left: 6px;
+  margin-right: 6px;
+
+}
+
+.pagenum {
+  background-color: #FFFAF9;
+  color: #70707099;
+  border: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.pagenum-active {
+  background-color: #FFFAF9;
+  color: #E25D41;
+  border: none;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}

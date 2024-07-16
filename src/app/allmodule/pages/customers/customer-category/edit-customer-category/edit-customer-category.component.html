@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <h2 mat-dialog-title id="mtitle">Edit Customer Category <button type="button" class="btn-close" aria-label="Close" id="close" (click)="onNoClick()"></button></h2>
+    
+<div mat-dialog-content id="mdialog">
+        <form name="editCustomerCategoryForm"  [formGroup]="editCustomerCategoryForm">
+                <div class="row" id="crow">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label id="ctlabel">Category Name</label>
+                            <input type="text" class="form-control" rows="5" formControlName="categoryName"
+                                [ngClass]="{ 'is-invalid': submitted && f['categoryName'].errors }">
+                            <div *ngIf="submitted && f['categoryName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['categoryName'].errors['required']" class="text-left">
+                                    Category Field is required
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && f['categoryName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['categoryName'].errors['pattern']" class="text-left">
+                                    Special Characters and numbers are not allowed
+                                </div>
+                            </div>
+                            <div *ngIf="submitted && f['categoryName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['categoryName'].errors['maxlength']" class="text-left">
+                                    Maximum length is 20 characters
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="drow">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label id="dlabel">Description</label>
+                            <textarea  type="text" class="form-control" rows="4" formControlName="description"
+                                [ngClass]="{ 'is-invalid': submitted && f['description'].errors }">
+                            </textarea>
+                            <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+                                <div *ngIf="f['description'].errors['maxlength']" class="text-left">
+                                    Maximum length is 50 characters
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <mat-dialog-actions align="center"  id="sbutton">
+                    <button type="submit" (click)="editCustomerCategory()" class="orange_btn"><i class="icon-icon-19"></i>Confirm</button>
+                  </mat-dialog-actions>
+        </form>
+    </div>  
+
+</div>

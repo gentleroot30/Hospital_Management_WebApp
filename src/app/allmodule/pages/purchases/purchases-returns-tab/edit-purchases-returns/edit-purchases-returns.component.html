@@ -1,0 +1,267 @@
+<div class="add">
+
+    <h2><a href="" routerLink="/purchases-returns-tab"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <g clip-path="url(#clip0_3259_104669)">
+          <path d="M28.3337 15.5837H11.0928L19.012 7.66449L17.0003 5.66699L5.66699 17.0003L17.0003 28.3337L18.9978 26.3362L11.0928 18.417H28.3337V15.5837Z" fill="#313131"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_3259_104669">
+            <rect width="34" height="34" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+  </a> Edit Purchases Returns</h2>
+  
+    <form name=" editPurchasesReturnForm" (ngSubmit)="editPurchasesReturn()" [formGroup]=" editPurchasesReturnForm">
+  
+      <mat-card style="width: 1110px;
+    margin-left: 40px">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Supplier Detalis</label>
+              <p style="margin-top: 13px;">Supplier</p>
+  
+              <select class=" selectform" formControlName="supplier" placeholder="Supplier" style="width: 250px;"
+                [ngClass]="{ 'is-invalid': submitted && f['supplier'].errors }">
+  
+                <option value=option value >Select supplier</option>
+  
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+  
+  
+  
+              </select>
+  
+              <div *ngIf="submitted && f['supplier'].errors" class="invalid-feedback">
+                <div *ngIf="f['supplier'].errors['required']" class="text-left">Supplier Field is required</div>
+  
+              </div>
+            </div>
+          </div>
+          <!--Product number html code start-->
+          <div class="col-md" style="border: none;">
+            <div class="form-group">
+              <p style="margin-top: 38px;">Purchase Return Ref No</p>
+              <input type="text" placeholder="00123" class="form-control" formControlName="pnNumber"
+                [ngClass]="{ 'is-invalid': submitted && f['supplier'].errors }" style="width: 250px;
+  height: 40px;
+  flex-shrink: 0;
+    border-radius: 5px;
+  border: 1px solid #E4E5E5; margin-top: 4px">
+              <div *ngIf="submitted && f['supplier'].errors" class="invalid-feedback">
+                <div *ngIf="f['supplier'].errors['required']" class="text-left">pnNumber Field is required</div>
+              </div>
+            </div>
+          </div>
+          <!--Product number html code end-->
+  
+  
+          <!--calende code start html-->
+          <div class="col-md" style="border: none;">
+            <div class="form-group">
+              <p style="margin-top: 41px">Date</p>
+              <input type="date" class="form-control" formControlName="date"
+                [ngClass]="{ 'is-invalid': submitted && f['date'].errors }" style="border-radius: 5px;
+                border: 0.5px solid #707070;width: 260px;
+  height: 40px;
+  flex-shrink: 0;">
+              <div *ngIf="submitted && f['date'].errors" class="invalid-feedback">
+                <div *ngIf="f['date'].errors['required']" class="text-left">Date Field is required</div>
+              </div>
+            </div>
+            <!--calende code end html-->
+  
+          </div>
+        </div>
+  
+      </mat-card>
+  
+  
+      <mat-card style="width: 1110px;
+  margin-left: 40px;margin-top: 20px;">
+  
+        <h2 style=" margin-left: 0px;color: rgba(0, 0, 0, 0.60);
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; /* 133.333% */
+        letter-spacing: -0.27px;"><a href="" routerLink="/purchase"></a> Add Products</h2>
+        <p style="color: #313131;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 133.333% */
+        letter-spacing: -0.27px;">Product Name</p>
+        <div class="row">
+          <div class="col-md-2">
+            <form>
+              <select style="margin-bottom: 21px">
+                <option hidden>Search by</option>
+                <option value="1">Supplier Name</option>
+                <option value="2">PN</option>
+                <!-- <option *ngFor="let Options3 of Options3" [value]="Options3.value">
+              {{Options3.viewValue}}</option>-->
+              </select>
+            </form>
+          </div>
+          <div class="col-md-6" id="searchhere">
+            <input type="text" class="search" placeholder="Search here" class="search" style="margin-left: -342px;">
+            <button class="btn btn-secondary search-btn" type="button" style="margin-left: -132px;">
+              <i class="fa fa-search"></i>
+            </button>
+  
+          </div>
+  
+  
+        </div>
+      </mat-card>
+  
+  
+      <div class="table-container" >
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-left:36px">
+  
+          <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+  
+          <!-- Slno. Column -->
+          <ng-container matColumnDef="Slno">
+            <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          /* identical to box height */
+          
+          
+          /* Primary Text */
+          
+          color: #313131;"> Slno. </th>
+            <td mat-cell *matCellDef="let element"> {{element.Slno}} </td>
+          </ng-container>
+  
+  
+          <!-- Product Name Column -->
+          <ng-container matColumnDef="Product_Name">
+            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+            <td mat-cell *matCellDef="let element" style="width: 260px; height: 103px;"> <a href="">
+                {{element.Product_Name}}
+              </a> </td>
+          </ng-container>
+  
+  
+  
+          <!-- Batch Column -->
+          <ng-container matColumnDef="Batch">
+            <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        text-align: center;
+        
+        /* Primary Text */
+        
+        color: #313131;"> Batch </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> <select name="batch-select"
+                style="border-radius: 5px;
+              border: 0.5px solid #E4E5E5;
+              color: var(--secondary-text, #707070);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 116px;
+  height: 35px;
+  padding-left: 10px;
+  outline: none;
+              ">
+                <option value="0"> Enter Here</option>
+                <option value="1"> Batch 1</option>
+                <option value="2"> Batch 2</option>
+                <option value="3"> Batch 3</option>
+                <option value="4"> Batch 4</option>
+              </select> </td>
+          </ng-container>
+  
+          <!-- Return Quantity Column -->
+          <ng-container matColumnDef="Return_Quantity">
+            <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 18px;
+                  line-height: 22px;
+                  /* identical to box height */
+                  text-align: center;
+                  
+                  /* Primary Text */
+                  
+                  color: #313131;"> Return Quantity </th>
+            <td mat-cell *matCellDef="let element" style="    text-align: center;"> <input type="text"
+                placeholder="Enter Here" style="    height: 35px;
+                        width: 96px;
+                        border-color: #E4E5E5;
+                        outline: none;
+                        text-align: center;
+                        padding-right: 10px;"> </td>
+          </ng-container>
+  
+          <!-- Return SubTotal Column -->
+          <ng-container matColumnDef="Return_Subtotal">
+            <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        text-align: center;
+        
+        /* Primary Text */
+        
+        color: #313131;"> Return Subtotal </th>
+            <td mat-cell *matCellDef="let element" style="    text-align: center;"> {{element.Return_Subtotal}} </td>
+          </ng-container>
+  
+          <!-- Action Column -->
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17"
+                viewBox="0 0 16 17" fill="none">
+                <path d="M16 5.56312V9.92676L8 5.07827L0 9.92676V5.56312L8 0.714637L16 5.56312Z" fill="#313131" />
+                <path d="M16 12.3512V16.7148L8 11.8664L0 16.7148V12.3512L8 7.50272L16 12.3512Z" fill="#313131" />
+              </svg>
+            </th>
+            <td mat-cell *matCellDef="let element"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="16"
+                viewBox="0 0 13 16" fill="none">
+                <path
+                  d="M0.888889 14.2222C0.888889 15.2 1.68889 16 2.66667 16H9.77778C10.7556 16 11.5556 15.2 11.5556 14.2222V3.55556H0.888889V14.2222ZM12.4444 0.888889H9.33333L8.44444 0H4L3.11111 0.888889H0V2.66667H12.4444V0.888889Z"
+                  fill="#E25D41" />
+              </svg>
+              {{element.Action}} </td>
+          </ng-container>
+  
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  
+      </div>
+      <p class="table-data-description" style="color: rgba(0, 0, 0, 0.60);
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 133.333% */
+      letter-spacing: -0.27px;margin-left: 36px;">Return Total  ₹ 2000.00</p>
+  
+      <div class="submit_btn" style="margin-left: -117px;">
+        <button type="button" class="orange_btn">
+          <i class="icon-icon-19"></i> &nbsp;&nbsp;Confirm</button>
+      </div>
+    </form>
+  </div>

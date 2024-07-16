@@ -1,0 +1,120 @@
+<div class="add">
+  <h2>
+    <a href="" routerLink="/product"><mat-icon>arrow_back</mat-icon></a> Edit
+    Product
+  </h2>
+  <form [formGroup]="addProductForm">
+    <mat-card>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Product Name</label>
+            <span style="color: red;">* </span>
+            <textarea type="text" class="form-control" rows="5" formControlName="productName"
+              placeholder=" Enter Product Name here" [ngClass]="{
+                'is-invalid': submitted && f['productName'].errors
+              }"></textarea>
+            <div *ngIf="submitted && f['productName'].errors" class="invalid-feedback">
+              <div *ngIf="f['productName'].errors['required']" class="text-left">
+                Product Name Field is required
+              </div>
+              <div *ngIf="f['productName'].errors['maxlength']" class="text-left">
+                Product Name cannot be more than 30 characters
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Category</label>
+
+            <select class="form-control" formControlName="category"
+              [ngClass]="{ 'is-invalid': submitted && f['category'].errors }">
+              <option *ngFor="let category of categories" [value]="category.categoryId">
+                {{ category.categoryName }}
+              </option>
+            </select>
+            <div *ngIf="submitted && f['category'].errors" class="invalid-feedback">
+              <div *ngIf="f['category'].errors['required']" class="text-left">
+                Category Field is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Brand</label>
+
+            <select class="form-control" formControlName="brand"
+              [ngClass]="{ 'is-invalid': submitted && f['brand'].errors }">
+              <option *ngFor="let brand of brands" [value]="brand.brandId">
+                {{ brand.brandName }}
+              </option>
+            </select>
+            <div *ngIf="submitted && f['brand'].errors" class="invalid-feedback">
+              <div *ngIf="f['brand'].errors['required']" class="text-left">
+                Brand Field is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Sequence Sorting</label>
+            <input type="text" class="form-control" formControlName="sequenceSorting"
+              placeholder="Enter sequence sorting here" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Alert Quantity</label>
+            <input type="text" class="form-control" formControlName="alertQuantity" placeholder="60" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Discount % </label>
+            <input type="text" class="form-control" formControlName="discount" placeholder="60%" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Custom Field 1</label>
+            <textarea type="text" class="form-control" rows="4" formControlName="customF1"
+              placeholder="Enter Custom Field 1"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Custom Field 2</label>
+            <textarea type="text" class="form-control" rows="4" formControlName="customF2"
+              placeholder="Enter Custom Field 2"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Custom Field 3</label>
+            <textarea type="text" class="form-control" rows="4" formControlName="customF3"
+              placeholder="Enter Custom Field 3"></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- Other form controls go here -->
+    </mat-card>
+    <div class="submit_btn">
+      <button (click)="addProduct()" type="submit" class="orange_btn">
+        <i class="fa-regular fa-circle-check"></i> Confirm
+      </button>
+    </div>
+  </form>
+</div>

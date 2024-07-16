@@ -1,0 +1,135 @@
+<div class="add">
+    <h2><a href="" routerLink="/user"><mat-icon>arrow_back</mat-icon></a> Add User</h2>
+    <form name="addUserForm" [formGroup]="addUserForm">
+        <mat-card>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>User Role</label>
+                        <select class="selectform w-100 " formControlName="roleId" [ngClass]="{ 'is-invalid': submitted && f['roleId'].errors }">
+                            <option value="" selected disabled>Select Category</option>
+                            <option  *ngFor="let role of AllRoles" [value]="role.roleId">{{role.roleName}}</option>
+                        </select>
+                        <div *ngIf="submitted && f['roleId'].errors" class="invalid-feedback">
+                            <div  *ngIf="f['roleId'].errors['required']" class="text-left">User Role Field is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" formControlName="emailId" 
+                        [ngClass]="{ 'is-invalid': submitted && f['emailId'].errors }" placeholder="Email Address">
+                        <div *ngIf="submitted && f['emailId'].errors" class="invalid-feedback">
+                            <div *ngIf="f['emailId'].errors['required']" class="text-left">Email is required</div>
+                            <div *ngIf="f['emailId'].errors['email']" class="text-left">Email is not valid</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" formControlName="name" placeholder="Full Name" 
+                        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                            <div *ngIf="f['name'].errors['required']" class="text-left">Full Name Field is required</div>
+                            <div *ngIf="f['name'].errors['pattern']" class="text-left">Full Name must contain alphabetic characters only and be up to 30 characters long</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea type="text" class="form-control" rows="5" formControlName="address" placeholder="Enter address here" 
+                        [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"></textarea>
+                        <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                            <div *ngIf="f['address'].errors['maxLength']" class="text-left">Address must be up to 300 characters long</div> 
+                            <div *ngIf="f['address'].errors['required']" class="text-left">Address Field is required</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea type="text" class="form-control" rows="5" formControlName="address" placeholder="Enter address here" 
+                        [ngClass]="{ 'is-invalid': submitted && f['address'].errors }"></textarea>
+                        <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                            <div *ngIf="f['address'].errors['required']" class="text-left">Address Field is required</div>
+                            <div *ngIf="f['address'].errors['maxLength']" class="text-left">Address must be up to 300 characters long</div> <!-- Error message for maxLength validator -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <div class="row">
+                <label>Contact</label>
+
+                <!-- <div class="form-group" style="float: left; width: 89%"></div> -->
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="contactNo_1" placeholder="Enter Contact"
+                        style="margin-bottom: 15px"
+                        [ngClass]="{ 'is-invalid': submitted && f['contactNo_1'].errors }" />
+                    <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_1'].errors['required']" class="text-left">
+                            Contact field is required
+                        </div>
+                    </div>
+                    <div *ngIf="submitted && f['contactNo_1'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_1'].errors['pattern']" class="text-left">
+                            Number should be in 10 digit
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" [hidden]="hidden_1">
+                    <input type="text" class="form-control" formControlName="contactNo_2" placeholder="Contact"
+                        style="margin-bottom: 15px"
+                        [ngClass]="{ 'is-invalid': submitted && f['contactNo_2'].errors }" />
+                    <div *ngIf="submitted && f['contactNo_2'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_2'].errors['required']" class="text-left">
+                            Contact field is required
+                        </div>
+                    </div>
+                    <div *ngIf="submitted && f['contactNo_2'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_2'].errors['pattern']" class="text-left">
+                            Number should be in 10 digit
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" [hidden]="hidden_2">
+                    <input type="text" class="form-control" formControlName="contactNo_3" placeholder="Contact"
+                        style="margin-bottom: 15px"
+                        [ngClass]="{ 'is-invalid': submitted && f['contactNo_3'].errors }" />
+                    <div *ngIf="submitted && f['contactNo_3'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_3'].errors['required']" class="text-left">
+                            Contact field is required
+                        </div>
+                    </div>
+                    <div *ngIf="submitted && f['contactNo_3'].errors" class="invalid-feedback">
+                        <div *ngIf="f['contactNo_3'].errors['pattern']" class="text-left">
+                            Number should be in 10 digit
+                        </div>
+                    </div>
+                </div>
+
+                <button style="margin-top: 9px;" type="button" (click)="addContact()" class="plus_btn" [hidden]="Hide_button">
+                    <i class="icon-icon-20"></i>
+                </button>
+            </div>
+
+        </mat-card>
+        <div class="submit_btn">
+            <button type="submit" (click)="addUser()" class="orange_btn"><i class="icon-icon-19"></i> Submit</button>
+        </div>
+    </form>
+</div>

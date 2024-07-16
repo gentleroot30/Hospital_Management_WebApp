@@ -1,0 +1,72 @@
+select{
+    margin-top: 5px;
+    border: 0.50px #707070 solid;
+  }
+  option{
+    font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  
+  }
+  
+  input{
+      
+    width: 230px;
+    height: 40px;
+    border: 0.5px solid #707070;
+    border-radius: 5px;
+    }
+    p{
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    
+    }
+    .search{
+        
+        width: 215px;
+        height: 40px;
+        font-size: 13px;
+        border: 0.5px solid #E4E5E5;
+        border-radius: 5px 0px 0 5px;
+        position: absolute;
+        /* transform: translate(-40px,0); */
+        padding-left: 7px;
+        margin-left: 28px;
+      }
+        
+      
+      .selectform{
+        width: 260px;
+        height: 40px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #707070;
+        font-family:'Montserrat' ;
+        border-radius: 6px;
+        border-color: rgb(192, 192, 192,0.6);
+        
+      }
+      .selectform1{
+        width: 107.95px;
+        height: 40px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #707070;
+        font-family:'Montserrat' ;
+        border-radius: 6px;
+        border-color: rgb(192, 192, 192,0.6);
+        
+      }
+      a.disabled {
+        pointer-events:fill;
+        
+      }

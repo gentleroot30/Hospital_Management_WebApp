@@ -1,0 +1,26 @@
+@media print {
+    body * {
+      visibility:visible;
+      height: max-content;
+    }
+    
+  }
+.copy-link{
+  display: inline-block;
+    
+    
+    gap: 10px;border-radius: 5px;
+    border: 1px solid #E25D41;
+    color: #E25D41;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Balsamiq Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px; /* 114.286% */
+    text-transform: uppercase;
+    
+    background-color: #FFF;margin-left: 65px;
+    margin-right: -94px;
+    margin-top: 7px
+}

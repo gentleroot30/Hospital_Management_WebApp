@@ -1,0 +1,97 @@
+* {
+    overflow: hidden; /* Hide scrollbars */
+}
+  
+  .content-heading {
+    display: inline;
+    width: fit-content;
+    white-space: nowrap;
+    height: 28px;
+    margin-left: 15px;
+    font-family: 'Balsamiq Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 2.57812px;
+    color: #313131;
+  }
+  
+  
+  /* CSS Code for Search Bar Starts..... */
+  
+  .search-btn-class,
+  .search {
+    white-space: nowrap;
+    width: 220px;
+    height: 40px;
+    font-family: "Montserrat";
+    padding-left: 7.05px;
+    margin-left: 16px;
+    margin-bottom: 13.7px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #919191;
+    border: 0.5px solid #e4e5e5;
+    border-radius: 5px 0px 0px 5px;
+  }
+  
+  .search-btn {
+    
+    white-space: nowrap;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+
+    
+    border-color: #E25D41;
+    background: #E25D41;
+    border-radius: 0px 5px 5px 0px;
+  }
+  
+  /* CSS Code for Search Bar Ends..... */
+  
+  /* CSS Code for Checkbox Starts.....  */
+/* Hide the default checkbox appearance */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  outline: none; /* Remove the focus outline */
+  cursor: pointer;
+  position: relative;
+}
+
+/* Remove the border for the checkbox on all browsers */
+input[type="checkbox"]::before {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 0.2px solid #E25D41; /* Set the border color to black (#000000) */
+  border-radius: 3px; /* Optional border radius */
+  outline: none; /* Remove the focus outline */
+}
+
+/* Custom style for the checkbox when checked */
+input[type="checkbox"]:checked::before {
+  content: "\f00c"; /* Unicode for the check icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+  color: #fff; /* Checkmark color */
+  position: absolute;
+  top: 0;
+  left: 0px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  background-color: #E25D41; /* Background color when checked */
+}
+/* CSS Code for Checkbox Ends.....  */

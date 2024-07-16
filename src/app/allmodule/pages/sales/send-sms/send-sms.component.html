@@ -1,0 +1,80 @@
+
+<p class="content-heading">Select Supplier</p>
+
+<button style="margin-left: 923px; outline:none; border-style: none; background-color: #FFF;" (click)="onNoClick()" class="clear" ><img src="../../../../../../assets/icon/clear_icon.svg" alt="" style="background-color: white;"></button>
+
+<!-- html code for search bar starts -->
+<div class="" style="display: flex;"></div> 
+<div style="white-space: nowrap; width: fit-content; display: inline;">
+<input type="text" class="search-btn-class" placeholder="Search here" style="outline: none;" />
+<button class="btn btn-secondary search-btn search-btn-class-i-tag" type="button" style="margin-top: -3px;">
+  <i><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2.95387 17.844L6.73813 14.0625C7.46733 13.3338 7.46754 12.1519 6.73861 11.423V11.423C6.00988 10.6943 4.82836 10.6943 4.09962 11.423L0.314396 15.2082C-0.10451 15.6271 -0.10451 16.3167 0.314395 16.7356L1.42283 17.844C1.84544 18.2629 2.53867 18.2629 2.95387 17.844Z"
+        fill="#FEFDFE" />
+      <path
+        d="M7.24904 9.52779C6.8672 9.90963 6.8672 10.5287 7.24904 10.9106V10.9106C7.63088 11.2924 8.24996 11.2924 8.6318 10.9106L8.79868 10.7437C9.21391 10.3284 9.86219 10.2844 10.398 10.5247C12.4233 11.433 14.8861 11.0584 16.5484 9.39619C18.6948 7.24976 18.6948 3.76135 16.5484 1.61121C14.402 -0.538924 10.9135 -0.535217 8.7634 1.61121C7.10116 3.27346 6.7266 5.73631 7.63487 7.7616C7.87515 8.2974 7.83115 8.94569 7.41592 9.36091L7.24904 9.52779ZM9.84589 2.67887C11.4029 1.12187 13.9274 1.12187 15.4807 2.67887C17.0377 4.23586 17.0377 6.76042 15.4807 8.31371C13.9237 9.8707 11.3992 9.8707 9.84589 8.31371C8.28889 6.76042 8.28889 4.23586 9.84589 2.67887Z"
+        fill="#FEFDFE" />
+    </svg>
+  </i>
+</button>
+</div>
+<!-- html code for search bar ends -->
+
+
+<hr style="width: 1037px;
+margin: 1rem 0;
+color: inherit;
+background: #E4E5E5;
+border: 0;
+border-top: 1px solid;
+opacity: 0.25;
+margin-left: -26px;">
+
+
+<!-- html code for table starts  -->
+<div class="table-scroll" style="margin-left: 16px; margin-right: 32px;">
+    <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8 table-style">
+      
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Select Product Column -->
+        <ng-container matColumnDef="Select_Supplier" style="font-size: 18px;">
+          <th mat-header-cell *matHeaderCellDef style="width: 0px;"></th>
+          <td mat-cell *matCellDef="let element" style="width: 0px;">
+            <label>
+            <input type="checkbox" id="myCheckbox">
+          </label>
+           </td>
+        </ng-container>
+        <!-- Product Name Column -->
+        <ng-container matColumnDef="Supplier_id" style="font-size: 18px;">
+          <th mat-header-cell *matHeaderCellDef style="width: 160px;">Supplier ID</th>
+          <td mat-cell *matCellDef="let element" style="width: 133px;"><a href="">{{element.Supplier_id}}</a> </td>
+        </ng-container>    
+        <!-- Units Sold Note Column -->
+        <ng-container matColumnDef="Supplier_Name">
+            <th mat-header-cell *matHeaderCellDef style="   margin-left: 50px;">Supplier Name</th>
+            <td mat-cell *matCellDef="let element" style="width: 160px;"> {{element.Supplier_Name}} </td>
+          </ng-container>
+          
+          
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns1;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement1 === element"
+            (click)="expandedElement1 = expandedElement1 === element ? null : element">
+        
+      </table>
+
+      
+</div>
+<!-- html code for table ends  -->
+
+
+<div class="submit_btn">
+    <button type="submit" class="orange_btn" (click)="sendSMSSuccess()" (click)="onNoClick()"><i class="icon-icon-19"></i> SEND SMS</button>
+</div>
+

@@ -1,0 +1,111 @@
+
+body{
+    overflow-x: hidden;
+}
+
+#close{
+   margin-left: 550px;
+}
+
+#mdialog{
+    align-items: center;
+}
+
+#ctlabel{
+    
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    /* identical to box height, or 133% */
+    
+    letter-spacing: -0.015em;
+    
+    color: #313131;
+    
+}
+
+#dlabel{
+    
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 33px;
+/* identical to box height, or 133% */
+
+letter-spacing: -0.015em;
+
+color: #313131;
+}
+
+
+::placeholder{
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+#mtitle{
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+color: #313131;
+}
+
+
+.orange_btn{
+  margin-top:30px;
+}
+
+.form-control{
+    color: #707070;
+font-size: 15px;
+font-family: Montserrat;
+font-weight: 500;
+word-wrap: break-word
+}
+
+table {
+    text-decoration: none;
+}
+
+tr th {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 0px;
+    background-color: white;
+}
+
+tr{
+    height: 34px;
+    
+}
+
+input textarea{
+    width: 600px;
+}
+
+h2 {
+    /* position: absolute; */
+    width: 132px;
+    height: 22px;
+    left: 465px;
+    top: 78px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #313131;
+}

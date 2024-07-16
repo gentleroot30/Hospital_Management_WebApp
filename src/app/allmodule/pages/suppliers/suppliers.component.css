@@ -1,0 +1,395 @@
+h2{
+  margin-left: 16px;
+  font-family: 'Balsamiq Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2.57812px;
+  color: #000000;
+  opacity: 0.6;
+}
+h3{
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+
+}
+
+.mat-menu-i{
+  margin-right: 10px;
+}
+
+.mat-menu-a{
+  text-decoration: none;
+  width: 177px;
+  height: 22px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #313131;;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+a {
+  text-decoration: none;
+ 
+}
+a.disabled {
+  pointer-events: none;
+  color: gray; /* Change this to any color you prefer */
+  text-decoration: none;
+}
+
+a.disabled span {
+  cursor: not-allowed;
+}
+
+a span {
+  cursor: pointer;
+}
+
+.i{
+font-family: 'Montserrat';
+}
+
+.a{
+text-decoration: none;
+color: #313131;
+padding-left: 10px;
+line-height: 30px;
+font-size: 16px;
+}
+.text-decoration-n{
+text-decoration: none;
+}
+hr{
+  width: 89.02px;
+  height: 1px;
+  border: 1px solid #7b7b7b;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-bottom: 5px;
+}
+
+.selectform{
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #707070;
+  font-family:'Montserrat' ;
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192,0.6);
+  padding-left: 7px;
+}
+.selectform-rs{
+  width: 114px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-top: 10px;
+  color: #707070;
+  font-family:'Montserrat' ;
+  border-radius: 6px;
+  border-color: rgb(192, 192, 192,0.6);
+  padding-left: 7px;
+}
+
+
+.inline{
+  display: inline-block;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+/* .search{
+height: 40px;
+width: 260px;
+font-size: 13px;
+border-radius: 6px;
+border-color: rgb(192, 192, 192,0.6);
+position: absolute;
+margin-top: -27px;
+padding-left: 7px;
+}
+
+.search-btn{
+margin-left: 250px;
+margin-top: -27px;
+display: inline-block;
+height: 40px;
+width: 40px;
+border-top-left-radius: 0%;
+border-bottom-left-radius: 0%;
+border-top-right-radius: 6px;
+border-bottom-right-radius: 6px;
+position: absolute;
+background: #E25D41;
+  border-color: #FEFDFE;
+
+} */
+
+/* Code for Search Bar Starts..... */
+
+.search-btn-class,
+.search {
+  width: 220px;
+  height: 40px;
+  font-family: "Montserrat";
+  padding-left: 7.05px;
+  margin-bottom: 13.7px;
+  position: absolute;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #919191;
+  border: 0.5px solid #e4e5e5;
+  border-radius: 5px 0px 0px 5px;
+  outline: none;
+
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 0px;
+  margin-bottom: 13.7px;
+  position: absolute;
+  margin-top: 22px;
+  border-color: #E25D41;
+  background: #E25D41;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* Code for Search Bar Ends..... */
+
+/* Code for Add New Button Starts....  */
+.orange_btn {
+  min-width: 135px !important;
+  height: 40px;
+  margin-left: 1045px;
+  text-transform: capitalize !important;
+  margin-right: 5px;
+  margin-bottom: px;
+  margin-top: -40px;
+}
+
+.orange_btn_rs {
+  min-width: 135px !important;
+  height: 40px;
+  text-transform: capitalize !important;
+  margin-bottom: 13.7px;
+background: #E25D41;
+color: white;
+margin-top: 5px !important;
+border-radius: 5px;
+}
+#orange-add-new-button {
+  display: none;
+  width: 135px;
+  height: 40px;
+  background: #e25d41;
+  color: white;
+  border-radius: 5px;
+  margin-left: 60px;
+  text-transform: capitalize !important;
+}
+/* Code for Add New Button Ends....  */
+/* Code for Table Data Decoration Starts....  */
+.mat-cell {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* Code for Table Data Decoration Ends....  */
+
+/* Code for Responsive Starts */
+
+@media (max-width: 855px) {    
+  #add-new-button {
+    display: none !important; 
+  }
+}
+@media (max-width: 855px) {
+  #add-new-button-rs {
+    display: inline-block !important; 
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 615px) {    
+  .selectform {
+    display: none !important; 
+  }
+  .responsive-button-container {
+    padding-top: 35px;
+  }
+}
+@media (min-width: 615px) {
+  .selectform-rs {
+    display: none !important; 
+  }
+}
+
+
+
+
+li,a{
+gap:0px;
+}
+
+.page-link{
+color:#707070;
+font-size:small;
+ height: 30px;
+width: 30px;
+border: hidden;
+
+}
+
+#arrow{
+  height: 30px;
+  width: 30px;
+  background-color: #E25D41;
+  color: #FFFFFF;
+  font-size:30px;
+  border-radius: 3.5503px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+
+
+
+/* expansion */
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.expansion{
+margin-left: 50px;
+}
+
+.expansion span{
+width: 105px;
+height: 22px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #313131;
+
+}
+
+.expansion p{
+width: 42px;
+height: 20px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #707070;
+}
+
+.address{
+width: 446px;
+height: 20px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #707070;
+
+}
+option{
+font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 16px
+}
+
+/* @media( max-width:750px) {
+.search{
+  width: auto;
+  display: inline;
+}
+
+.search-btn{
+  margin-left: 128px;
+  display: inline;
+}
+} */
+.search-btn-class,
+.search,
+#range-input {
+  width: 220px; /* Adjust the width as needed */
+  height: 40px;
+  font-family: "Montserrat";
+  padding-left: 7.05px;
+  margin-bottom: 13.7px;
+  position: absolute;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #919191;
+  border: 0.5px solid #e4e5e5;
+  border-radius: 5px; /* Adjust the border-radius as needed */
+  outline: none;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 220px; /* Adjust the margin-left to create space between search and date range */
+  margin-bottom: 13.7px;
+  position: absolute;
+  margin-top: 0px;
+  border-color: #E25D41;
+  background: #E25D41;
+  border-radius: 0px 5px 5px 0px;
+}

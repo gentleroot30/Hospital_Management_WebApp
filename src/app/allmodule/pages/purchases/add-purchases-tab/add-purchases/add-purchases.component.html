@@ -1,0 +1,587 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div style=" margin-bottom: 10px; margin-left: 16px;">
+  <button routerLink="../add-purchases-tab"
+    style="color: #313131;border: none; font-size:  25px; margin-right: 10px;background: none;"><i class=""><svg
+        width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        style="margin-left: 12px">
+        <path
+          d="M23.3327 10.5837H6.09185L14.011 2.66449L11.9993 0.666992L0.666016 12.0003L11.9993 23.3337L13.9968 21.3362L6.09185 13.417H23.3327V10.5837Z"
+          fill="#313131" />
+      </svg>
+    </i></button>
+  <span style="color: #313131;border: none; font-size: 18px; font-style: normal;
+    font-weight: 700; padding-bottom: 10px;">Add Purchase </span>
+</div>
+<div class="container" style="width: 100%;">
+
+  <div class="nav-container" style="margin-left: 35%; margin-right: 25%; margin-bottom: 32.5px;">
+    <ul class="nav nav-pills" style="    white-space: nowrap;
+    position: absolute;
+">
+      <li class="active" id="product-details-tab" style="
+        background: #ED1C24;
+        
+        border-radius: 4.375px;"><a data-toggle="pill" href="#home" style=" background-color: #52D14FCC !important;font-family: 'Montserrat';
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15.75px;
+        line-height: 19px;
+        color: #FFFFFF !important;">Product Details</a></li>
+      <svg style="margin-top: 17px; margin-right: -1px;
+        margin-left: -1px;" width="61" height="2" viewBox="0 0 61 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0.960938" y1="1" x2="60.0372" y2="1" stroke="#707070" />
+      </svg>
+
+      <li><a data-toggle="pill" href="#menu1" style="background-color: #E25D41 !important; font-family: 'Montserrat';
+          text-align: center;
+          margin-right: 15px !important;
+                  font-style: normal;
+          font-weight: 600;
+          font-size: 15.75px;
+          line-height: 19px;
+          color: #FFFFFF;">Payment Details</a></li>
+    </ul>
+  </div>
+
+  <div class="tab-content" style="margin-top: 60px;">
+    <div id="home" class="tab-pane fade in active">
+
+      <div class="row" style="background: #FFFFFF; width: 90%; margin-bottom:15px; margin-left: 16px; margin-right: 114px; border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;height: 230px; ">
+        <p style="margin-top: -25px; margin-bottom: 24px; margin-left: 44px;font-family: 'Montserrat';
+         font-style: normal;
+         font-weight: 600;
+         font-size: 18px;
+         line-height: 24px;
+         /* identical to box height, or 133% */
+         
+         letter-spacing: -0.015em;
+         
+         color: rgba(0, 0, 0, 0.6); color: rgba(0, 0, 0, 0.60);
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 133.333% */
+letter-spacing: -0.27px;">Supplier Details</p>
+        <div class="col-md" style="border: none; margin-right: 61px;">
+          <p style="margin-left: 44px; margin-bottom: 24px; font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          /* identical to box height, or 133% */
+          letter-spacing: -0.015em;
+          color: #313131;margin-top: -57px;">Supplier</p>
+          <select name="select_supplier" id="select-supplier" placeholder="Select Supplier" style="outline: none;">
+            <option value="">Select Supplier</option>
+            <option value="First Name 1">Supplier Name</option>
+            <option value="First Name 2">PO Number</option>
+
+          </select>
+
+
+        </div>
+
+
+
+
+        <div class="col-md" style="border: none;">
+          <p style="margin-bottom: 7px; font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          /* identical to box height, or 133% */
+          letter-spacing: -0.015em;
+          color: #313131;margin-top: -40px;">Invoice Number</p>
+          <input type="text" placeholder="00123" style="font-family: 'Montserrat'; color: #313131;
+          font-style: normal;
+          font-weight: 400;
+          padding-left: 10px;
+          font-size: 12px;
+          line-height: 34px;
+          /* identical to box height */
+          /* Secondary Text */
+          border: 0.5px solid #E4E5E5;
+          outline: none;
+          border-radius: 5px; width: 260px;">
+        </div>
+        <div class="col-md" style="border: none;">
+          <p style="margin-bottom: 7px; font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          /* identical to box height, or 133% */
+          letter-spacing: -0.015em;
+          color: #313131;margin-top: -40px;"> Purchase Date</p>
+          <input type="date" style="font-family: 'Montserrat';
+        font-style: normal;
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 34px;
+        /* identical to box height */
+        /* Secondary Text */
+        color: #313131;
+        border: 1px solid #E4E5E5;
+        outline: none;
+        border-radius: 5px;width: 260px;">
+        </div>
+
+
+      </div>
+
+      <mat-card style="    background: #FFFFFF;
+      width: 90%;
+      margin-bottom: 32px;
+      margin-left: 16px;
+      margin-right: 114px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.09);
+      border-radius: 10px;
+      height: 241px;">
+
+        <h2 style="color: rgba(0, 0, 0, 0.60);margin-left: 14px;"><a href="" routerLink="/add-purchase-tab"></a> Add
+          Products</h2>
+        <p style="margin-left: 14px;color: #313131;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 133.333% */
+        letter-spacing: -0.27px;">Product Name</p>
+        <div class="row">
+          <div class="col-md-2">
+            <form>
+              <select style="margin-bottom: 21px;    height: 38px;
+              margin-left: 12px;
+              font-size: 13px;
+              
+              border-color: rgb(241, 234, 234);
+              position: absolute;
+              margin-top: 1px; border-radius: 5px;
+              border: 0.446px solid #707070;display: inline-flex;
+              padding: 11.15px;
+              align-items: flex-start;
+              gap: 11.15px;">
+                <option hidden style="color: #707070;
+                font-family: Montserrat;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 17.84px; /* 148.668% */
+                letter-spacing: 0.167px;">Search by</option>
+                <option value="1">Supplier Name</option>
+                <option value="2">PN</option>
+                <!-- <option *ngFor="let Options3 of Options3" [value]="Options3.value">
+                  {{Options3.viewValue}}</option>-->
+              </select>
+            </form>
+          </div>
+          <div class="col-md-6" id="searchhere">
+            <input style="color: var(--Disabled-edit-text, #919191);
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;" type="text" class="search" placeholder="Search here" class="search"
+              style="margin-left: -342px;">
+            <button class="btn btn-secondary search-btn" type="button" style="margin-left: -123px;">
+              <i class="fa fa-search"></i>
+            </button>
+
+          </div>
+
+
+        </div>
+
+
+
+      </mat-card>
+
+
+      <div class="table-container" style="    margin-left: 16px;
+      margin-right: 32px;
+      margin-top: 32px; overflow: hidden;">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+          style=" width:93.5%;  margin-bottom: 33px; ">
+
+          <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+
+          <!-- Product Name Column -->
+          <ng-container matColumnDef="Product_Name">
+            <th mat-header-cell *matHeaderCellDef style="color: #313131;"> Product Name </th>
+            <td mat-cell *matCellDef="let element" style="width: 260px; height: 103px;color: #978BDD;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;"> {{element.Product_Name}} </td>
+
+          </ng-container>
+
+
+
+
+          <!-- Batch No Column -->
+          <ng-container matColumnDef="Batch_No">
+            <th mat-header-cell *matHeaderCellDef> Batch No </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;">
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+            </td>
+          </ng-container>
+
+          <!-- Exp. Date Column -->
+          <ng-container matColumnDef="Exp_Date">
+            <th mat-header-cell *matHeaderCellDef> Exp Date </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;">
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+                  
+            </td>
+          </ng-container>
+
+          <!-- Pack of Column -->
+          <ng-container matColumnDef="Pack_of">
+            <th mat-header-cell *matHeaderCellDef> Pack of </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;">
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+          <!-- MRP per Pack Column -->
+          <ng-container matColumnDef="MRP_per_Pack">
+            <th mat-header-cell *matHeaderCellDef> MRP <br>per <br>Pack </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;">
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+
+          <!-- Unit Price Column -->
+          <ng-container matColumnDef="UnitPrice">
+            <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;"> 
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+
+          <!-- Quantity Column -->
+          <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;"> 
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                     
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+
+
+          <!-- TotalMRP Column -->
+          <ng-container matColumnDef="TotalMRP">
+            <th mat-header-cell *matHeaderCellDef> Total <br>MRP </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;"> 
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                     
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+
+
+          <!-- Bill Total Column -->
+          <ng-container matColumnDef="Bill_Total">
+            <th mat-header-cell *matHeaderCellDef> Bill Total </th>
+            <td mat-cell *matCellDef="let element"style="padding: 5px;"> 
+              <input type="text"
+              placeholder="Enter Here" style="    height: 35px;
+                      width: 96px;
+                      
+                      outline: none;
+                      text-align: center;
+                      padding-right: 10px;"> 
+              </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M16.8184 5.56326V9.92676L8.81836 5.07843L0.818359 9.92676V5.56326L8.81836 0.714933L16.8184 5.56326Z" fill="#313131"/>
+              <path d="M16.8184 12.3513V16.7148L8.81836 11.8665L0.818359 16.7148V12.3513L8.81836 7.50302L16.8184 12.3513Z" fill="#313131"/>
+            </svg> </th>
+            <td mat-cell *matCellDef="let element"> {{element.Action}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+
+
+
+      <div class="table-description">
+        <p style="display: inline-block; 
+        width: 255px;
+        height: 24px;
+        margin-top: 8px;
+        margin-right: 13px;   
+        margin-bottom: 32px; 
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+        
+        letter-spacing: -0.015em;
+        
+        color: rgba(0, 0, 0, 0.6);margin-left: 12px;">Grand Total MRP: ₹ 2000.00 </p>
+        <p style="display: inline-block; 
+        width: 255px;
+        height: 24px;
+        margin-top: 8px;
+        margin-bottom: 32px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+    
+        letter-spacing: -0.015em;
+    
+        color: rgba(0, 0, 0, 0.6);">Total Bill: ₹ 2000.00</p>
+      </div>
+      <!--Save end continue start-->
+
+      <!--Dcoments start-->
+      <mat-card [ngStyle]="{'height.px': getHeight()}" style="margin-left: 16px; margin-right: 114px; min-width: 1035px; max-width: 1170px;">
+            
+                
+              
+        <div class="row" id="dashedbox" [ngStyle]="{'height.px': getHeight2()}"  style="width:95%; margin-left:42px">
+            <div class="col-md-12" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+              <div class="input-group" id="uploaddocuments" style="text-align:center;">
+                <!-- <div class="input-group html code"> -->
+               
+                <div *ngIf="submitted && f['documentLocation'].errors" class="invalid-feedback">
+                    <div *ngIf="f['documentLocation'].errors['required']" class="text-left">Please upload File this is required</div>
+                    
+                </div>
+  <label for="fileInput" class="upload-button" style="border-radius: 5px;">
+    <i><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_9992_996)">
+    <path d="M8.00065 1.33301C4.32065 1.33301 1.33398 4.31967 1.33398 7.99967C1.33398 11.6797 4.32065 14.6663 8.00065 14.6663C11.6807 14.6663 14.6673 11.6797 14.6673 7.99967C14.6673 4.31967 11.6807 1.33301 8.00065 1.33301ZM11.334 8.66634H8.66732V11.333H7.33398V8.66634H4.66732V7.33301H7.33398V4.66634H8.66732V7.33301H11.334V8.66634Z" fill="white"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_9992_996">
+    <rect width="16" height="16" fill="white"/>
+    </clipPath>
+    </defs>
+    </svg>
+    </i>  UPLOAD DOCUMENTS</label>
+    <div>
+  <ul class="upload-list" style="margin-bottom: 20px;">
+    <li *ngFor="let file of uploadedFiles" class="upload-list-item">{{ file.name }}</li>
+  </ul>
+  <p *ngIf="uploadedFiles.length === 0" class="drag-and-drop">Drag and drop documents here</p>
+</div>
+                  
+                <!-- </div> -->
+                
+              </div>
+            </div>
+          </div>
+      </mat-card>
+
+      <!--Dcuments End-->
+
+      <div class="button-container"
+        style="width: 1074px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <button style="width: 176px; height: 40px; margin-top: 51px; background: 
+    #E25D41; border: 1px solid #E25D41; border-radius: 5px; font-family: 'Balsamiq Sans';
+font-style: normal;
+font-weight: 400;
+margin-bottom: 62px;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-transform: uppercase;
+
+color: #FFFFFF;">Save and Next</button>
+      </div>
+
+      <!--Save end continue end-->
+
+
+
+
+    </div>
+    <div id="menu1" class="tab-pane fade"style="margin-left:-41px;width:1074px;">
+
+      <div class="row" style="background-color: #FFF; width: 107%;margin-left: 5%;margin-right: 5%; border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 5px; padding-left: 5%;padding-top: 3%; padding-bottom: 5%;">
+
+
+<div class="col-md" style="border: none;">
+  <p style="margin-bottom: 7px; color: #313131;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: -0.27px;margin-left: -12px;">Recievers Name </p>
+  <input type="text" placeholder="Enter here" style="font-family: 'Montserrat'; color: #313131;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 34px;
+  /* identical to box height */
+  /* Secondary Text */
+  border: 0.5px solid #E4E5E5;
+  outline: none;
+  border-radius: 5px; width: 260px;margin-left: -12px;">
+</div>
+
+<div class="col-md" style="border: none;">
+  <p style="margin-bottom: 7px; color: #313131;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: -0.27px;">Recievers  Number</p>
+  <input type="text" placeholder="Enter here" style="font-family: 'Montserrat'; color: #313131;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 34px;
+  /* identical to box height */
+  /* Secondary Text */
+  border: 0.5px solid #E4E5E5;
+  outline: none;
+  border-radius: 5px; width: 260px;">
+</div>
+        <div class="first" style="margin-left: 56px;">
+          <p style="color: #313131;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 133.333% */
+          letter-spacing: -0.27px;margin-left: -71px;">Payment Date</p>
+          <input type="date" name="payment-date" class="payment-date" style="border-radius: 5px;
+          border: 0.5px solid #707070;width: 260px;
+height: 40px;
+flex-shrink: 0;margin-left: -71px">
+        </div>
+
+        
+
+        <div class="first">
+          <p style="width: 260px;color: #313131;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 133.333% */
+          letter-spacing: -0.27px;margin-top: 36px;">Amount (₹)</p>
+          <input [(ngModel)]="inputNumber" (input)="convertToWords()" type="number" placeholder="Enter amount"
+            style="border-radius: 5px;
+            border: 0.5px solid var(--Secondary-Text, #707070);width: 260px;
+height: 40px;
+flex-shrink: 0;">
+        </div>
+
+        <div class="second">
+          <p style="width: 260px;color: #313131;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 133.333% */
+          letter-spacing: -0.27px;margin-left: 107px;margin-top: 36px;">Payment Method</p>
+          <form mat-button>
+            <select class="selectform" aria-label="Default select example" style="outline: none; padding-left: 10px;margin-left: 107px;">
+              <option value="" hidden><span>Select Payment Method</span></option>
+              <option value="1">Cash</option>
+              <option value="2">Card</option>
+              <option value="3">Goodle Pay</option>
+              <option value="4">Other UPI</option>
+              <option value="5">Website</option>
+            </select>
+          </form>
+
+
+        </div>
+
+      </div>
+
+      <br>
+      <div style="text-align: center;
+  align-items:center;">
+        <button class="Button-of-submit"
+          style="width: 181px;border: 1px solid #E25D41;border-radius: 5px; background-color: white; color:#E25D41 ;"
+          (click)="createDiv()">Add
+          new payment</button>&nbsp;&nbsp;
+        <button class="Button-of-submit" style="width: 181px;"><i
+            class="fa-solid fa-circle-check"></i>&nbsp;&nbsp;Finalise payment</button>
+      </div>
+    </div>
+  </div>
+</div>

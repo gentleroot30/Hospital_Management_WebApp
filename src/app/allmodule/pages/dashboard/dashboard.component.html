@@ -1,0 +1,79 @@
+<div class="dashboard">
+  <h2>Dashboard</h2>
+  <div style="display: inline-block; margin-left: 25px" class="div2">
+    <div class="grid-1">
+      <div class="totalpurchase">
+        <h3>Total Purchase</h3>
+        <h1>Rs. {{ totalpurchase }}</h1>
+        <p>+11% of target</p>
+      </div>
+      <div class="totalsales">
+        <h3>Total Sales</h3>
+        <h1>Rs. {{ totalSales }}</h1>
+        <p>+11% of target</p>
+      </div>
+      <div class="totalexpenditure">
+        <h3>Total Expenditure</h3>
+        <h1>Rs. {{ totalexpenditure }}</h1>
+        <p style="color: #b00020">-55% of target</p>
+      </div>
+
+      <div class="graph">
+        <span class="graph-h">
+          Sales vs. Purchase
+          <div class="day" mat-button>
+            <select [(ngModel)]="chartDataType" name="chartDataType" (ngModelChange)="drawSaleAndPurchaseChart(chartDataType)">
+              <option *ngFor="let range of dateRanges" [value]="range.value">
+                {{ range.viewValue }}
+              </option>
+            </select>
+          </div>
+        </span>
+        <div id="curve_chart" style="width: 100%; height: 250px; margin-top: 50px"></div>
+        <p id="line-chart-error" style="text-align: center; margin-top: 90px; margin-left: 250px" *ngIf="chartData?.length === 0">No Data Found</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: inline-block; margin-left: 25px" class="div2">
+    <div class="grid-2">
+      <div class="pychart">
+        <span class="pie-h">
+          Sales by Product
+          <div class="date" mat-button>
+            <select [(ngModel)]="chartDataType1" name="chartDataType1" (ngModelChange)="drawPieChart(chartDataType1)">
+              <option *ngFor="let range of dateRanges" [value]="range.value">
+                {{ range.viewValue }}
+              </option>
+            </select>
+          </div>
+        </span>
+        <div *ngIf="pieData.length !== 0">
+          <apx-chart
+            [series]="chartSeries"
+            [chart]="chartDetails"
+            [labels]="chartLabels"
+            [title]="chartTitle"
+            [dataLabels]="chartDataLabels"
+            [legend]="legend"
+            [colors]="['#ff0000', '#00ff00', '#0000ff']"
+          ></apx-chart>
+        </div>
+        <p id="pie-chart-error" style="text-align: center; margin-top: 30px" *ngIf="pieData.length === 0">No Data Found</p>
+      </div>
+      <div class="paymentdue">
+        <h3 style="font-weight: 400; color: rgba(0, 0, 0, 0.6); font-style: normal; font-size: 19.4455px; letter-spacing: 0, 270077px; margin-bottom: 20px; width: 364.43px;">Payment Due</h3>
+        <div style="display: flex; align-items: center">
+          <div style="margin-left: 30px; margin-top: 30px">
+            <h4>Purchase</h4>
+            <h1>Rs. {{ totalPurchaseDue }}</h1>
+          </div>
+          <div style="margin-left: 100px; margin-top: 30px">
+            <h4>Sales</h4>
+            <span>Rs. {{ totalSalesDue }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

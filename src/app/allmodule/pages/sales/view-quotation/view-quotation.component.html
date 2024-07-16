@@ -1,0 +1,231 @@
+<div class="add">
+  <h2><a routerLink="/sales"><mat-icon>arrow_back</mat-icon></a> View Quotation </h2>
+  <form [formGroup]="viewQuotationForm" >
+    <mat-card class="mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+              <label>Quotation ID</label>
+              <span style="color: red ">*</span>
+            <input  type="text" placeholder="Enter Quotation Number" formControlName="quotationId" class="form-control" readonly>
+          </div>
+      </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>Customer</label>
+                  <span style="color: red ">*</span>
+                <input  type="text" placeholder="Enter Quotation Number" formControlName="customerName" class="form-control"readonly>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label> Date</label>
+                  <span style="color: red ">*</span>
+                  <input id="quotation-date" type="date" formControlName="quotationDate" class="form-control" readonly
+                 >
+                  
+              </div>
+  
+          </div>
+          
+      </div>
+  </mat-card>
+
+  <mat-card>
+    <div class="row">
+        <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Add NF</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>NF1</label>
+            <span style="color: red ">*</span>
+            <input type="text" formControlName="new_Field_1" class="form-control" readonly>
+            
+        </div>
+        <div class="col-md-4">
+            <label>NF2</label>
+            <span style="color: red ">*</span>
+            <input type="text" formControlName="new_Field_2" class="form-control" readonly>
+           
+        </div>
+        <div class="col-md-4">
+            <label>NF3</label>
+            <span style="color: red "> *</span>
+            <input type="text" formControlName="new_Field_3" class="form-control" readonly>
+            
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <label>NF4</label>
+            <input type="text" formControlName="new_Field_4" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+            <label>NF5</label>
+            <input type="text" formControlName="new_Field_5" class="form-control" readonly>
+        </div>
+        <div class="col-md-4">
+            <label>NF6</label>
+            <input type="text" formControlName="new_Field_6" class="form-control"readonly>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <label>NF7</label>
+            <input type="text" formControlName="new_Field_7" class="form-control" readonly>
+        </div>
+    </div>
+</mat-card>
+
+  <mat-card class="mt-5">
+      <div class="row">
+          <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Notes</h3>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <label >Sell Note 1 </label>
+              <textarea class="form-control" formControlName="sale_Note_1" readonly></textarea>
+          </div>
+         
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-8">
+              <label >Sell Note 2 </label>
+              <textarea class="form-control" formControlName="sale_Note_2" readonly></textarea>
+          </div>
+         
+      </div>
+  </mat-card>
+  <mat-card style="margin-top: 20px;">
+      <div class="row">
+          <div class="col-md-10">
+              <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Add Products</h3>
+          </div>
+      </div>
+      <div class="row">
+         <mat-label style="font-family: Montserrat; font-size: 15px;width: 130px; height: 24px;">Product Name</mat-label> 
+      </div>
+
+    <div>
+      <table  mat-table [dataSource]="dataSource"  multiTemplateDataRows class="mat-elevation-z8 mt-2 " matSort>
+  
+        <!--- Note that these columns can be defined in any order.
+                             The actual rendered columns are set as a property on the row definition" -->
+       
+             <!-- Position Column -->
+            
+             <ng-container matColumnDef="productName">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Product Name </th>
+               <td mat-cell *matCellDef="let product "> {{product.productName}} </td>
+             </ng-container>
+       
+             <!-- Name Column -->
+             <ng-container matColumnDef="customField1">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField1}} </td>
+             </ng-container>
+       
+             <!-- Weight Column -->
+             <ng-container matColumnDef="customField2">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField2}} </td>
+             </ng-container>
+       
+             <!-- Symbol Column -->
+             <ng-container matColumnDef="customField3">
+               <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+               font-style: normal;
+               font-weight: 400;
+               font-size: 18px;
+               line-height: 22px;
+               /* identical to box height */
+               
+               
+               color: #313131;"> Custom Field </th>
+               <td mat-cell *matCellDef="let product"> {{product.customField3}} </td>
+             </ng-container>
+  
+             <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef style="font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              /* identical to box height */
+              
+              
+              color: #313131;"> Action </th>
+              <td mat-cell *matCellDef="let product"> <button mat-icon-button 
+                  aria-label="Example icon-button with a menu">
+                  <mat-icon  style="color: #E25D41;">delete</mat-icon>
+                </button>
+    
+              </td>
+            </ng-container>
+             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         
+           </table>
+   
+     </div>
+   </mat-card>
+   <mat-card class="mt-5">
+      <div class="row">
+          <h3 style="font-family: Montserrat; font-size: 18px; color:#00000099; line-height: 24px;">Notes</h3>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <label >Sell Note 3 </label>
+              <div class="textarea-container">
+                  <button  mat-button  class=" custom-button">Send SMS</button>
+                  <textarea class="form-control"  formControlName="sale_Note_3" placeholder="Enter Notes Here"readonly></textarea>
+              </div>
+          </div>
+         
+      </div>
+      <div class="row mt-5">
+          <div class="col-md-8">
+              <label >Sell Note 4 </label>
+              <textarea class="form-control" formControlName="sale_Note_4" placeholder="Enter Notes Here"readonly></textarea>
+          </div>
+         
+      </div>
+  </mat-card>
+  <mat-card>
+    <div class="form">
+
+      <div class="rectangular" id="selectFiles">
+
+      </div>
+    </div>
+
+  </mat-card>
+ 
+  
+  </form>
+</div>  

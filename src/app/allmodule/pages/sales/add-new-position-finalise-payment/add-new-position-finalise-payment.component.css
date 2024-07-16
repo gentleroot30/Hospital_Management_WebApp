@@ -1,0 +1,8 @@
+  /* CSS Media Tag code to adjust print  */
+  @media print {
+    body * {
+      visibility:visible;
+      height: max-content;
+    }
+    
+  }
